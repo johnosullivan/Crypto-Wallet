@@ -8,14 +8,17 @@
 
 /* Begin PBXBuildFile section */
 		1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */; };
-		458DBDA220CF519500185170 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA120CF519500185170 /* AppDelegate.swift */; };
-		458DBDA420CF519500185170 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA320CF519500185170 /* ViewController.swift */; };
 		458DBDA720CF519500185170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDA520CF519500185170 /* Main.storyboard */; };
 		458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */; };
 		458DBDAC20CF519700185170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAB20CF519700185170 /* Assets.xcassets */; };
 		458DBDAF20CF519700185170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAD20CF519700185170 /* LaunchScreen.storyboard */; };
 		458DBDBA20CF519700185170 /* Crypto_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDB920CF519700185170 /* Crypto_WalletTests.swift */; };
 		458DBDC520CF519700185170 /* Crypto_WalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */; };
+		45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80120CF781E006F5B68 /* AppDelegate.swift */; };
+		45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80220CF781E006F5B68 /* ViewController.swift */; };
+		45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80520CF7954006F5B68 /* EthereumTools.swift */; };
+		45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80820CF7B19006F5B68 /* UITools.swift */; };
+		45BAB80C20CF7C51006F5B68 /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80B20CF7C51006F5B68 /* String.swift */; };
 		75CEBD6AF2F22E5E4E8838A9 /* Pods_Crypto_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */; };
 		A1EEFAB24EB9B1DBEE0E9BF3 /* Pods_Crypto_WalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -42,8 +45,6 @@
 		0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_WalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		458DBD9E20CF519500185170 /* Crypto Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		458DBDA120CF519500185170 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		458DBDA320CF519500185170 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		458DBDA620CF519500185170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		458DBDA920CF519500185170 /* Crypto_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crypto_Wallet.xcdatamodel; sourceTree = "<group>"; };
 		458DBDAB20CF519700185170 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -55,6 +56,12 @@
 		458DBDC020CF519700185170 /* Crypto WalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crypto WalletUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_WalletUITests.swift; sourceTree = "<group>"; };
 		458DBDC620CF519700185170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		45BAB80020CF781D006F5B68 /* Crypto Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crypto Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
+		45BAB80120CF781E006F5B68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
+		45BAB80220CF781E006F5B68 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
+		45BAB80520CF7954006F5B68 /* EthereumTools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EthereumTools.swift; path = "Crypto Wallet/Tools/EthereumTools.swift"; sourceTree = SOURCE_ROOT; };
+		45BAB80820CF7B19006F5B68 /* UITools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
+		45BAB80B20CF7C51006F5B68 /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = String.swift; path = Helpers/String.swift; sourceTree = SOURCE_ROOT; };
 		485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Wallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5967F890B0F2997B0E46ABE3 /* Pods-Crypto WalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		79335E0002F8E9FE1C1DAD51 /* Pods-Crypto WalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -126,13 +133,16 @@
 		458DBDA020CF519500185170 /* Crypto Wallet */ = {
 			isa = PBXGroup;
 			children = (
-				458DBDA120CF519500185170 /* AppDelegate.swift */,
-				458DBDA320CF519500185170 /* ViewController.swift */,
+				45BAB80A20CF7C30006F5B68 /* Helpers */,
+				45BAB80720CF79C8006F5B68 /* Tools */,
+				45BAB80120CF781E006F5B68 /* AppDelegate.swift */,
+				45BAB80220CF781E006F5B68 /* ViewController.swift */,
 				458DBDA520CF519500185170 /* Main.storyboard */,
 				458DBDAB20CF519700185170 /* Assets.xcassets */,
 				458DBDAD20CF519700185170 /* LaunchScreen.storyboard */,
 				458DBDB020CF519700185170 /* Info.plist */,
 				458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */,
+				45BAB80020CF781D006F5B68 /* Crypto Wallet-Bridging-Header.h */,
 			);
 			path = "Crypto Wallet";
 			sourceTree = "<group>";
@@ -153,6 +163,23 @@
 				458DBDC620CF519700185170 /* Info.plist */,
 			);
 			path = "Crypto WalletUITests";
+			sourceTree = "<group>";
+		};
+		45BAB80720CF79C8006F5B68 /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				45BAB80520CF7954006F5B68 /* EthereumTools.swift */,
+				45BAB80820CF7B19006F5B68 /* UITools.swift */,
+			);
+			path = Tools;
+			sourceTree = "<group>";
+		};
+		45BAB80A20CF7C30006F5B68 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				45BAB80B20CF7C51006F5B68 /* String.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		C2E8C6D6D621DB59EA03CCB7 /* Pods */ = {
@@ -245,6 +272,7 @@
 				TargetAttributes = {
 					458DBD9D20CF519500185170 = {
 						CreatedOnToolsVersion = 9.4;
+						LastSwiftMigration = 0940;
 					};
 					458DBDB420CF519700185170 = {
 						CreatedOnToolsVersion = 9.4;
@@ -472,9 +500,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45BAB80C20CF7C51006F5B68 /* String.swift in Sources */,
+				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
+				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
+				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
+				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
 				458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */,
-				458DBDA420CF519500185170 /* ViewController.swift in Sources */,
-				458DBDA220CF519500185170 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -648,12 +679,18 @@
 			baseConfigurationReference = A18C4FF739E61EF7A4028FAF /* Pods-Crypto Wallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crypto Wallet/Crypto Wallet-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -664,12 +701,17 @@
 			baseConfigurationReference = ABB93DB720B0D6B1B1413128 /* Pods-Crypto Wallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Crypto Wallet/Crypto Wallet-Bridging-Header.h";
 				SWIFT_VERSION = 4.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -684,7 +726,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -702,7 +748,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -719,7 +769,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -736,7 +790,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
