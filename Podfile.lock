@@ -1,0 +1,41 @@
+PODS:
+  - Alamofire (4.7.1)
+  - AlamofireObjectMapper (5.0.0):
+    - Alamofire (~> 4.1)
+    - ObjectMapper (~> 3.0)
+  - Geth (1.8.3)
+  - Kingfisher (4.6.4)
+  - ObjectMapper (3.1.0)
+  - PKHUD (5.0.0)
+  - R.swift (4.0.0):
+    - R.swift.Library (~> 4.0.0)
+  - R.swift.Library (4.0.0)
+  - Realm (3.3.1):
+    - Realm/Headers (= 3.3.1)
+  - Realm/Headers (3.3.1)
+  - RealmSwift (3.3.1):
+    - Realm (= 3.3.1)
+
+DEPENDENCIES:
+  - AlamofireObjectMapper
+  - Geth
+  - Kingfisher
+  - PKHUD
+  - R.swift
+  - RealmSwift
+
+SPEC CHECKSUMS:
+  Alamofire: 68d7d521118d49c615a8d2214d87cdf525599d30
+  AlamofireObjectMapper: 5fafc816351cbbc0d486611aaeba7461c0cbad49
+  Geth: e00dad6a7592facdf063214be13b28b7e73b0df2
+  Kingfisher: 68498a706e46c2a050b0c9572f100e5db407f6e0
+  ObjectMapper: 20505058f54e5c3ca69e1d6de9897d152a5369a6
+  PKHUD: 3c001512c6e002091184197a8de7a20420786e3b
+  R.swift: d6a5ec2f55a8441dc0ed9f1f8b37d7d11ae85c66
+  R.swift.Library: c3af34921024333546e23b70e70d0b4e0cffca75
+  Realm: 63ebf4903b446b0bdf2131244eb1e1549925c724
+  RealmSwift: f28fe8507bdfb8f1c924962401b83e7b9d7abb5c
+
+PODFILE CHECKSUM: 9ba3dc41832811f7f49d757e0ce725995c9a3066
+
+COCOAPODS: 1.4.0

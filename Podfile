@@ -6,6 +6,12 @@ target 'Crypto Wallet' do
   use_frameworks!
 
   # Pods for Crypto Wallet
+  pod 'R.swift'
+  pod 'Geth'
+  pod 'RealmSwift'
+  pod 'AlamofireObjectMapper'
+  pod 'PKHUD'
+  pod 'Kingfisher'
 
   target 'Crypto WalletTests' do
     inherit! :search_paths

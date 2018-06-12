@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */; };
 		458DBDA220CF519500185170 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA120CF519500185170 /* AppDelegate.swift */; };
 		458DBDA420CF519500185170 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA320CF519500185170 /* ViewController.swift */; };
 		458DBDA720CF519500185170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDA520CF519500185170 /* Main.storyboard */; };
@@ -15,6 +16,8 @@
 		458DBDAF20CF519700185170 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAD20CF519700185170 /* LaunchScreen.storyboard */; };
 		458DBDBA20CF519700185170 /* Crypto_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDB920CF519700185170 /* Crypto_WalletTests.swift */; };
 		458DBDC520CF519700185170 /* Crypto_WalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */; };
+		75CEBD6AF2F22E5E4E8838A9 /* Pods_Crypto_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */; };
+		A1EEFAB24EB9B1DBEE0E9BF3 /* Pods_Crypto_WalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		03A110548D1DC21459243496 /* Pods-Crypto WalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests.debug.xcconfig"; sourceTree = "<group>"; };
+		0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_WalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		458DBD9E20CF519500185170 /* Crypto Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDA120CF519500185170 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		458DBDA320CF519500185170 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +55,12 @@
 		458DBDC020CF519700185170 /* Crypto WalletUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Crypto WalletUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_WalletUITests.swift; sourceTree = "<group>"; };
 		458DBDC620CF519700185170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Wallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5967F890B0F2997B0E46ABE3 /* Pods-Crypto WalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests.release.xcconfig"; sourceTree = "<group>"; };
+		79335E0002F8E9FE1C1DAD51 /* Pods-Crypto WalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.release.xcconfig"; sourceTree = "<group>"; };
+		841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_WalletUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A18C4FF739E61EF7A4028FAF /* Pods-Crypto Wallet.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Wallet.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Wallet/Pods-Crypto Wallet.debug.xcconfig"; sourceTree = "<group>"; };
+		ABB93DB720B0D6B1B1413128 /* Pods-Crypto Wallet.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto Wallet.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto Wallet/Pods-Crypto Wallet.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +68,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				75CEBD6AF2F22E5E4E8838A9 /* Pods_Crypto_Wallet.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -63,6 +76,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A1EEFAB24EB9B1DBEE0E9BF3 /* Pods_Crypto_WalletTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -70,12 +84,23 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2AA79C7CEF1F984ADDC1E268 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */,
+				0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */,
+				841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		458DBD9520CF519500185170 = {
 			isa = PBXGroup;
 			children = (
@@ -83,6 +108,8 @@
 				458DBDB820CF519700185170 /* Crypto WalletTests */,
 				458DBDC320CF519700185170 /* Crypto WalletUITests */,
 				458DBD9F20CF519500185170 /* Products */,
+				C2E8C6D6D621DB59EA03CCB7 /* Pods */,
+				2AA79C7CEF1F984ADDC1E268 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -128,6 +155,19 @@
 			path = "Crypto WalletUITests";
 			sourceTree = "<group>";
 		};
+		C2E8C6D6D621DB59EA03CCB7 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A18C4FF739E61EF7A4028FAF /* Pods-Crypto Wallet.debug.xcconfig */,
+				ABB93DB720B0D6B1B1413128 /* Pods-Crypto Wallet.release.xcconfig */,
+				03A110548D1DC21459243496 /* Pods-Crypto WalletTests.debug.xcconfig */,
+				5967F890B0F2997B0E46ABE3 /* Pods-Crypto WalletTests.release.xcconfig */,
+				0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */,
+				79335E0002F8E9FE1C1DAD51 /* Pods-Crypto WalletUITests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -135,9 +175,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 458DBDC920CF519700185170 /* Build configuration list for PBXNativeTarget "Crypto Wallet" */;
 			buildPhases = (
+				2ECBEBFF2ED098CF021D4D59 /* [CP] Check Pods Manifest.lock */,
 				458DBD9A20CF519500185170 /* Sources */,
 				458DBD9B20CF519500185170 /* Frameworks */,
 				458DBD9C20CF519500185170 /* Resources */,
+				D14FAE4519BF80FCF1E581DD /* [CP] Embed Pods Frameworks */,
+				05C37AD4641E3861AFC6A823 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -152,9 +195,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 458DBDCC20CF519700185170 /* Build configuration list for PBXNativeTarget "Crypto WalletTests" */;
 			buildPhases = (
+				27E3C3E4ED6F1F0F5219F9C9 /* [CP] Check Pods Manifest.lock */,
 				458DBDB120CF519700185170 /* Sources */,
 				458DBDB220CF519700185170 /* Frameworks */,
 				458DBDB320CF519700185170 /* Resources */,
+				91016EEF64B059A83A58B67E /* [CP] Embed Pods Frameworks */,
+				27D7314BA39EC1E7BD0C442E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -170,9 +216,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 458DBDCF20CF519700185170 /* Build configuration list for PBXNativeTarget "Crypto WalletUITests" */;
 			buildPhases = (
+				1C9E9E1FC92898FD6BB74072 /* [CP] Check Pods Manifest.lock */,
 				458DBDBC20CF519700185170 /* Sources */,
 				458DBDBD20CF519700185170 /* Frameworks */,
 				458DBDBE20CF519700185170 /* Resources */,
+				2B43C153710488C1AD49CE97 /* [CP] Embed Pods Frameworks */,
+				BD4ADF4A1BD7FD007E8425A5 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -253,6 +302,170 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		05C37AD4641E3861AFC6A823 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Wallet/Pods-Crypto Wallet-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1C9E9E1FC92898FD6BB74072 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crypto WalletUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27D7314BA39EC1E7BD0C442E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		27E3C3E4ED6F1F0F5219F9C9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crypto WalletTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2B43C153710488C1AD49CE97 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		2ECBEBFF2ED098CF021D4D59 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Crypto Wallet-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		91016EEF64B059A83A58B67E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BD4ADF4A1BD7FD007E8425A5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		D14FAE4519BF80FCF1E581DD /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Wallet/Pods-Crypto Wallet-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/AlamofireObjectMapper/AlamofireObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
+				"${BUILT_PRODUCTS_DIR}/ObjectMapper/ObjectMapper.framework",
+				"${BUILT_PRODUCTS_DIR}/PKHUD/PKHUD.framework",
+				"${BUILT_PRODUCTS_DIR}/R.swift.Library/Rswift.framework",
+				"${BUILT_PRODUCTS_DIR}/Realm/Realm.framework",
+				"${BUILT_PRODUCTS_DIR}/RealmSwift/RealmSwift.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjectMapper.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PKHUD.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Rswift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RealmSwift.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Crypto Wallet/Pods-Crypto Wallet-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		458DBD9A20CF519500185170 /* Sources */ = {
@@ -432,15 +645,13 @@
 		};
 		458DBDCA20CF519700185170 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A18C4FF739E61EF7A4028FAF /* Pods-Crypto Wallet.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -450,15 +661,13 @@
 		};
 		458DBDCB20CF519700185170 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ABB93DB720B0D6B1B1413128 /* Pods-Crypto Wallet.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -468,17 +677,14 @@
 		};
 		458DBDCD20CF519700185170 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 03A110548D1DC21459243496 /* Pods-Crypto WalletTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -489,17 +695,14 @@
 		};
 		458DBDCE20CF519700185170 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5967F890B0F2997B0E46ABE3 /* Pods-Crypto WalletTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -510,16 +713,13 @@
 		};
 		458DBDD020CF519700185170 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -530,16 +730,13 @@
 		};
 		458DBDD120CF519700185170 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 79335E0002F8E9FE1C1DAD51 /* Pods-Crypto WalletUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
