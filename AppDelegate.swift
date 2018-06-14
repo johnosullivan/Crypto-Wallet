@@ -8,15 +8,69 @@
 
 import UIKit
 import CoreData
+import Alamofire
+import ObjectMapper
+import AlamofireObjectMapper
+
+protocol CustomError: Error {
+    typealias ErrorInfo = (title: String?, message: String?, showing: Bool)
+    var description: ErrorInfo? { get }
+}
+
+extension CustomError {
+    var criticalError: ErrorInfo {
+        return (title: "Critical error", message: "Something went wront. Please contact with developers", showing: true)
+    }
+}
+
+enum NetworkError: CustomError {
+    case parseError
+    
+    var description: CustomError.ErrorInfo? {
+        return nil
+    }
+}
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
 
     var window: UIWindow?
 
-
+    func getBalance(address: String, result: @escaping (Result<String>) -> Void) {
+        loadObjectJSON(request: API.Etherscan.balance(address: address)) { resultHandler in
+            
+            switch resultHandler {
+            case .success(let object):
+                
+                guard let json = object as? [String: Any], let balance = json["result"] as? String else {
+                    result(Result.failure(NetworkError.parseError))
+                    return
+                }
+                
+                result(Result.success(balance))
+                
+            case .failure(let error):
+                result(Result.failure(error))
+            }
+            
+        }
+    }
+    
+ 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        getBalance(address: "0x51e003aeb3feb22093528f0c6fc046c498e2d8d3") { result in
+            switch result {
+                case .success(let balance):
+                    let ether = Ether(weiString: balance)
+                    print("FullName: ", ether.fullNameWithSymbol)
+                    print("Value: ", ether.value)
+                case .failure(let error):
+                    print(error)
+            }
+        }
+        
         return true
     }
 

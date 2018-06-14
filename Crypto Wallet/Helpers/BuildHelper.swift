@@ -16,7 +16,6 @@ extension Bundle {
         return "\(version) build \(build)"
     }
     
-    
     var displayName: String {
         return object(forInfoDictionaryKey: "CFBundleDisplayName") as! String
     }

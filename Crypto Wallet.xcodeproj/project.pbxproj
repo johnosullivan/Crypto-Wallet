@@ -15,6 +15,12 @@
 		458DBDBA20CF519700185170 /* Crypto_WalletTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDB920CF519700185170 /* Crypto_WalletTests.swift */; };
 		458DBDC520CF519700185170 /* Crypto_WalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */; };
 		45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481020D0A7D800F88753 /* BuildHelper.swift */; };
+		45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481220D20EA600F88753 /* NetworkLoadable.swift */; };
+		45A8481520D2100000F88753 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481420D2100000F88753 /* API.swift */; };
+		45A8481720D2101C00F88753 /* APIEth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481620D2101C00F88753 /* APIEth.swift */; };
+		45A8481A20D2149A00F88753 /* Ether.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481920D2149A00F88753 /* Ether.swift */; };
+		45A8481C20D214C300F88753 /* Currency.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481B20D214C300F88753 /* Currency.swift */; };
+		45A8481E20D214F400F88753 /* ValueHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481D20D214F400F88753 /* ValueHelper.swift */; };
 		45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80120CF781E006F5B68 /* AppDelegate.swift */; };
 		45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80220CF781E006F5B68 /* ViewController.swift */; };
 		45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80520CF7954006F5B68 /* EthereumTools.swift */; };
@@ -58,6 +64,12 @@
 		458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Crypto_WalletUITests.swift; sourceTree = "<group>"; };
 		458DBDC620CF519700185170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		45A8481020D0A7D800F88753 /* BuildHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildHelper.swift; sourceTree = "<group>"; };
+		45A8481220D20EA600F88753 /* NetworkLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoadable.swift; sourceTree = "<group>"; };
+		45A8481420D2100000F88753 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
+		45A8481620D2101C00F88753 /* APIEth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIEth.swift; sourceTree = "<group>"; };
+		45A8481920D2149A00F88753 /* Ether.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ether.swift; sourceTree = "<group>"; };
+		45A8481B20D214C300F88753 /* Currency.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Currency.swift; sourceTree = "<group>"; };
+		45A8481D20D214F400F88753 /* ValueHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueHelper.swift; sourceTree = "<group>"; };
 		45BAB80020CF781D006F5B68 /* Crypto Wallet-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "Crypto Wallet-Bridging-Header.h"; sourceTree = "<group>"; };
 		45BAB80120CF781E006F5B68 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = SOURCE_ROOT; };
 		45BAB80220CF781E006F5B68 /* ViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = SOURCE_ROOT; };
@@ -135,6 +147,7 @@
 		458DBDA020CF519500185170 /* Crypto Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				45A8481820D2147800F88753 /* CurrencyModel */,
 				45BAB80A20CF7C30006F5B68 /* Helpers */,
 				45BAB80720CF79C8006F5B68 /* Tools */,
 				45BAB80120CF781E006F5B68 /* AppDelegate.swift */,
@@ -145,6 +158,9 @@
 				458DBDB020CF519700185170 /* Info.plist */,
 				458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */,
 				45BAB80020CF781D006F5B68 /* Crypto Wallet-Bridging-Header.h */,
+				45A8481220D20EA600F88753 /* NetworkLoadable.swift */,
+				45A8481420D2100000F88753 /* API.swift */,
+				45A8481620D2101C00F88753 /* APIEth.swift */,
 			);
 			path = "Crypto Wallet";
 			sourceTree = "<group>";
@@ -167,6 +183,15 @@
 			path = "Crypto WalletUITests";
 			sourceTree = "<group>";
 		};
+		45A8481820D2147800F88753 /* CurrencyModel */ = {
+			isa = PBXGroup;
+			children = (
+				45A8481920D2149A00F88753 /* Ether.swift */,
+				45A8481B20D214C300F88753 /* Currency.swift */,
+			);
+			path = CurrencyModel;
+			sourceTree = "<group>";
+		};
 		45BAB80720CF79C8006F5B68 /* Tools */ = {
 			isa = PBXGroup;
 			children = (
@@ -181,6 +206,7 @@
 			children = (
 				45BAB80B20CF7C51006F5B68 /* StringHelper.swift */,
 				45A8481020D0A7D800F88753 /* BuildHelper.swift */,
+				45A8481D20D214F400F88753 /* ValueHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -503,13 +529,19 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45A8481C20D214C300F88753 /* Currency.swift in Sources */,
 				45BAB80C20CF7C51006F5B68 /* StringHelper.swift in Sources */,
 				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
 				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
+				45A8481A20D2149A00F88753 /* Ether.swift in Sources */,
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
 				45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */,
 				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
+				45A8481720D2101C00F88753 /* APIEth.swift in Sources */,
+				45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */,
+				45A8481520D2100000F88753 /* API.swift in Sources */,
 				458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */,
+				45A8481E20D214F400F88753 /* ValueHelper.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
