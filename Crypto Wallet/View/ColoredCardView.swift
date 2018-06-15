@@ -5,6 +5,9 @@ class ColoredCardView: CardView {
 
     @IBOutlet weak var contentView: UIView!
     
+    @IBOutlet weak var send: UIButton!
+    @IBOutlet weak var receive: UIButton!
+    
     
     @IBOutlet weak var indexLabel: UILabel!
     var index: Int = 0 {
@@ -12,6 +15,11 @@ class ColoredCardView: CardView {
             indexLabel.text = "# \(index)"
         }
     }
+    
+    let hueValue: CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
+    let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
+    let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+    
     
     func generateRandomColor() -> UIColor {
         let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
@@ -35,10 +43,10 @@ class ColoredCardView: CardView {
     
     func presentedDidUpdate() {
         
-        let color = generateRandomColor()
+        //let color = UIColor(hue: hueValue, saturation: saturation, brightness: brightness, alpha: 1)
         
-        removeCardViewButton.isHidden = !presented
-        contentView.backgroundColor = presented ? color : color
+        //removeCardViewButton.isHidden = !presented
+        contentView.backgroundColor = UIColor.white
         contentView.addTransitionFade()
         
     }
