@@ -5,15 +5,20 @@ class ColoredCardView: CardView {
 
     @IBOutlet weak var contentView: UIView!
     
-    let presentedCardViewColor:          UIColor = UIColor.red
-    
-    lazy var depresentedCardViewColor:   UIColor = UIColor.red
     
     @IBOutlet weak var indexLabel: UILabel!
     var index: Int = 0 {
         didSet {
             indexLabel.text = "# \(index)"
         }
+    }
+    
+    func generateRandomColor() -> UIColor {
+        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
+        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
+        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
+        
+        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
     override func awakeFromNib() {
@@ -30,8 +35,10 @@ class ColoredCardView: CardView {
     
     func presentedDidUpdate() {
         
+        let color = generateRandomColor()
+        
         removeCardViewButton.isHidden = !presented
-        contentView.backgroundColor = presented ? presentedCardViewColor : depresentedCardViewColor
+        contentView.backgroundColor = presented ? color : color
         contentView.addTransitionFade()
         
     }
