@@ -39,7 +39,7 @@ extension API.Etherscan: APIMethodProtocol {
                 "startblock": 0,
                 "endblock": 99999999,
                 "sort": "asc",
-                "apiKey": "DI5D2RRNSJI5H6BNI3Z6JZB1RD4F2TKX9X"
+                "apiKey": Constants.Etherscan.apiKey
             ]
         case .balance(let address):
             return [
@@ -47,7 +47,7 @@ extension API.Etherscan: APIMethodProtocol {
                 "action": "balance",
                 "address": address,
                 "tag": "latest",
-                "apiKey": "DI5D2RRNSJI5H6BNI3Z6JZB1RD4F2TKX9X"
+                "apiKey": Constants.Etherscan.apiKey
             ]
         }
     }

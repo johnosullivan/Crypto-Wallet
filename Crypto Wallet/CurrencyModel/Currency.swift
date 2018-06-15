@@ -18,7 +18,7 @@ protocol Currency {
 
 extension Currency {
    
-    var fullName: String {creturn "\(name) (\(iso))" }
+    var fullName: String { return "\(name) (\(iso))" }
     
     var fullNameWithSymbol: String { return "\(symbol)\t\(fullName)" }
     
