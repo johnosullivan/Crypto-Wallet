@@ -1,5 +1,7 @@
 
 import UIKit
+import Kingfisher
+import Rswift
 
 class ColoredCardView: CardView {
 
@@ -7,7 +9,7 @@ class ColoredCardView: CardView {
     
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var receive: UIButton!
-    
+    @IBOutlet weak var iconImageView: UIImageView!
     
     @IBOutlet weak var indexLabel: UILabel!
     var index: Int = 0 {
@@ -29,6 +31,7 @@ class ColoredCardView: CardView {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
@@ -44,10 +47,13 @@ class ColoredCardView: CardView {
     func presentedDidUpdate() {
         
         //let color = UIColor(hue: hueValue, saturation: saturation, brightness: brightness, alpha: 1)
-        
+        //#f08b16 UIColor(red:0.94, green:0.55, blue:0.09, alpha:1.0)
         //removeCardViewButton.isHidden = !presented
         contentView.backgroundColor = UIColor.white
         contentView.addTransitionFade()
+        
+        iconImageView.image = UIImage(named: "Ethereum-icon")?.withRenderingMode(.alwaysTemplate)
+        //iconImageView.tintColor = coin.color
         
     }
     
