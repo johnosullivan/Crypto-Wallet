@@ -129,6 +129,9 @@
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="removeCardView:" destination="iN0-l3-epB" eventType="touchDragInside" id="Xt0-Ks-yr4"/>
+                                    </connections>
                                 </button>
                             </subviews>
                         </stackView>
