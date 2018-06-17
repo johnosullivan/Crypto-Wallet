@@ -31,7 +31,6 @@ class ColoredCardView: CardView {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
-    
     override func awakeFromNib() {
         super.awakeFromNib()
         

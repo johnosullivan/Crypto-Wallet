@@ -11,6 +11,7 @@ import CoreData
 import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
+import Geth
 
 protocol CustomError: Error {
     typealias ErrorInfo = (title: String?, message: String?, showing: Bool)
@@ -29,6 +30,49 @@ enum NetworkError: CustomError {
     var description: CustomError.ErrorInfo? {
         return nil
     }
+}
+
+struct Transaction {
+    var txHash: String!
+    var to: String!
+    var from: String!
+    var amount: Currency!
+    var timestamp: Date!
+    var isIncoming: Bool!
+    var isPending: Bool!
+    var isError: Bool!
+    var isTokenTransfer: Bool!
+    
+    static func mapFromGethTransaction(_ object: GethTransaction, time: TimeInterval) -> Transaction {
+        var transaction = Transaction()
+        transaction.txHash = object.getHash().getHex()
+        transaction.to = object.getTo().getHex()
+        transaction.from = ""
+        transaction.amount = Ether(weiString: object.getValue().string()!)
+        transaction.timestamp = Date(timeIntervalSince1970: time)
+        transaction.isPending = false
+        transaction.isError = false
+        transaction.isTokenTransfer = false
+        return transaction
+    }
+    
+}
+
+extension Transaction: ImmutableMappable {
+    
+    init(map: Map) throws {
+        txHash = try map.value("hash")
+        to = try map.value("to")
+        from = try map.value("from")
+        let amountString: String = try map.value("value")
+        amount = Ether(weiString: amountString)
+        timestamp = try map.value("timeStamp", using: DateTransform())
+        let isErrorString: String = try map.value("isError")
+        isError = Bool(isErrorString)
+        isPending = false
+        isTokenTransfer = false
+    }
+    
 }
 
 @UIApplicationMain
@@ -56,6 +100,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
         }
     }
     
+    func getTransactions(address: String, result: @escaping (Result<[Transaction]>) -> Void) {
+        loadArray(request: API.Etherscan.transactions(address: address), keyPath: "result", completion: result)
+    }
+    
  
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
@@ -66,6 +114,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
                     let ether = Ether(weiString: balance)
                     print("FullName: ", ether.fullNameWithSymbol)
                     print("Value: ", ether.value)
+                case .failure(let error):
+                    print(error)
+            }
+        }
+        
+        getTransactions(address: "0x51e003aeb3feb22093528f0c6fc046c498e2d8d3") { result in
+            switch result {
+            case .success(let transactions):
+                    print("Transactions: ", transactions.count)
                 case .failure(let error):
                     print(error)
             }
