@@ -8,6 +8,12 @@
 
 import UIKit
 import Geth
+import RealmSwift
+
+class Account: Object {
+    @objc dynamic var name = ""
+    @objc dynamic var address = ""
+}
 
 class ViewController: UIViewController {
     
@@ -37,6 +43,20 @@ class ViewController: UIViewController {
             self?.showAddCardViewButtonIfNeeded()
             self?.addCardViewButton.addTransitionFade()
         }
+        
+        let acc = Account()
+        acc.address = ""
+        acc.name = ""
+        
+        let realm = try! Realm()
+
+        try! realm.write {
+            realm.add(acc)
+        }
+        
+        let accs = realm.objects(Account.self).filter("name == ''")
+        print(accs)
+
         
     }
     
