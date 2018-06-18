@@ -66,9 +66,11 @@ class ViewController: UIViewController {
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
-        walletView.insert(cardView: ColoredCardView.nibForClass(), animated: true, presented: true)
+        //walletView.insert(cardView: ColoredCardView.nibForClass(), animated: true, presented: true)
+        print("Send transaction")
         
     }
+    
     
     override var prefersStatusBarHidden: Bool {
         return false
