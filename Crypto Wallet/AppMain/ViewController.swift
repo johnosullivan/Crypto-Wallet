@@ -15,7 +15,7 @@ class Account: Object {
     @objc dynamic var address = ""
 }
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, SyncCoordinatorDelegate {
     
     @IBOutlet weak var walletHeaderView: UIView!
     @IBOutlet weak var walletView: WalletView!
@@ -77,13 +77,53 @@ class ViewController: UIViewController {
         
     }
     func syncDidReceiveTransactions(_ transactions: [GethTransaction], timestamp: Int64) {
-        
+        print("Receive Transactions: ", transactions)
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
         //walletView.insert(cardView: ColoredCardView.nibForClass(), animated: true, presented: true)
-        print("Send transaction")
+        /*print("Create Wallet")
+        let kstore = KeystoreService()
+        do {
+            try kstore.createAccount(passphrase: "mogilska")
+        } catch {
+            
+        }*/
+        
+        let chain = Chain.ropsten
+        
+        //let core = Ethereum.core
+        let keystore = KeystoreService()
+        let core = Ethereum.core
+        let syncCoordinator = StandardSyncCoordinator()
+        core.syncCoordinator = syncCoordinator
+        
+        do  {
+            try syncCoordinator.startSync(chain: chain, delegate: self)
+            try core.client = syncCoordinator.getClient()
+        } catch {
+            
+        }
+        
+       let gasService = GasService(core: core)
+        
+        gasService.getSuggestedGasPrice() { result in
+            switch result {
+            case .success(let gasPrice):
+                print(gasPrice)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        do {
+            let trans:GethTransaction = try core.client.getTransactionByHash(core.context, hash: GethHash.init(fromHex: "0xe13faabb45934af9cacafb23a5866b45ed591b647b9d0c6e94da74f86fa16b7e"))
+            print(try trans.encodeJSON())
+        } catch {
+            
+        }
+        
         
         /*
         let chain = Chain.ropsten

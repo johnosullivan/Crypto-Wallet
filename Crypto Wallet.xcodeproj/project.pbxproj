@@ -10,7 +10,11 @@
 		1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */; };
 		4576CB9A20D8285900D53F44 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9920D8285900D53F44 /* Chain.swift */; };
 		4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9B20D891AC00D53F44 /* Ethereum.swift */; };
-		4576CB9E20D8924900D53F44 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9D20D8924900D53F44 /* TransactionFactory.swift */; };
+		4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA020D8AF1600D53F44 /* KeystoreService.swift */; };
+		4576CBA320D97A7B00D53F44 /* GasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA220D97A7B00D53F44 /* GasService.swift */; };
+		4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */; };
+		4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */; };
+		4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA820D987D600D53F44 /* TransactionFactory.swift */; };
 		458DBDA720CF519500185170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDA520CF519500185170 /* Main.storyboard */; };
 		458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */; };
 		458DBDAC20CF519700185170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAB20CF519700185170 /* Assets.xcassets */; };
@@ -61,7 +65,11 @@
 		0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		4576CB9920D8285900D53F44 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		4576CB9B20D891AC00D53F44 /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
-		4576CB9D20D8924900D53F44 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
+		4576CBA020D8AF1600D53F44 /* KeystoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreService.swift; sourceTree = "<group>"; };
+		4576CBA220D97A7B00D53F44 /* GasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasService.swift; sourceTree = "<group>"; };
+		4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSyncCoordinator.swift; sourceTree = "<group>"; };
+		4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesSyncCoordinator.swift; sourceTree = "<group>"; };
+		4576CBA820D987D600D53F44 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
 		458DBD9E20CF519500185170 /* Crypto Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDA620CF519500185170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		458DBDA920CF519500185170 /* Crypto_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crypto_Wallet.xcdatamodel; sourceTree = "<group>"; };
@@ -138,6 +146,18 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		4576CB9F20D8AF0200D53F44 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				4576CBA020D8AF1600D53F44 /* KeystoreService.swift */,
+				4576CBA220D97A7B00D53F44 /* GasService.swift */,
+				4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */,
+				4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */,
+				4576CBA820D987D600D53F44 /* TransactionFactory.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
 		458DBD9520CF519500185170 = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +184,7 @@
 			isa = PBXGroup;
 			children = (
 				458DBDB020CF519700185170 /* Info.plist */,
+				4576CB9F20D8AF0200D53F44 /* Services */,
 				458ED91C20D2FC05004AEF22 /* AppMain */,
 				458ED91B20D2FBED004AEF22 /* Common */,
 				45A8481820D2147800F88753 /* CurrencyModel */,
@@ -202,7 +223,6 @@
 				45A8481620D2101C00F88753 /* APIEth.swift */,
 				4576CB9920D8285900D53F44 /* Chain.swift */,
 				4576CB9B20D891AC00D53F44 /* Ethereum.swift */,
-				4576CB9D20D8924900D53F44 /* TransactionFactory.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -588,12 +608,15 @@
 			files = (
 				45A8481C20D214C300F88753 /* Currency.swift in Sources */,
 				45BAB80C20CF7C51006F5B68 /* StringHelper.swift in Sources */,
+				4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */,
 				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
 				4576CB9A20D8285900D53F44 /* Chain.swift in Sources */,
 				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
 				458ED92620D36C57004AEF22 /* ColoredCardView.swift in Sources */,
 				45A8481A20D2149A00F88753 /* Ether.swift in Sources */,
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
+				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
+				4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */,
 				45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */,
 				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
 				45A8481720D2101C00F88753 /* APIEth.swift in Sources */,
@@ -601,9 +624,10 @@
 				4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */,
 				45A8481520D2100000F88753 /* API.swift in Sources */,
 				458ED92020D368E9004AEF22 /* WalletView.swift in Sources */,
+				4576CBA320D97A7B00D53F44 /* GasService.swift in Sources */,
 				45A8482020D2BA4500F88753 /* Constants.swift in Sources */,
 				458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */,
-				4576CB9E20D8924900D53F44 /* TransactionFactory.swift in Sources */,
+				4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */,
 				458ED92220D3691C004AEF22 /* CardView.swift in Sources */,
 				45A8481E20D214F400F88753 /* ValueHelper.swift in Sources */,
 			);
