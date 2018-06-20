@@ -91,19 +91,36 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
             
         }*/
         
+        
+        
         let chain = Chain.ropsten
         
         //let core = Ethereum.core
         let keystore = KeystoreService()
         let core = Ethereum.core
+        core.chain = chain
         let syncCoordinator = StandardSyncCoordinator()
         core.syncCoordinator = syncCoordinator
         
         do  {
+            print(try keystore.getAccount(at: 0).getAddress().getHex())
+
             try syncCoordinator.startSync(chain: chain, delegate: self)
             try core.client = syncCoordinator.getClient()
         } catch {
             
+        }
+        
+        
+        let trans_service = TransactionService.init(core: core, keystore: keystore, transferType: TransferType.default)
+        let trans = TransactionInfo.init(amount: 20000000000000000.0, address: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", contractAddress: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", gasLimit: 53000.0, gasPrice: 1000000000.0)
+        trans_service.sendTransaction(with: trans, passphrase: "mogilska") { result in
+            switch result {
+            case .success(let sendedTransaction):
+                print(sendedTransaction)
+            case .failure(let error):
+                print(error)
+            }
         }
         
        let gasService = GasService(core: core)
@@ -111,66 +128,23 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         gasService.getSuggestedGasPrice() { result in
             switch result {
             case .success(let gasPrice):
-                print(gasPrice)
+                print("gasPrice: ", gasPrice)
             case .failure(let error):
                 print(error)
             }
         }
         
-        do {
-            let trans:GethTransaction = try core.client.getTransactionByHash(core.context, hash: GethHash.init(fromHex: "0xe13faabb45934af9cacafb23a5866b45ed591b647b9d0c6e94da74f86fa16b7e"))
-            print(try trans.encodeJSON())
-        } catch {
-            
+        gasService.getSuggestedGasLimit() { result in
+            switch result {
+            case .success(let gasLimit):
+                print("gasLimit: ", gasLimit)
+            case .failure(let error):
+                print(error)
+            }
         }
         
-        
-        /*
-        let chain = Chain.ropsten
-        
-        let context: GethContext = GethNewContext()
-        var error: NSError?
-        let client =  GethNewEthereumClient(chain.clientUrl, &error)
-      
-        let receiverAddress = "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a"
-        let gethAddress = GethNewAddressFromHex(receiverAddress, &error)
-        let noncePointer: Int64 = 5
-        
-        /*let gaddress = GethAddress.init(fromHex: "0x51e003aeb3feb22093528f0c6fc046c498e2d8d3")
-        do  {
-            try client?.getNonceAt(context, account: gaddress, number: -1, nonce: &noncePointer)
-        } catch {
-            
-        }*/
-        print(noncePointer)
-        
-        let gasPrice:Decimal = 0.0
-        //let gasLimit:Decimal = 0.0
-        let account:Decimal = 0.0
-        
-        let intAmount = GethNewBigInt(0)
-        intAmount?.setString(account.toHex(), base: 16)
-        //let gethGasLimit = GethNewBigInt(0)
-        //gethGasLimit?.setString(gasLimit.toHex(), base: 16)
-        let gethGasPrice = GethNewBigInt(0)
-        gethGasPrice?.setString(gasPrice.toHex(), base: 16)
-        
-        
-        var gethGasLimit: Int64 = 500000000000
-
-        
-        let trans:GethTransaction = GethNewTransaction(noncePointer, gethAddress, intAmount, gethGasLimit, gethGasPrice, nil)
-        
-        
-        */
-        /*let intAmounst = GethNewBigInt(0)
-        intAmount?.setString(info.amount.toHex(), base: 16)
-        
-        let gethGasLimit = GethNewBigInt(0)
-        gethGasLimit?.setString(info.gasLimit.toHex(), base: 16)
-        let gethGasPrice = GethNewBigInt(0)
-        gethGasPrice?.setString(info.gasPrice.toHex(), base: 16)*/
-        
+    
+    
     }
     
     

@@ -41,23 +41,20 @@ class GasService: GasServiceProtocol {
     }
     
     func getSuggestedGasLimit(result: @escaping (Result<Int64>) -> Void) {
-        /*Ethereum.syncQueue.async {
+        Ethereum.syncQueue.async {
             do {
                 let msg = GethNewCallMsg()
-                
-                let ptr:UnsafeMutablePointer<Int64> = UnsafeMutablePointer(0)
-                
-                try self.client.estimateGas(self.context, msg: msg, gas:ptr)
+                var gas:Int64 = 0
+                try self.client.estimateGas(self.context, msg: msg, gas: &gas)
                 DispatchQueue.main.async {
-                    result(.success(ptr.pointee))
+                    result(.success(gas))
                 }
             } catch {
                 DispatchQueue.main.async {
                     result(.failure(error))
                 }
             }
-        }*/
-        result(.success(10))
+        }
     }
     
     func getSuggestedGasPrice(result: @escaping (Result<Int64>) -> Void) {
