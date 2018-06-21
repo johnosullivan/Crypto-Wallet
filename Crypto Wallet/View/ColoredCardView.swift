@@ -15,16 +15,10 @@ class ColoredCardView: CardView {
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var balanceLabel: UILabel!
     @IBOutlet weak var rateBalanceLabel: UILabel!
+    @IBOutlet weak var indexLabel: UILabel!
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    
-    var i = 0
-    
-    var index: Int = 0 {
-        didSet {
-            i = index
-        }
-    }
+    var currentDocumentPartTitle: String!
     
     let hueValue: CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
     let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
@@ -39,14 +33,7 @@ class ColoredCardView: CardView {
         return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        
-        contentView.layer.cornerRadius  = 10
-        contentView.layer.masksToBounds = true
-        
-        print("index -> ", i)
-        
+    func update(index: Int) {
         do {
             var ethBalance = Ether(weiString: "0.0")
             let address: GethAccount = try appDelegate.keyStore.getAccount(at: index)
@@ -80,8 +67,16 @@ class ColoredCardView: CardView {
                 }
             }
         } catch {
-        
+            
         }
+        
+    }
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        
+        contentView.layer.cornerRadius  = 10
+        contentView.layer.masksToBounds = true
         
         presentedDidUpdate()
         
@@ -90,12 +85,7 @@ class ColoredCardView: CardView {
     override var presented: Bool { didSet { presentedDidUpdate() } }
     
     func presentedDidUpdate() {
-        
-        //let color = UIColor(hue: hueValue, saturation: saturation, brightness: brightness, alpha: 1)
-        //#f08b16 UIColor(red:0.94, green:0.55, blue:0.09, alpha:1.0)
-        //removeCardViewButton.isHidden = !presented
-        
-        
+
         
         contentView.backgroundColor = UIColor.white
         contentView.addTransitionFade()

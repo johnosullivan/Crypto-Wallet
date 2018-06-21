@@ -26,6 +26,10 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
     
     let keystore = KeystoreService()
     
+    var tempcard: ColoredCardView!
+    
+    var wallets = [ColoredCardView]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,18 +37,14 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         
         walletView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        var wallets = [ColoredCardView]()
-        
         //print(keystore.getAccountCount())
         
         print((keystore.getAccountCount() - 1))
         
         for i in 0 ... (keystore.getAccountCount() - 1) {
-            print("E: ",i)
             let wallet = ColoredCardView.nibForClass()
-            wallet.index = i
+            wallet.update(index: i)
             wallets.append(wallet)
-            
         }
         
         
@@ -92,6 +92,10 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
+        
+        for i in 0 ... (keystore.getAccountCount() - 1) {
+            wallets[i].update(index: i)
+        }
         
         //walletView.insert(cardView: ColoredCardView.nibForClass(), animated: true, presented: true)
         /*print("Create Wallet")
@@ -159,7 +163,7 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
             }
         }
         */
-        
+       /*
         let chain = Chain.ropsten
 
         let keystore = KeystoreService()
@@ -177,7 +181,7 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
             let nsError = error as NSError
             print(nsError.localizedDescription)
         }
-        
+        */
         
     }
     

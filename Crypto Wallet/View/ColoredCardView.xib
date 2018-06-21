@@ -210,6 +210,7 @@
                 <outlet property="balanceLabel" destination="vHw-VU-lJG" id="38A-C5-z2z"/>
                 <outlet property="contentView" destination="OGR-lR-C5v" id="fSz-Gj-R5Z"/>
                 <outlet property="iconImageView" destination="WFC-9A-SaW" id="Egh-HK-Dro"/>
+                <outlet property="indexLabel" destination="Sao-ue-K7Z" id="k5v-lZ-ly7"/>
                 <outlet property="rateBalanceLabel" destination="Phx-Ur-WxP" id="bU0-hJ-P2B"/>
             </connections>
             <point key="canvasLocation" x="-66" y="-70"/>
