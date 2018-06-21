@@ -10,8 +10,8 @@ import UIKit
 
 struct Ether {
     
-    let raw: Decimal
-    let value: Double
+    var raw: Decimal
+    var value: Double
     
     init(_ value: Decimal) {
         self.raw = value
@@ -36,6 +36,12 @@ struct Ether {
     init(weiString: String) {
         let number = Decimal(weiString)
         self.init(weiValue: number)
+    }
+    
+    mutating func update(weiString: String) {
+        let number = Decimal(weiString)
+        self.raw = number / 1e18
+        self.value = number.double / 1e18
     }
     
 }

@@ -15,6 +15,7 @@
 		4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */; };
 		4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */; };
 		4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA820D987D600D53F44 /* TransactionFactory.swift */; };
+		4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBAA20DB4BEC00D53F44 /* APIRate.swift */; };
 		458DBDA720CF519500185170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDA520CF519500185170 /* Main.storyboard */; };
 		458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */; };
 		458DBDAC20CF519700185170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAB20CF519700185170 /* Assets.xcassets */; };
@@ -70,6 +71,7 @@
 		4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSyncCoordinator.swift; sourceTree = "<group>"; };
 		4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesSyncCoordinator.swift; sourceTree = "<group>"; };
 		4576CBA820D987D600D53F44 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
+		4576CBAA20DB4BEC00D53F44 /* APIRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRate.swift; sourceTree = "<group>"; };
 		458DBD9E20CF519500185170 /* Crypto Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDA620CF519500185170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		458DBDA920CF519500185170 /* Crypto_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crypto_Wallet.xcdatamodel; sourceTree = "<group>"; };
@@ -223,6 +225,7 @@
 				45A8481620D2101C00F88753 /* APIEth.swift */,
 				4576CB9920D8285900D53F44 /* Chain.swift */,
 				4576CB9B20D891AC00D53F44 /* Ethereum.swift */,
+				4576CBAA20DB4BEC00D53F44 /* APIRate.swift */,
 			);
 			path = Common;
 			sourceTree = "<group>";
@@ -617,6 +620,7 @@
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
 				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
 				4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */,
+				4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */,
 				45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */,
 				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
 				45A8481720D2101C00F88753 /* APIEth.swift in Sources */,

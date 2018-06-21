@@ -34,7 +34,7 @@ protocol TransactionServiceProtocol {
     func sendTransaction(with info: TransactionInfo, passphrase: String, result: @escaping (Result<GethTransaction>) -> Void)
 }
 
-class TransactionService: TransactionServiceProtocol {
+class TransactionService: TransactionServiceProtocol, NetworkLoadable{
     
     private let context: GethContext
     private let client: GethEthereumClient

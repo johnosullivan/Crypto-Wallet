@@ -79,7 +79,8 @@ extension Transaction: ImmutableMappable {
 class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
 
     var window: UIWindow?
-
+    public let keyStore = KeystoreService()
+    
     func getBalance(address: String, result: @escaping (Result<String>) -> Void) {
         loadObjectJSON(request: API.Etherscan.balance(address: address)) { resultHandler in
             
@@ -103,31 +104,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
     func getTransactions(address: String, result: @escaping (Result<[Transaction]>) -> Void) {
         loadArray(request: API.Etherscan.transactions(address: address), keyPath: "result", completion: result)
     }
-    
- 
+
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-        
-        getBalance(address: "0x51e003aeb3feb22093528f0c6fc046c498e2d8d3") { result in
-            switch result {
-                case .success(let balance):
-                    let ether = Ether(weiString: balance)
-                    print("FullName: ", ether.fullNameWithSymbol)
-                    print("Value: ", ether.value)
-                case .failure(let error):
-                    print(error)
-            }
-        }
-        
-        getTransactions(address: "0x51e003aeb3feb22093528f0c6fc046c498e2d8d3") { result in
-            switch result {
-            case .success(let transactions):
-                    print("Transactions: ", transactions.count)
-                case .failure(let error):
-                    print(error)
-            }
-        }
-        
+    
         return true
     }
 

@@ -22,6 +22,10 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
     
     @IBOutlet weak var addCardViewButton: UIButton!
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    
+    let keystore = KeystoreService()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -29,15 +33,22 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         
         walletView.contentInset = UIEdgeInsets(top: 20, left: 0, bottom: 0, right: 0)
         
-        let coloredCardViews = [ColoredCardView]()
-        /*
-         for index in 1...10 {
-         let cardView = ColoredCardView.nibForClass()
-         cardView.index = index
-         coloredCardViews.append(cardView)
-         }
-         */
-        walletView.reload(cardViews: coloredCardViews)
+        var wallets = [ColoredCardView]()
+        
+        //print(keystore.getAccountCount())
+        
+        print((keystore.getAccountCount() - 1))
+        
+        for i in 0 ... (keystore.getAccountCount() - 1) {
+            print("E: ",i)
+            let wallet = ColoredCardView.nibForClass()
+            wallet.index = i
+            wallets.append(wallet)
+            
+        }
+        
+        
+        walletView.reload(cardViews: wallets)
         
         walletView.didUpdatePresentedCardViewBlock = { [weak self] (_) in
             self?.showAddCardViewButtonIfNeeded()
@@ -92,7 +103,7 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         }*/
         
         
-        
+        /*
         let chain = Chain.ropsten
         
         //let core = Ethereum.core
@@ -109,9 +120,14 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
             try core.client = syncCoordinator.getClient()
         } catch {
             
-        }
+        }*/
         
+        let amount = Ether.init("1.0")
+        print(amount.raw.toWei())
+        //20000000000000000.0
+        //1000000000000000000
         
+        /*
         let trans_service = TransactionService.init(core: core, keystore: keystore, transferType: TransferType.default)
         let trans = TransactionInfo.init(amount: 20000000000000000.0, address: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", contractAddress: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", gasLimit: 53000.0, gasPrice: 1000000000.0)
         trans_service.sendTransaction(with: trans, passphrase: "mogilska") { result in
@@ -142,9 +158,27 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
                 print(error)
             }
         }
+        */
         
-    
-    
+        let chain = Chain.ropsten
+
+        let keystore = KeystoreService()
+        let core = Ethereum.core
+        core.chain = chain
+        let syncCoordinator = StandardSyncCoordinator()
+        core.syncCoordinator = syncCoordinator
+        
+        do  {
+            try syncCoordinator.startSync(chain: chain, delegate: self)
+            try core.client = syncCoordinator.getClient()
+            let account:GethAccount = try keystore.createAccount(passphrase: "mogilska")
+            print(account.getAddress().getHex())
+        } catch {
+            let nsError = error as NSError
+            print(nsError.localizedDescription)
+        }
+        
+        
     }
     
     

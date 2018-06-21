@@ -51,10 +51,14 @@ class KeystoreService: KeystoreServiceProtocol {
         return try keystore.getAccounts().get(index)
     }
     
+    func getAccountCount() -> Int {
+        return keystore.getAccounts().size()
+    }
+    
     func createAccount(passphrase: String) throws -> GethAccount {
-        guard keystore.getAccounts().size() == 0 else {
+        /*guard keystore.getAccounts().size() == 0 else {
             throw EthereumError.accountExist
-        }
+        }*/
         
         return try keystore.newAccount(passphrase)
     }
