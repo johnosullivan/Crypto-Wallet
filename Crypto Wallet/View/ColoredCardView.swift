@@ -19,21 +19,8 @@ class ColoredCardView: CardView {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentDocumentPartTitle: String!
-    
+
     var currentIndex:Int = 0
-    
-    let hueValue: CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
-    let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
-    let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
-    
-    
-    func generateRandomColor() -> UIColor {
-        let hue : CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
-        let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
-        let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
-        
-        return UIColor(hue: hue, saturation: saturation, brightness: brightness, alpha: 1)
-    }
     
     func update(index: Int) {
         currentIndex = index
@@ -77,12 +64,9 @@ class ColoredCardView: CardView {
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        
         contentView.layer.cornerRadius  = 10
         contentView.layer.masksToBounds = true
-        
         presentedDidUpdate()
-        
     }
     
     override var presented: Bool { didSet { presentedDidUpdate() } }
