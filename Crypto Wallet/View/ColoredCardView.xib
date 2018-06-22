@@ -117,6 +117,9 @@
                                         </userDefinedRuntimeAttribute>
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     </userDefinedRuntimeAttributes>
+                                    <connections>
+                                        <action selector="send:" destination="iN0-l3-epB" eventType="touchUpInside" id="d5b-hy-s7Q"/>
+                                    </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHq-Y4-WaI">
                                     <rect key="frame" x="160" y="0.0" width="160" height="44"/>
@@ -132,7 +135,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="removeCardView:" destination="iN0-l3-epB" eventType="touchDragInside" id="Xt0-Ks-yr4"/>
+                                        <action selector="receive:" destination="iN0-l3-epB" eventType="touchUpInside" id="HXZ-Zv-J1r"/>
                                     </connections>
                                 </button>
                             </subviews>

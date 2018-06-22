@@ -94,10 +94,21 @@ class ColoredCardView: CardView {
     }
     
     @IBOutlet weak var removeCardViewButton: UIButton!
-    @IBAction func removeCardView(_ sender: Any) {
-        //walletView?.remove(cardView: self, animated: true)
-        print("currentIndex: ", currentIndex)
+    
+    @IBAction func send(_ sender: Any) {
         
+        let nc = NotificationCenter.default
+        nc.post(name:.send, object: nil, userInfo: ["message":"Hello there!", "date":Date()])
+        print("send: ", currentIndex)
+        
+        
+    }
+    
+    @IBAction func receive(_ sender: Any) {
+        
+        let nc = NotificationCenter.default
+        nc.post(name:.receive, object: nil, userInfo: ["message":"Hello there!", "date":Date()])
+        print("receive: ", currentIndex)
         
     }
     

@@ -15,6 +15,11 @@ class Account: Object {
     @objc dynamic var address = ""
 }
 
+extension Notification.Name {
+    static let send = Notification.Name("send")
+    static let receive = Notification.Name("receive")
+}
+
 class ViewController: UIViewController, SyncCoordinatorDelegate {
     
     @IBOutlet weak var walletHeaderView: UIView!
@@ -30,6 +35,16 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
     
     var wallets = [ColoredCardView]()
     
+    func sendPresention(notification:Notification) -> Void {
+        print("sendPresention")
+        
+    }
+    
+    func receivePresention(notification:Notification) -> Void {
+        print("receivePresention")
+        
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,11 +54,15 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         
         //print(keystore.getAccountCount())
         
+        let nc = NotificationCenter.default
+        nc.addObserver(forName:.send, object:nil, queue:nil, using:sendPresention)
+        nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
+        
         print((keystore.getAccountCount() - 1))
         
         for i in 0 ... (keystore.getAccountCount() - 1) {
             let wallet = ColoredCardView.nibForClass()
-            //wallet.update(index: i)
+            wallet.update(index: i)
             wallets.append(wallet)
         }
         
