@@ -43,7 +43,7 @@ class ViewController: UIViewController, SyncCoordinatorDelegate {
         
         for i in 0 ... (keystore.getAccountCount() - 1) {
             let wallet = ColoredCardView.nibForClass()
-            wallet.update(index: i)
+            //wallet.update(index: i)
             wallets.append(wallet)
         }
         

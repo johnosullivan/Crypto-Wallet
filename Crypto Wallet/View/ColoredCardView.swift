@@ -20,6 +20,8 @@ class ColoredCardView: CardView {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentDocumentPartTitle: String!
     
+    var currentIndex:Int = 0
+    
     let hueValue: CGFloat = CGFloat(arc4random() % 256) / 256 // use 256 to get full range from 0.0 to 1.0
     let saturation : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from white
     let brightness : CGFloat = CGFloat(arc4random() % 128) / 256 + 0.5 // from 0.5 to 1.0 to stay away from black
@@ -34,6 +36,7 @@ class ColoredCardView: CardView {
     }
     
     func update(index: Int) {
+        currentIndex = index
         do {
             var ethBalance = Ether(weiString: "0.0")
             let address: GethAccount = try appDelegate.keyStore.getAccount(at: index)
@@ -50,7 +53,7 @@ class ColoredCardView: CardView {
                 }
             }
             
-            let rate = RatesNetworkService()
+            /*let rate = RatesNetworkService()
             let currencies_array = ["ETH","USD"]
             rate.getRate(currencies: currencies_array) { result in
                 switch result {
@@ -65,7 +68,7 @@ class ColoredCardView: CardView {
                 case .failure(let error):
                     print(error)
                 }
-            }
+            }*/
         } catch {
             
         }
@@ -85,19 +88,17 @@ class ColoredCardView: CardView {
     override var presented: Bool { didSet { presentedDidUpdate() } }
     
     func presentedDidUpdate() {
-
-        
         contentView.backgroundColor = UIColor.white
         contentView.addTransitionFade()
-        
         iconImageView.image = UIImage(named: "Ethereum-icon")?.withRenderingMode(.alwaysTemplate)
-        //iconImageView.tintColor = coin.color
-        
     }
     
     @IBOutlet weak var removeCardViewButton: UIButton!
     @IBAction func removeCardView(_ sender: Any) {
-        walletView?.remove(cardView: self, animated: true)
+        //walletView?.remove(cardView: self, animated: true)
+        print("currentIndex: ", currentIndex)
+        
+        
     }
     
 }
