@@ -39,23 +39,6 @@ class ColoredCardView: CardView {
                     print(error)
                 }
             }
-            
-            /*let rate = RatesNetworkService()
-            let currencies_array = ["ETH","USD"]
-            rate.getRate(currencies: currencies_array) { result in
-                switch result {
-                case .success(let rates):
-                    let rate_array = rates.filter { $0.from == "ETH" }
-                    for index in 0...rate_array.count - 1 {
-                        let current:Rate = rate_array[index]
-                        if (current.to == "USD") {
-                            self.rateBalanceLabel.text = "$" + String(Double(ethBalance.value) * current.value)
-                        }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }*/
         } catch {
             
         }

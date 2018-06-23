@@ -65,7 +65,22 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
-        
+        /*let rate = RatesNetworkService()
+         let currencies_array = ["ETH","USD"]
+         rate.getRate(currencies: currencies_array) { result in
+         switch result {
+         case .success(let rates):
+         let rate_array = rates.filter { $0.from == "ETH" }
+         for index in 0...rate_array.count - 1 {
+         let current:Rate = rate_array[index]
+         if (current.to == "USD") {
+         self.rateBalanceLabel.text = "$" + String(Double(ethBalance.value) * current.value)
+         }
+         }
+         case .failure(let error):
+         print(error)
+         }
+         }*/
         /*
         let trans_service = TransactionService.init(core: core, keystore: keystore, transferType: TransferType.default)
         let trans = TransactionInfo.init(amount: 20000000000000000.0, address: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", contractAddress: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", gasLimit: 53000.0, gasPrice: 1000000000.0)
