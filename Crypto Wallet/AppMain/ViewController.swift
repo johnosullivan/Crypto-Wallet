@@ -25,8 +25,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var walletHeaderView: UIView!
     @IBOutlet weak var walletView: WalletView!
     @IBOutlet weak var addCardViewButton: UIButton!
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
+
+    
     var wallets = [ColoredCardView]()
     
     func sendPresention(notification:Notification) -> Void {
@@ -65,6 +66,12 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
+        
+        do {
+            try appDelegate.keyStore.createAccount(passphrase: "mogilska")
+        } catch {
+            
+        }
         /*let rate = RatesNetworkService()
          let currencies_array = ["ETH","USD"]
          rate.getRate(currencies: currencies_array) { result in
