@@ -140,17 +140,8 @@
                                 </button>
                             </subviews>
                         </stackView>
-                        <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$593.99" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phx-Ur-WxP">
-                            <rect key="frame" x="255" y="92" width="57" height="16"/>
-                            <constraints>
-                                <constraint firstAttribute="height" constant="16" id="hCA-Zf-mdk"/>
-                            </constraints>
-                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
-                            <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.67843137249999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
-                            <nil key="highlightedColor"/>
-                        </label>
-                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ξ 1.199979" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHw-VU-lJG">
-                            <rect key="frame" x="239" y="72" width="73" height="16"/>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ξ 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vHw-VU-lJG">
+                            <rect key="frame" x="290" y="68" width="22" height="16"/>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <nil key="textColor"/>
                             <nil key="highlightedColor"/>
@@ -165,7 +156,17 @@
                             <nil key="highlightedColor"/>
                         </label>
                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Balance" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kY3-9l-Myv">
-                            <rect key="frame" x="8" y="72" width="52.5" height="16"/>
+                            <rect key="frame" x="8" y="68" width="52.5" height="16"/>
+                            <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
+                            <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.67843137249999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$ 0" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Phx-Ur-WxP">
+                            <rect key="frame" x="231" y="87" width="81" height="16"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="16" id="Yz2-en-xQ8"/>
+                                <constraint firstAttribute="width" constant="81" id="nnN-xM-CIH"/>
+                            </constraints>
                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="14"/>
                             <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.67843137249999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
@@ -174,22 +175,22 @@
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="w5Y-cE-YgH" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leading" constant="7" id="5zT-9g-4gQ"/>
-                        <constraint firstItem="vHw-VU-lJG" firstAttribute="top" secondItem="bsF-7r-fUg" secondAttribute="bottom" constant="8" symbolic="YES" id="Bq7-lt-fzc"/>
-                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="top" secondItem="OGR-lR-C5v" secondAttribute="top" constant="92" id="G3o-Iq-vzD"/>
-                        <constraint firstItem="kY3-9l-Myv" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leadingMargin" id="ICF-1l-UlA"/>
-                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="top" secondItem="vHw-VU-lJG" secondAttribute="bottom" constant="4" id="IQ1-0n-Q5D"/>
+                        <constraint firstItem="kY3-9l-Myv" firstAttribute="baseline" secondItem="vHw-VU-lJG" secondAttribute="baseline" id="AQ3-G4-tLZ"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leading" id="KTb-zf-eFb"/>
                         <constraint firstItem="w5Y-cE-YgH" firstAttribute="centerX" secondItem="2ZT-IV-poe" secondAttribute="centerX" id="MAf-6l-XRM"/>
                         <constraint firstAttribute="trailing" secondItem="2ZT-IV-poe" secondAttribute="trailing" id="Mpm-3E-bYy"/>
-                        <constraint firstItem="kY3-9l-Myv" firstAttribute="baseline" secondItem="vHw-VU-lJG" secondAttribute="baseline" id="Osl-NS-zhl"/>
+                        <constraint firstItem="kY3-9l-Myv" firstAttribute="top" secondItem="bsF-7r-fUg" secondAttribute="bottom" constant="4" id="P3i-UD-tWL"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="top" secondItem="w5Y-cE-YgH" secondAttribute="bottom" constant="8" symbolic="YES" id="cTV-3b-E4E"/>
                         <constraint firstAttribute="bottom" secondItem="2ZT-IV-poe" secondAttribute="bottom" id="dhF-XP-wUD"/>
+                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="top" secondItem="vHw-VU-lJG" secondAttribute="bottom" constant="3" id="edF-R9-fOX"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="leading" secondItem="bsF-7r-fUg" secondAttribute="leading" id="gZG-nE-jPr"/>
                         <constraint firstItem="bsF-7r-fUg" firstAttribute="top" secondItem="OGR-lR-C5v" secondAttribute="top" id="hwA-BO-9Ep"/>
-                        <constraint firstItem="kY3-9l-Myv" firstAttribute="firstBaseline" secondItem="vHw-VU-lJG" secondAttribute="firstBaseline" id="j3Q-3g-unw"/>
-                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="trailing" secondItem="vHw-VU-lJG" secondAttribute="trailing" id="lC1-as-qPC"/>
+                        <constraint firstItem="kY3-9l-Myv" firstAttribute="firstBaseline" secondItem="vHw-VU-lJG" secondAttribute="firstBaseline" id="nuz-14-jwm"/>
+                        <constraint firstItem="kY3-9l-Myv" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leadingMargin" id="s9P-Il-s4O"/>
                         <constraint firstItem="vHw-VU-lJG" firstAttribute="trailing" secondItem="OGR-lR-C5v" secondAttribute="trailingMargin" id="soW-2z-quM"/>
+                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="top" secondItem="OGR-lR-C5v" secondAttribute="top" constant="87" id="umn-DM-EFv"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="trailing" secondItem="bsF-7r-fUg" secondAttribute="trailing" id="wRe-Xv-uGm"/>
+                        <constraint firstItem="Phx-Ur-WxP" firstAttribute="trailing" secondItem="vHw-VU-lJG" secondAttribute="trailing" id="zk5-5J-vUV"/>
                     </constraints>
                 </view>
             </subviews>

@@ -36,6 +36,8 @@ class ViewController: UIViewController {
     
     func receivePresention(notification:Notification) -> Void {
         print("receivePresention")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceivingViewController") as! ReceivingViewController
+        self.present(vc, animated: true, completion: nil)
     }
     
     override func viewDidLoad() {
@@ -59,19 +61,26 @@ class ViewController: UIViewController {
             self?.showAddCardViewButtonIfNeeded()
             self?.addCardViewButton.addTransitionFade()
         }
+    
     }
     
     func showAddCardViewButtonIfNeeded() {
         addCardViewButton.alpha = walletView.presentedCardView == nil || walletView.insertedCardViews.count <= 1 ? 1.0 : 0.0
     }
     
+    func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+    }
+    
     @IBAction func addCardViewAction(_ sender: Any) {
         
-        do {
+        
+        
+        
+        /*do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
         } catch {
             
-        }
+        }*/
         /*let rate = RatesNetworkService()
          let currencies_array = ["ETH","USD"]
          rate.getRate(currencies: currencies_array) { result in
