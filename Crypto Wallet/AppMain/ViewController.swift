@@ -32,12 +32,18 @@ class ViewController: UIViewController {
     
     func sendPresention(notification:Notification) -> Void {
         print("sendPresention")
+        //
     }
     
     func receivePresention(notification:Notification) -> Void {
         print("receivePresention")
-        let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceivingViewController") as! ReceivingViewController
-        self.present(vc, animated: true, completion: nil)
+        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceivingViewController") as! ReceivingViewController
+        //self.present(vc, animated: true, completion: nil)
+        let address = notification.userInfo!["address"]! as! String
+        print(address)
+        let popup = RegisterPopupViewController()
+        popup.address = address
+        PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
     }
     
     override func viewDidLoad() {

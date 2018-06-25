@@ -81,18 +81,35 @@ class ColoredCardView: CardView {
     @IBAction func send(_ sender: Any) {
         
         let nc = NotificationCenter.default
-        nc.post(name:.send, object: nil, userInfo: ["message":"Hello there!", "date":Date()])
-        print("send: ", currentIndex)
+        do {
+            let address: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
+            let address_str = address.getAddress().getHex()
+            let astr = address_str! as String
+            nc.post(name:.send, object: nil, userInfo: ["address":astr])
+            
+            print("send: ", currentIndex)
+        } catch {
+            
+        }
+        
         
         
     }
     
     @IBAction func receive(_ sender: Any) {
         
+     
         let nc = NotificationCenter.default
-        nc.post(name:.receive, object: nil, userInfo: ["message":"Hello there!", "date":Date()])
-        print("receive: ", currentIndex)
-        
+        do {
+            let address: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
+            let address_str = address.getAddress().getHex()
+            let astr = address_str! as String
+            nc.post(name:.receive, object: nil, userInfo: ["address":astr])
+            
+            print("receive: ", currentIndex)
+        } catch {
+            
+        }
     }
     
 }

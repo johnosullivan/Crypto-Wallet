@@ -34,7 +34,7 @@ class ReceivingViewController: UIViewController {
         super.viewDidLoad()
         
         
-        //qrimageview.image = generateQRCode(from: "0xFe006D8454e40C53Fa9d9e8878260b7081Ad6ce5")
+        qrimageview.image = generateQRCode(from: "0xFe006D8454e40C53Fa9d9e8878260b7081Ad6ce5")
         address.text = "0xFe006D8454e40C53Fa9d9e8878260b7081Ad6ce5"
     }
     
