@@ -65,7 +65,7 @@ extension UIColor {
     }
 }
 
-class RegisterPopupView: UIView, PopupViewContainable, Nibable  {
+class ReceivedPopupView: UIView, PopupViewContainable, Nibable  {
     
     @IBOutlet weak var qrimageview: UIImageView!
     @IBOutlet weak var address: UILabel!
@@ -94,11 +94,11 @@ class RegisterPopupView: UIView, PopupViewContainable, Nibable  {
     @IBOutlet weak var closeButton: UIButton! {
         didSet {
             closeButton.setImage(UIImage(named:"close"), for: .normal)
-            closeButton.imageView?.tintColor = .gray
+            closeButton.imageView?.tintColor = .black
         }
     }
 
-    var registerButtonTapHandler: (() -> Void)?
+    var receivedButtonTapHandler: (() -> Void)?
     var closeButtonTapHandler: (() -> Void)?
 
     override func awakeFromNib() {
@@ -108,7 +108,7 @@ class RegisterPopupView: UIView, PopupViewContainable, Nibable  {
     }
 
     @IBAction func didTapRegisterButton() {
-        registerButtonTapHandler?()
+        receivedButtonTapHandler?()
     }
 
     @IBAction func didTapCloseButton() {

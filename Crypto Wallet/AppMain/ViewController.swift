@@ -28,10 +28,13 @@ class ViewController: UIViewController {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
     
-    var wallets = [ColoredCardView]()
+    var wallets = [WalletCardView]()
     
     func sendPresention(notification:Notification) -> Void {
         print("sendPresention")
+        let popup = SendPopupViewController()
+        popup.height = Double((self.view.window?.frame.height)!)
+        PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
         //
     }
     
@@ -41,7 +44,7 @@ class ViewController: UIViewController {
         //self.present(vc, animated: true, completion: nil)
         let address = notification.userInfo!["address"]! as! String
         print(address)
-        let popup = RegisterPopupViewController()
+        let popup = ReceivedPopupViewController()
         popup.address = address
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
     }
@@ -57,7 +60,7 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         
         for i in 0 ... (appDelegate.keyStore.getAccountCount() - 1) {
-            let wallet = ColoredCardView.nibForClass()
+            let wallet = WalletCardView.nibForClass()
             wallet.update(index: i)
             wallets.append(wallet)
         }
@@ -74,15 +77,16 @@ class ViewController: UIViewController {
         addCardViewButton.alpha = walletView.presentedCardView == nil || walletView.insertedCardViews.count <= 1 ? 1.0 : 0.0
     }
     
-    func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
+    func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {
+        return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
+        /*
         
         
-        
-        /*do {
+        do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
         } catch {
             

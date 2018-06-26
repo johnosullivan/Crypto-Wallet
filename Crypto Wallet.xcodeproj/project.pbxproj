@@ -17,9 +17,8 @@
 		4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */; };
 		4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA820D987D600D53F44 /* TransactionFactory.swift */; };
 		4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBAA20DB4BEC00D53F44 /* APIRate.swift */; };
-		4584626420E0A96A004476AA /* RegisterPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626120E0A969004476AA /* RegisterPopupViewController.swift */; };
-		4584626520E0A96A004476AA /* RegisterPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4584626220E0A96A004476AA /* RegisterPopupView.xib */; };
-		4584626620E0A96A004476AA /* RegisterPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626320E0A96A004476AA /* RegisterPopupView.swift */; };
+		4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626120E0A969004476AA /* ReceivedPopupViewController.swift */; };
+		4584626620E0A96A004476AA /* ReceivedPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626320E0A96A004476AA /* ReceivedPopupView.swift */; };
 		4584627620E0ACEB004476AA /* CGRect+Inset.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626820E0ACE9004476AA /* CGRect+Inset.swift */; };
 		4584627720E0ACEB004476AA /* UIView+Shape.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626920E0ACE9004476AA /* UIView+Shape.swift */; };
 		4584627920E0ACEB004476AA /* PopupViewContainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626B20E0ACE9004476AA /* PopupViewContainable.swift */; };
@@ -32,6 +31,14 @@
 		4584628020E0ACEB004476AA /* BasePopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584627320E0ACEB004476AA /* BasePopupViewController.swift */; };
 		4584628120E0ACEB004476AA /* ViewType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584627420E0ACEB004476AA /* ViewType.swift */; };
 		4584628220E0ACEB004476AA /* PopupViewDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584627520E0ACEB004476AA /* PopupViewDirection.swift */; };
+		4584628820E140B1004476AA /* UIImageViewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628420E140B0004476AA /* UIImageViewExtension.swift */; };
+		4584628920E140B1004476AA /* QRCode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628520E140B0004476AA /* QRCode.swift */; };
+		4584628A20E140B1004476AA /* CIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628620E140B1004476AA /* CIColorExtension.swift */; };
+		4584628B20E140B1004476AA /* CIImageExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628720E140B1004476AA /* CIImageExtension.swift */; };
+		4584628C20E1CF45004476AA /* ReceivedPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4584626220E0A96A004476AA /* ReceivedPopupView.xib */; };
+		4584628E20E1DDC3004476AA /* SendPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628D20E1DDC3004476AA /* SendPopupViewController.swift */; };
+		4584629020E1DDD2004476AA /* SendPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584628F20E1DDD2004476AA /* SendPopupView.swift */; };
+		4584629220E1DDF2004476AA /* SendPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 4584629120E1DDF2004476AA /* SendPopupView.xib */; };
 		458DBDA720CF519500185170 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDA520CF519500185170 /* Main.storyboard */; };
 		458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDA820CF519500185170 /* Crypto_Wallet.xcdatamodeld */; };
 		458DBDAC20CF519700185170 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 458DBDAB20CF519700185170 /* Assets.xcassets */; };
@@ -40,8 +47,8 @@
 		458DBDC520CF519700185170 /* Crypto_WalletUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458DBDC420CF519700185170 /* Crypto_WalletUITests.swift */; };
 		458ED92020D368E9004AEF22 /* WalletView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ED91F20D368E9004AEF22 /* WalletView.swift */; };
 		458ED92220D3691C004AEF22 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ED92120D3691C004AEF22 /* CardView.swift */; };
-		458ED92520D36C57004AEF22 /* ColoredCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458ED92320D36C56004AEF22 /* ColoredCardView.xib */; };
-		458ED92620D36C57004AEF22 /* ColoredCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ED92420D36C57004AEF22 /* ColoredCardView.swift */; };
+		458ED92520D36C57004AEF22 /* WalletCardView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 458ED92320D36C56004AEF22 /* WalletCardView.xib */; };
+		458ED92620D36C57004AEF22 /* WalletCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 458ED92420D36C57004AEF22 /* WalletCardView.swift */; };
 		45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481020D0A7D800F88753 /* BuildHelper.swift */; };
 		45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481220D20EA600F88753 /* NetworkLoadable.swift */; };
 		45A8481520D2100000F88753 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45A8481420D2100000F88753 /* API.swift */; };
@@ -89,9 +96,9 @@
 		4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesSyncCoordinator.swift; sourceTree = "<group>"; };
 		4576CBA820D987D600D53F44 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
 		4576CBAA20DB4BEC00D53F44 /* APIRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRate.swift; sourceTree = "<group>"; };
-		4584626120E0A969004476AA /* RegisterPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPopupViewController.swift; sourceTree = "<group>"; };
-		4584626220E0A96A004476AA /* RegisterPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RegisterPopupView.xib; sourceTree = "<group>"; };
-		4584626320E0A96A004476AA /* RegisterPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RegisterPopupView.swift; sourceTree = "<group>"; };
+		4584626120E0A969004476AA /* ReceivedPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedPopupViewController.swift; sourceTree = "<group>"; };
+		4584626220E0A96A004476AA /* ReceivedPopupView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ReceivedPopupView.xib; sourceTree = "<group>"; };
+		4584626320E0A96A004476AA /* ReceivedPopupView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedPopupView.swift; sourceTree = "<group>"; };
 		4584626820E0ACE9004476AA /* CGRect+Inset.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "CGRect+Inset.swift"; sourceTree = "<group>"; };
 		4584626920E0ACE9004476AA /* UIView+Shape.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Shape.swift"; sourceTree = "<group>"; };
 		4584626B20E0ACE9004476AA /* PopupViewContainable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewContainable.swift; sourceTree = "<group>"; };
@@ -104,6 +111,13 @@
 		4584627320E0ACEB004476AA /* BasePopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePopupViewController.swift; sourceTree = "<group>"; };
 		4584627420E0ACEB004476AA /* ViewType.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewType.swift; sourceTree = "<group>"; };
 		4584627520E0ACEB004476AA /* PopupViewDirection.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopupViewDirection.swift; sourceTree = "<group>"; };
+		4584628420E140B0004476AA /* UIImageViewExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImageViewExtension.swift; sourceTree = "<group>"; };
+		4584628520E140B0004476AA /* QRCode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QRCode.swift; sourceTree = "<group>"; };
+		4584628620E140B1004476AA /* CIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIColorExtension.swift; sourceTree = "<group>"; };
+		4584628720E140B1004476AA /* CIImageExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CIImageExtension.swift; sourceTree = "<group>"; };
+		4584628D20E1DDC3004476AA /* SendPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPopupViewController.swift; sourceTree = "<group>"; };
+		4584628F20E1DDD2004476AA /* SendPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SendPopupView.swift; sourceTree = "<group>"; };
+		4584629120E1DDF2004476AA /* SendPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SendPopupView.xib; sourceTree = "<group>"; };
 		458DBD9E20CF519500185170 /* Crypto Wallet.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Crypto Wallet.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		458DBDA620CF519500185170 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		458DBDA920CF519500185170 /* Crypto_Wallet.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Crypto_Wallet.xcdatamodel; sourceTree = "<group>"; };
@@ -118,8 +132,8 @@
 		458DBDC620CF519700185170 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		458ED91F20D368E9004AEF22 /* WalletView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WalletView.swift; sourceTree = "<group>"; };
 		458ED92120D3691C004AEF22 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		458ED92320D36C56004AEF22 /* ColoredCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ColoredCardView.xib; sourceTree = "<group>"; };
-		458ED92420D36C57004AEF22 /* ColoredCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ColoredCardView.swift; sourceTree = "<group>"; };
+		458ED92320D36C56004AEF22 /* WalletCardView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = WalletCardView.xib; sourceTree = "<group>"; };
+		458ED92420D36C57004AEF22 /* WalletCardView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalletCardView.swift; sourceTree = "<group>"; };
 		45A8481020D0A7D800F88753 /* BuildHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BuildHelper.swift; sourceTree = "<group>"; };
 		45A8481220D20EA600F88753 /* NetworkLoadable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkLoadable.swift; sourceTree = "<group>"; };
 		45A8481420D2100000F88753 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
@@ -192,13 +206,15 @@
 			path = Services;
 			sourceTree = "<group>";
 		};
-		4584626720E0ACE9004476AA /* Extensions */ = {
+		4584628320E1409A004476AA /* QR Helper */ = {
 			isa = PBXGroup;
 			children = (
-				4584626820E0ACE9004476AA /* CGRect+Inset.swift */,
-				4584626920E0ACE9004476AA /* UIView+Shape.swift */,
+				4584628620E140B1004476AA /* CIColorExtension.swift */,
+				4584628720E140B1004476AA /* CIImageExtension.swift */,
+				4584628520E140B0004476AA /* QRCode.swift */,
+				4584628420E140B0004476AA /* UIImageViewExtension.swift */,
 			);
-			path = Extensions;
+			path = "QR Helper";
 			sourceTree = "<group>";
 		};
 		458DBD9520CF519500185170 = {
@@ -297,7 +313,6 @@
 			children = (
 				4584627120E0ACEA004476AA /* Animator.swift */,
 				4584627320E0ACEB004476AA /* BasePopupViewController.swift */,
-				4584626720E0ACE9004476AA /* Extensions */,
 				4584626D20E0ACEA004476AA /* PopupContainerView.swift */,
 				4584626F20E0ACEA004476AA /* PopupContainerWindow.swift */,
 				4584626C20E0ACEA004476AA /* PopupItem.swift */,
@@ -306,13 +321,16 @@
 				4584627020E0ACEA004476AA /* PopupWindowManager.swift */,
 				4584626E20E0ACEA004476AA /* ShapeType.swift */,
 				4584627420E0ACEB004476AA /* ViewType.swift */,
-				4584626320E0A96A004476AA /* RegisterPopupView.swift */,
-				4584626220E0A96A004476AA /* RegisterPopupView.xib */,
-				4584626120E0A969004476AA /* RegisterPopupViewController.swift */,
-				458ED92420D36C57004AEF22 /* ColoredCardView.swift */,
-				458ED92320D36C56004AEF22 /* ColoredCardView.xib */,
+				4584626320E0A96A004476AA /* ReceivedPopupView.swift */,
+				4584626220E0A96A004476AA /* ReceivedPopupView.xib */,
+				4584626120E0A969004476AA /* ReceivedPopupViewController.swift */,
+				458ED92420D36C57004AEF22 /* WalletCardView.swift */,
+				458ED92320D36C56004AEF22 /* WalletCardView.xib */,
 				458ED91F20D368E9004AEF22 /* WalletView.swift */,
 				458ED92120D3691C004AEF22 /* CardView.swift */,
+				4584628D20E1DDC3004476AA /* SendPopupViewController.swift */,
+				4584628F20E1DDD2004476AA /* SendPopupView.swift */,
+				4584629120E1DDF2004476AA /* SendPopupView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -339,9 +357,12 @@
 		45BAB80A20CF7C30006F5B68 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				4584628320E1409A004476AA /* QR Helper */,
 				45BAB80B20CF7C51006F5B68 /* StringHelper.swift */,
 				45A8481020D0A7D800F88753 /* BuildHelper.swift */,
 				45A8481D20D214F400F88753 /* ValueHelper.swift */,
+				4584626820E0ACE9004476AA /* CGRect+Inset.swift */,
+				4584626920E0ACE9004476AA /* UIView+Shape.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -473,10 +494,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4584628C20E1CF45004476AA /* ReceivedPopupView.xib in Resources */,
 				458DBDAF20CF519700185170 /* LaunchScreen.storyboard in Resources */,
-				458ED92520D36C57004AEF22 /* ColoredCardView.xib in Resources */,
+				458ED92520D36C57004AEF22 /* WalletCardView.xib in Resources */,
+				4584629220E1DDF2004476AA /* SendPopupView.xib in Resources */,
 				458DBDAC20CF519700185170 /* Assets.xcassets in Resources */,
-				4584626520E0A96A004476AA /* RegisterPopupView.xib in Resources */,
 				458DBDA720CF519500185170 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -668,14 +690,14 @@
 			files = (
 				45A8481C20D214C300F88753 /* Currency.swift in Sources */,
 				45BAB80C20CF7C51006F5B68 /* StringHelper.swift in Sources */,
-				4584626620E0A96A004476AA /* RegisterPopupView.swift in Sources */,
+				4584626620E0A96A004476AA /* ReceivedPopupView.swift in Sources */,
 				4584627C20E0ACEB004476AA /* ShapeType.swift in Sources */,
-				4584626420E0A96A004476AA /* RegisterPopupViewController.swift in Sources */,
+				4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */,
 				4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */,
 				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
 				4576CB9A20D8285900D53F44 /* Chain.swift in Sources */,
 				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
-				458ED92620D36C57004AEF22 /* ColoredCardView.swift in Sources */,
+				458ED92620D36C57004AEF22 /* WalletCardView.swift in Sources */,
 				45A8481A20D2149A00F88753 /* Ether.swift in Sources */,
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
 				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
@@ -685,8 +707,11 @@
 				4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */,
 				45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */,
 				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
+				4584629020E1DDD2004476AA /* SendPopupView.swift in Sources */,
 				45A8481720D2101C00F88753 /* APIEth.swift in Sources */,
 				4584627920E0ACEB004476AA /* PopupViewContainable.swift in Sources */,
+				4584628E20E1DDC3004476AA /* SendPopupViewController.swift in Sources */,
+				4584628820E140B1004476AA /* UIImageViewExtension.swift in Sources */,
 				4584627D20E0ACEB004476AA /* PopupContainerWindow.swift in Sources */,
 				451BF66420E09C0C008C43F4 /* ReceivingViewController.swift in Sources */,
 				45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */,
@@ -698,8 +723,11 @@
 				4584628020E0ACEB004476AA /* BasePopupViewController.swift in Sources */,
 				4576CBA320D97A7B00D53F44 /* GasService.swift in Sources */,
 				45A8482020D2BA4500F88753 /* Constants.swift in Sources */,
+				4584628B20E140B1004476AA /* CIImageExtension.swift in Sources */,
 				4584627720E0ACEB004476AA /* UIView+Shape.swift in Sources */,
 				4584627F20E0ACEB004476AA /* Animator.swift in Sources */,
+				4584628920E140B1004476AA /* QRCode.swift in Sources */,
+				4584628A20E140B1004476AA /* CIColorExtension.swift in Sources */,
 				4584627620E0ACEB004476AA /* CGRect+Inset.swift in Sources */,
 				4584628220E0ACEB004476AA /* PopupViewDirection.swift in Sources */,
 				458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */,

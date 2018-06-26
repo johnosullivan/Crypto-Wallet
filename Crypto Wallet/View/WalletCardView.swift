@@ -4,7 +4,7 @@ import Kingfisher
 import Rswift
 import Geth
 
-class ColoredCardView: CardView {
+class WalletCardView: CardView {
 
     @IBOutlet weak var contentView: UIView!
     
@@ -33,6 +33,7 @@ class ColoredCardView: CardView {
             appDelegate.getBalance(address: address_str!) { result in
                 switch result {
                 case .success(let balance):
+                    print(balance)
                     ethBalance.update(weiString: balance)
                     self.balanceLabel.text = ethBalance.symbol + " " + String(ethBalance.value)
                 case .failure(let error):

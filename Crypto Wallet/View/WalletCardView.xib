@@ -13,7 +13,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Wallet Card View" customClass="ColoredCardView" customModule="Crypto_Wallet" customModuleProvider="target">
+        <view contentMode="scaleToFill" id="iN0-l3-epB" userLabel="Wallet Card View" customClass="WalletCardView" customModule="Crypto_Wallet" customModuleProvider="target">
             <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
@@ -118,7 +118,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="send:" destination="iN0-l3-epB" eventType="touchUpInside" id="d5b-hy-s7Q"/>
+                                        <action selector="send:" destination="iN0-l3-epB" eventType="touchUpInside" id="PN3-yS-SY6"/>
                                     </connections>
                                 </button>
                                 <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eHq-Y4-WaI">
@@ -135,7 +135,7 @@
                                         <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
                                     </userDefinedRuntimeAttributes>
                                     <connections>
-                                        <action selector="receive:" destination="iN0-l3-epB" eventType="touchUpInside" id="HXZ-Zv-J1r"/>
+                                        <action selector="receive:" destination="iN0-l3-epB" eventType="touchUpInside" id="PAM-eW-XP1"/>
                                     </connections>
                                 </button>
                             </subviews>
@@ -209,11 +209,11 @@
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <connections>
-                <outlet property="addressLabel" destination="Sao-ue-K7Z" id="iIw-bz-COL"/>
-                <outlet property="balanceLabel" destination="vHw-VU-lJG" id="38A-C5-z2z"/>
-                <outlet property="contentView" destination="OGR-lR-C5v" id="fSz-Gj-R5Z"/>
-                <outlet property="iconImageView" destination="WFC-9A-SaW" id="Egh-HK-Dro"/>
-                <outlet property="rateBalanceLabel" destination="Phx-Ur-WxP" id="bU0-hJ-P2B"/>
+                <outlet property="addressLabel" destination="Sao-ue-K7Z" id="lxV-Gc-6O1"/>
+                <outlet property="balanceLabel" destination="vHw-VU-lJG" id="uBo-9v-zJo"/>
+                <outlet property="contentView" destination="OGR-lR-C5v" id="0t1-QK-lnR"/>
+                <outlet property="iconImageView" destination="WFC-9A-SaW" id="HSx-L2-odc"/>
+                <outlet property="rateBalanceLabel" destination="Phx-Ur-WxP" id="sYu-jE-B79"/>
             </connections>
             <point key="canvasLocation" x="-66" y="-70"/>
         </view>
