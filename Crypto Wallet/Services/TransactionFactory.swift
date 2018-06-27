@@ -58,7 +58,25 @@ class TransactionService: TransactionServiceProtocol, NetworkLoadable{
         Ethereum.syncQueue.async {
             do {
                 let account = try self.keystore.getAccount(at: 0)
-                let transaction = try self.factory.buildTransaction(with: info, type: self.transferType)
+                let transaction = try self.factory.buildTransaction(with: info, type: self.transferType, signer: 0)
+                let signedTransaction = try self.keystore.signTransaction(transaction, account: account, passphrase: passphrase, chainId: self.chain.ChainID)
+                try self.sendTransaction(signedTransaction)
+                DispatchQueue.main.async {
+                    result(.success(signedTransaction))
+                }
+            } catch {
+                DispatchQueue.main.async {
+                    result(.failure(error))
+                }
+            }
+        }
+    }
+    
+    func sendTransactionWithAccount(with info: TransactionInfo, signer: Int ,passphrase: String, result: @escaping (Result<GethTransaction>) -> Void) {
+        Ethereum.syncQueue.async {
+            do {
+                let account = try self.keystore.getAccount(at: signer)
+                let transaction = try self.factory.buildTransaction(with: info, type: self.transferType, signer: signer)
                 let signedTransaction = try self.keystore.signTransaction(transaction, account: account, passphrase: passphrase, chainId: self.chain.ChainID)
                 try self.sendTransaction(signedTransaction)
                 DispatchQueue.main.async {
@@ -79,7 +97,7 @@ class TransactionService: TransactionServiceProtocol, NetworkLoadable{
 }
 
 protocol TransactionFactoryProtocol {
-    func buildTransaction(with info: TransactionInfo, type: TransferType) throws -> GethTransaction
+    func buildTransaction(with info: TransactionInfo, type: TransferType, signer: Int) throws -> GethTransaction
 }
 
 
@@ -95,12 +113,12 @@ class TransactionFactory: TransactionFactoryProtocol {
         self.context = core.context
     }
     
-    func buildTransaction(with info: TransactionInfo, type: TransferType) throws -> GethTransaction {
+    func buildTransaction(with info: TransactionInfo, type: TransferType, signer: Int) throws -> GethTransaction {
         switch type {
         case .default:
-            return try buildTransaction(with: info)
+            return try buildTransaction(with: info, signer: signer)
         case .token:
-            return try buildTransaction(with: info)
+            return try buildTransaction(with: info, signer: signer)
         }
     }
     
@@ -111,12 +129,12 @@ class TransactionFactory: TransactionFactoryProtocol {
 
 extension TransactionFactory {
     
-    private func buildTransaction(with info: TransactionInfo) throws -> GethTransaction {
+    private func buildTransaction(with info: TransactionInfo, signer: Int) throws -> GethTransaction {
         var error: NSError?
         let receiverAddress = info.contractAddress ?? info.address
         let gethAddress = GethNewAddressFromHex(receiverAddress, &error)
         var noncePointer: Int64 = 0
-        let account = try keystore.getAccount(at: 0)
+        let account = try keystore.getAccount(at: signer)
         try client.getNonceAt(context, account: account.getAddress(), number: -1, nonce: &noncePointer)
         
         let intAmount = GethNewBigInt(0)

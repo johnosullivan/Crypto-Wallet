@@ -29,13 +29,20 @@ class ViewController: UIViewController {
 
     
     var wallets = [WalletCardView]()
+    var refreshTimer: Timer?
+    let rate = RatesNetworkService()
     
     func sendPresention(notification:Notification) -> Void {
         print("sendPresention")
+        let address = notification.userInfo!["address"]! as! String
+        let index = notification.userInfo!["index"]! as! Int
+        print(address)
         let popup = SendPopupViewController()
+        popup.adddress_index = index
         popup.height = Double((self.view.window?.frame.height)!)
+        popup.address = address
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
-        //
+        
     }
     
     func receivePresention(notification:Notification) -> Void {
@@ -43,10 +50,41 @@ class ViewController: UIViewController {
         //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceivingViewController") as! ReceivingViewController
         //self.present(vc, animated: true, completion: nil)
         let address = notification.userInfo!["address"]! as! String
+        //let index = notification.userInfo!["index"]! as! Int
         print(address)
         let popup = ReceivedPopupViewController()
         popup.address = address
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
+    }
+    
+    func getBalanceOfAddress(address: GethAccount, handler: ((_ balance: String) -> Void)?) {
+        var ethBalance = Ether(weiString: "0.0")
+        let address = address.getAddress().getHex()
+        appDelegate.getBalance(address: address!) { result in
+            switch result {
+            case .success(let balance):
+                ethBalance.update(weiString: balance)
+                handler!(ethBalance.symbol + " " + String(ethBalance.value))
+            case .failure(let error):
+                print(error)
+                handler!(ethBalance.symbol + " " + String(ethBalance.value))
+            }
+        }
+    }
+    
+    func getRateConvert(from: String, to: String, handler: ((_ balance: Double) -> Void)?) {
+        rate.getRate(currencies: Constants.Wallet.SupportedCurrencies) { result in
+            switch result {
+            case .success(let rates):
+                let rate_array = rates.filter { $0.from == from }
+                for index in 0...rate_array.count - 1 {
+                    let current:Rate = rate_array[index]
+                    if (current.to == to) {  handler!(current.value) }
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     override func viewDidLoad() {
@@ -59,9 +97,23 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.send, object:nil, queue:nil, using:sendPresention)
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         
-        for i in 0 ... (appDelegate.keyStore.getAccountCount() - 1) {
+        var currentRate:Double = 0.0
+        
+        self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
+            currentRate = rate
+        })
+        
+        for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
-            wallet.update(index: i)
+            wallet.currentIndex = (i - 1)
+            do {
+                let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: (i - 1))
+                wallet.currentAddress = addressGeth.getAddress().getHex()!
+                print(addressGeth.getAddress().getHex()!)
+                self.getBalanceOfAddress(address: addressGeth, handler: { (balance: String) in
+                    wallet.currentBalance = balance
+                })
+            } catch { print(error as Error) }
             wallets.append(wallet)
         }
         
@@ -70,7 +122,22 @@ class ViewController: UIViewController {
             self?.showAddCardViewButtonIfNeeded()
             self?.addCardViewButton.addTransitionFade()
         }
+        
+        refreshTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { (timer) in
+            self.refreshWallets()
+        }
+    }
     
+    func refreshWallets() {
+        for i in 1 ... appDelegate.keyStore.getAccountCount() {
+            do {
+                let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: (i - 1))
+                wallets[(i - 1)].currentAddress = addressGeth.getAddress().getHex()!
+                self.getBalanceOfAddress(address: addressGeth, handler: { (balance: String) in
+                    self.wallets[(i - 1)].currentBalance = balance
+                })
+            } catch { print(error as Error) }
+        }
     }
     
     func showAddCardViewButtonIfNeeded() {
@@ -83,9 +150,10 @@ class ViewController: UIViewController {
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
+        self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
+            print(rate)
+        })
         /*
-        
-        
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
         } catch {
@@ -141,7 +209,6 @@ class ViewController: UIViewController {
         */
        /*
         let chain = Chain.ropsten
-
         let keystore = KeystoreService()
         let core = Ethereum.core
         core.chain = chain

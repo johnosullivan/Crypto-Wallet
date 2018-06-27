@@ -1,15 +1,16 @@
 //
-//  SendPopupView.swift
+//  SelectPopupView.swift
 //  Crypto Wallet
 //
-//  Created by John O'Sullivan on 6/25/18.
+//  Created by John O'Sullivan on 6/26/18.
 //  Copyright © 2018 John O'Sullivan. All rights reserved.
 //
 
 import Foundation
+import Foundation
 import UIKit
 
-class SendPopupView: UIView, PopupViewContainable, Nibable  {
+class SelectPopupView: UIView, PopupViewContainable, Nibable  {
     
     @IBOutlet weak var qrimageview: UIImageView!
     @IBOutlet weak var address: UILabel!
@@ -48,12 +49,10 @@ class SendPopupView: UIView, PopupViewContainable, Nibable  {
     
     var sendButtonTapHandler: ((_ amount: String, _ toAddress: String) -> Void)?
     var closeButtonTapHandler: (() -> Void)?
-    var selectButtonTapHandler: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
         backgroundColor = UIColor.backgroundColor()
-        sendview.backgroundColor = UIColor.backgroundColor()
         addDropShadow(type: .dynamic, color: .black, opacity: 0.5, radius: 3, shadowOffset: CGSize(width: 0, height: 5))
     }
     
@@ -64,9 +63,4 @@ class SendPopupView: UIView, PopupViewContainable, Nibable  {
     @IBAction func didTapCloseButton() {
         closeButtonTapHandler?()
     }
-    
-    @IBAction func didTapSelectButton() {
-        selectButtonTapHandler?()
-    }
 }
-

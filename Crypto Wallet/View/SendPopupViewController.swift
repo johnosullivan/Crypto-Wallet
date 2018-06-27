@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import Geth
 
 class SendPopupViewController: BasePopupViewController {
     
@@ -27,6 +28,11 @@ class SendPopupViewController: BasePopupViewController {
     
     public var height = 0.0
     
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
+    var gasPrice = 0
+    var gasLimit = 0
+    var adddress_index = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,18 +45,72 @@ class SendPopupViewController: BasePopupViewController {
             self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
         }
         
-        var qrCode = QRCode(address)
-        qrCode?.color = CIColor(color: UIColor.black)
-        qrCode?.backgroundColor = CIColor(color: UIColor.backgroundColor())
+        sendPopupView.selectButtonTapHandler = { [weak self] in
+            let alert = UIAlertController(title: "Local Accounts", message: "Please Choose Account To Send Too!", preferredStyle: .actionSheet)
+            
+            for i in 0 ... ((self?.appDelegate.keyStore.getAccountCount())! - 1) {
+                if (i != self?.adddress_index) {
+                    do {
+                        let address:GethAddress = (try self?.appDelegate.keyStore.getAccount(at: i).getAddress())!;
+                        alert.addAction(UIAlertAction(title: address.getHex(), style: .default, handler: { (action) in
+                            print(address.getHex())
+                            self?.sendPopupView.toAddress.text = address.getHex()
+                        }))
+                    } catch {
+                        
+                    }
+                }
+                
+            }
+            self?.present(alert, animated: true, completion: nil)
+        }
         
+        sendPopupView.sendButtonTapHandler = { [weak self] (ammount, toAddress) in
+            print("sent_address: ", self?.address ?? "")
+            print("gasPrice: ", self?.gasPrice ?? "")
+            print("gasLimit: ", self?.gasLimit ?? "")
+            print("ammount: ", ammount)
+            print("to_Address: ", toAddress)
+            let etherToSend:Double = Ether(ammount).value
+            print("etherToSend_Wei: ", Decimal(etherToSend).toWei())
+            print("adddress_index: ", self?.adddress_index ?? "")
+            
+            
+            //sendButtonTapHandler
+            
+            let trans_service = TransactionService.init(core: (self?.appDelegate.core)!, keystore: (self?.appDelegate.keyStore)!, transferType: TransferType.default)
+            let trans = TransactionInfo.init(amount: Decimal(etherToSend).toWei(), address: toAddress, contractAddress: toAddress, gasLimit: Decimal((self?.gasLimit)!), gasPrice: Decimal((self?.gasPrice)!))
+            trans_service.sendTransactionWithAccount(with: trans, signer: (self?.adddress_index)!, passphrase: "mogilska") { result in
+                switch result {
+                case .success(let sendedTransaction):
+                    let test:GethTransaction = sendedTransaction
+                    print(test.getHash().getHex())
+                    self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+                case .failure(let error):
+                    print(error)
+                }
+            }
+        }
         
-        sendPopupView.qrimage = qrCode?.image
-        sendPopupView.addressStr = address
+        let gasService = GasService(core: appDelegate.core)
         
-        /*sendPopupView.sendButtonTapHandler = { [weak self] in
-            guard let me = self else { return }
-            me.showCompletionView()
-        }*/
+        gasService.getSuggestedGasPrice() { result in
+            switch result {
+            case .success(let gasPrice):
+                self.gasPrice = Int(gasPrice)
+            case .failure(let error):
+                print(error)
+            }
+        }
+        
+        gasService.getSuggestedGasLimit() { result in
+            switch result {
+            case .success(let gasLimit):
+                self.gasLimit = Int(gasLimit)
+            case .failure(let error):
+                print(error)
+            }
+        }
     }
     
     override func tapPopupContainerView(_ gestureRecognizer: UITapGestureRecognizer) {

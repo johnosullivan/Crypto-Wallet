@@ -140,7 +140,7 @@ extension API.Rate: APIMethodProtocol {
         case .rate(let currencies):
             return [
                 "fsyms": currencies.joined(separator: ","),
-                "tsyms": Constants.Wallet.supportedCurrencies.joined(separator: ",")
+                "tsyms": Constants.Wallet.SupportedCurrencies.joined(separator: ",")
             ]
         }
     }

@@ -26,7 +26,7 @@ extension API.Etherscan: APIMethodProtocol {
     }
     
     var path: String {
-        return "https://ropsten.etherscan.io/api?"
+        return "https://rinkeby.etherscan.io/api?"
     }
     
     var params: Params? {

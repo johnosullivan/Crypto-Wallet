@@ -21,7 +21,7 @@ struct Constants {
     
     struct Wallet {
         static let defaultCurrency = "USD"
-        static let supportedCurrencies = ["BTC","ETH","USD","EUR","CNY","GBP"]
+        static let SupportedCurrencies = ["BTC","ETH","USD","EUR","CNY","GBP"]
     }
     
     struct Common {

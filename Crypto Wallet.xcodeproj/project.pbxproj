@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */; };
 		451BF66420E09C0C008C43F4 /* ReceivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451BF66320E09C0C008C43F4 /* ReceivingViewController.swift */; };
+		454B3CEA20E308B900D95960 /* SelectPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454B3CE920E308B900D95960 /* SelectPopupView.xib */; };
+		454B3CEC20E308C400D95960 /* SelectPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CEB20E308C400D95960 /* SelectPopupView.swift */; };
+		454B3CEE20E308D100D95960 /* SelectPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CED20E308D100D95960 /* SelectPopupViewController.swift */; };
 		4576CB9A20D8285900D53F44 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9920D8285900D53F44 /* Chain.swift */; };
 		4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9B20D891AC00D53F44 /* Ethereum.swift */; };
 		4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA020D8AF1600D53F44 /* KeystoreService.swift */; };
@@ -88,6 +91,9 @@
 		0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_WalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		451BF66320E09C0C008C43F4 /* ReceivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingViewController.swift; sourceTree = "<group>"; };
+		454B3CE920E308B900D95960 /* SelectPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPopupView.xib; sourceTree = "<group>"; };
+		454B3CEB20E308C400D95960 /* SelectPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPopupView.swift; sourceTree = "<group>"; };
+		454B3CED20E308D100D95960 /* SelectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPopupViewController.swift; sourceTree = "<group>"; };
 		4576CB9920D8285900D53F44 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		4576CB9B20D891AC00D53F44 /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
 		4576CBA020D8AF1600D53F44 /* KeystoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreService.swift; sourceTree = "<group>"; };
@@ -331,6 +337,9 @@
 				4584628D20E1DDC3004476AA /* SendPopupViewController.swift */,
 				4584628F20E1DDD2004476AA /* SendPopupView.swift */,
 				4584629120E1DDF2004476AA /* SendPopupView.xib */,
+				454B3CE920E308B900D95960 /* SelectPopupView.xib */,
+				454B3CEB20E308C400D95960 /* SelectPopupView.swift */,
+				454B3CED20E308D100D95960 /* SelectPopupViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -494,6 +503,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				454B3CEA20E308B900D95960 /* SelectPopupView.xib in Resources */,
 				4584628C20E1CF45004476AA /* ReceivedPopupView.xib in Resources */,
 				458DBDAF20CF519700185170 /* LaunchScreen.storyboard in Resources */,
 				458ED92520D36C57004AEF22 /* WalletCardView.xib in Resources */,
@@ -701,6 +711,7 @@
 				45A8481A20D2149A00F88753 /* Ether.swift in Sources */,
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
 				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
+				454B3CEE20E308D100D95960 /* SelectPopupViewController.swift in Sources */,
 				4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */,
 				4584627A20E0ACEB004476AA /* PopupItem.swift in Sources */,
 				4584628120E0ACEB004476AA /* ViewType.swift in Sources */,
@@ -734,6 +745,7 @@
 				4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */,
 				458ED92220D3691C004AEF22 /* CardView.swift in Sources */,
 				45A8481E20D214F400F88753 /* ValueHelper.swift in Sources */,
+				454B3CEC20E308C400D95960 /* SelectPopupView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -75,11 +75,21 @@ extension Transaction: ImmutableMappable {
     
 }
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
 
+
+@UIApplicationMain
+class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoordinatorDelegate {
+    
+    func syncDidChangeProgress(current: Int64, max: Int64) { }
+    func syncDidFinished() { }
+    func syncDidUpdateBalance(_ balanceHex: String, timestamp: Int64) { }
+    func syncDidUpdateGasLimit(_ gasLimit: Int64) {  }
+    func syncDidReceiveTransactions(_ transactions: [GethTransaction], timestamp: Int64) { }
+    
     var window: UIWindow?
     public let keyStore = KeystoreService()
+    public let core = Ethereum.core
+    public let syncCoordinator = StandardSyncCoordinator()
     
     func getBalance(address: String, result: @escaping (Result<String>) -> Void) {
         loadObjectJSON(request: API.Etherscan.balance(address: address)) { resultHandler in
@@ -108,6 +118,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
     
+        let chain = Chain.rinkeby
+        core.chain = chain
+        core.syncCoordinator = syncCoordinator
+        
+        do  {
+            try syncCoordinator.startSync(chain: chain, delegate: self)
+            try core.client = syncCoordinator.getClient()
+        } catch {
+            let nsError = error as NSError
+            print(nsError.localizedDescription)
+        }
+        
         return true
     }
 

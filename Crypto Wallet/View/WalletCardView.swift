@@ -1,4 +1,3 @@
-
 import UIKit
 import Kingfisher
 import Rswift
@@ -19,47 +18,19 @@ class WalletCardView: CardView {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentDocumentPartTitle: String!
+    var currentIndex: Int = 0
+    let nc = NotificationCenter.default
 
-    var currentIndex:Int = 0
-    
-    func update(index: Int) {
-        currentIndex = index
-        do {
-            var ethBalance = Ether(weiString: "0.0")
-            let address: GethAccount = try appDelegate.keyStore.getAccount(at: index)
-            let address_str = address.getAddress().getHex()
-            print("address -> ", address_str ?? "")
-            addressLabel.text = address_str
-            appDelegate.getBalance(address: address_str!) { result in
-                switch result {
-                case .success(let balance):
-                    print(balance)
-                    ethBalance.update(weiString: balance)
-                    self.balanceLabel.text = ethBalance.symbol + " " + String(ethBalance.value)
-                case .failure(let error):
-                    print(error)
-                }
-            }
-            let rate = RatesNetworkService()
-            let currencies_array = ["ETH","USD"]
-            rate.getRate(currencies: currencies_array) { result in
-                switch result {
-                case .success(let rates):
-                    let rate_array = rates.filter { $0.from == "ETH" }
-                    for index in 0...rate_array.count - 1 {
-                        let current:Rate = rate_array[index]
-                        if (current.to == "USD") {
-                            self.rateBalanceLabel.text = "$" + String(Double(ethBalance.value) * current.value)
-                        }
-                    }
-                case .failure(let error):
-                    print(error)
-                }
-            }
-        } catch {
-            
+    var currentBalance: String = "" {
+        didSet {
+            self.balanceLabel.text = currentBalance
         }
-        
+    }
+    
+    var currentAddress: String = "" {
+        didSet {
+            self.addressLabel.text = currentAddress
+        }
     }
     
     override func awakeFromNib() {
@@ -80,36 +51,22 @@ class WalletCardView: CardView {
     @IBOutlet weak var removeCardViewButton: UIButton!
     
     @IBAction func send(_ sender: Any) {
-        
-        let nc = NotificationCenter.default
         do {
-            let address: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
-            let address_str = address.getAddress().getHex()
-            let astr = address_str! as String
-            nc.post(name:.send, object: nil, userInfo: ["address":astr])
-            
-            print("send: ", currentIndex)
+            let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
+            let address = addressGeth.getAddress().getHex()
+            nc.post(name:.send, object: nil, userInfo: ["address":address!,"index":currentIndex])
         } catch {
-            
+            print(error as Error)
         }
-        
-        
-        
     }
     
     @IBAction func receive(_ sender: Any) {
-        
-     
-        let nc = NotificationCenter.default
         do {
-            let address: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
-            let address_str = address.getAddress().getHex()
-            let astr = address_str! as String
-            nc.post(name:.receive, object: nil, userInfo: ["address":astr])
-            
-            print("receive: ", currentIndex)
+            let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: currentIndex)
+            let address = addressGeth.getAddress().getHex()
+            nc.post(name:.receive, object: nil, userInfo: ["address":address!,"index":currentIndex])
         } catch {
-            
+           print(error as Error)
         }
     }
     
