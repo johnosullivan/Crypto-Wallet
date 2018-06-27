@@ -19,6 +19,14 @@ class WalletCardView: CardView {
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentDocumentPartTitle: String!
     var currentIndex: Int = 0
+    var etherAmount: Double = 0
+    
+    var rateAmount: Double = 0 {
+        didSet {
+            self.rateBalanceLabel.text = "$" + String(rateAmount * etherAmount)
+        }
+    }
+    
     let nc = NotificationCenter.default
 
     var currentBalance: String = "" {

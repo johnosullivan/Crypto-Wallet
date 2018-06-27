@@ -66,25 +66,26 @@ class SendPopupViewController: BasePopupViewController {
         }
         
         sendPopupView.sendButtonTapHandler = { [weak self] (ammount, toAddress) in
-            print("sent_address: ", self?.address ?? "")
-            print("gasPrice: ", self?.gasPrice ?? "")
-            print("gasLimit: ", self?.gasLimit ?? "")
-            print("ammount: ", ammount)
-            print("to_Address: ", toAddress)
+            print("Sending_Address: ", self?.address ?? "")
+            print("GasPrice: ", self?.gasPrice ?? "")
+            print("GasLimit: ", self?.gasLimit ?? "")
+            print("Ammount: ", ammount)
+            print("To_Address: ", toAddress)
+            
+           
             let etherToSend:Double = Ether(ammount).value
-            print("etherToSend_Wei: ", Decimal(etherToSend).toWei())
-            print("adddress_index: ", self?.adddress_index ?? "")
-            
-            
-            //sendButtonTapHandler
-            
             let trans_service = TransactionService.init(core: (self?.appDelegate.core)!, keystore: (self?.appDelegate.keyStore)!, transferType: TransferType.default)
-            let trans = TransactionInfo.init(amount: Decimal(etherToSend).toWei(), address: toAddress, contractAddress: toAddress, gasLimit: Decimal((self?.gasLimit)!), gasPrice: Decimal((self?.gasPrice)!))
+            let trans = TransactionInfo.init(amount: Decimal(etherToSend).toWei(), address: toAddress, contractAddress: toAddress, gasLimit: Decimal((self?.gasLimit)!), gasPrice:Decimal((self?.gasPrice)!))
             trans_service.sendTransactionWithAccount(with: trans, signer: (self?.adddress_index)!, passphrase: "mogilska") { result in
                 switch result {
                 case .success(let sendedTransaction):
                     let test:GethTransaction = sendedTransaction
                     print(test.getHash().getHex())
+                    
+                    let alert = UIAlertController(title: "Sent!", message: "Transactions has been submitted! Hash: " + test.getHash().getHex(), preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
+                    self?.present(alert, animated: true)
+                    
                     self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
                 case .failure(let error):
                     print(error)
