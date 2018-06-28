@@ -9,6 +9,12 @@
 import UIKit
 
 extension String {
+    func matches(_ regex: String) -> Bool {
+        return self.range(of: regex, options: .regularExpression, range: nil, locale: nil) != nil
+    }
+}
+
+extension String {
     
     subscript (i: Int) -> String {
         return self[i ..< i + 1]

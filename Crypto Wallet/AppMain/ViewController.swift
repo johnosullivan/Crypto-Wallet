@@ -170,11 +170,29 @@ class ViewController: UIViewController {
             print("getCumulativeGasUsed: ", rec.getCumulativeGasUsed())
             print("getBloom: ", rec.getBloom().getHex())
             print("getTxHash: ", rec.getTxHash().getHex())*/
-            let rec: GethTransaction = try self.appDelegate.core.client.getTransactionByHash(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
+            //let rec: GethTransaction = try self.appDelegate.core.client.getTransactionByHash(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
             //print("rec: ", rec.get)
-            //try self.appDelegate.core.client.block
-        } catch {
+            //let s:GethSyncProgress = try self.appDelegate.core.client.syncProgress(self.appDelegate.core.context)
+            //print(s.getHighestBlock())
             
+            let hash:GethHash = GethHash.init(fromHex: "0x633e24c5d0cd3125229a7ef5311c7fc6f0fe9432993eb57cd058056469911ddc")
+            
+            let rec: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(appDelegate.core.context, hash: hash)
+            
+            let statusRaw:[String] = rec.string()!.components(separatedBy: " ")
+            
+            let status:String = statusRaw[0].components(separatedBy: "=")[1]
+            
+            print(status)
+         
+            
+            
+            
+
+            
+            
+        } catch {
+            print(error as Error)
         }
         
         /*
