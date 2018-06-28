@@ -18,6 +18,7 @@ class Account: Object {
 extension Notification.Name {
     static let send = Notification.Name("send")
     static let receive = Notification.Name("receive")
+    static let txDone = Notification.Name("txDone")
 }
 
 class ViewController: UIViewController {
@@ -27,31 +28,54 @@ class ViewController: UIViewController {
     @IBOutlet weak var addCardViewButton: UIButton!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
 
-    
     var wallets = [WalletCardView]()
     var refreshTimer: Timer?
     let rate = RatesNetworkService()
     
     func sendPresention(notification:Notification) -> Void {
-        print("sendPresention")
         let address = notification.userInfo!["address"]! as! String
         let index = notification.userInfo!["index"]! as! Int
-        print(address)
         let popup = SendPopupViewController()
         popup.adddress_index = index
         popup.height = Double((self.view.window?.frame.height)!)
         popup.address = address
+        popup.receivedGethHash = { [weak self] (hash) in
+            self?.waitForStatusChangeWithHash(hash: hash)
+        }
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
-        
+    }
+    
+    func waitForStatusChangeWithHash(hash: String) {
+        let group = DispatchGroup()
+        group.enter()
+        DispatchQueue.global(qos: .background).async {
+            var break_loop = true
+            while(break_loop) {
+                do {
+                    let hash:GethHash = GethHash.init(fromHex: hash)
+                    let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
+                    let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
+                    break_loop = false
+                    NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash.getHex(), "status": status])
+                    group.leave()
+                } catch { break_loop = true }
+                sleep(1)
+            }
+        }
+        group.notify(queue: .main) {
+            //self.refreshWallets()
+        }
+    }
+    
+    func didRecieveTxDone(notification:Notification) -> Void {
+        let hash = notification.userInfo!["hash"]! as! String
+        let status = notification.userInfo!["status"]! as! Int
+        print("hash: ", hash)
+        print("status: ", status)
     }
     
     func receivePresention(notification:Notification) -> Void {
-        print("receivePresention")
-        //let vc = self.storyboard?.instantiateViewController(withIdentifier: "ReceivingViewController") as! ReceivingViewController
-        //self.present(vc, animated: true, completion: nil)
         let address = notification.userInfo!["address"]! as! String
-        //let index = notification.userInfo!["index"]! as! Int
-        print(address)
         let popup = ReceivedPopupViewController()
         popup.address = address
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
@@ -96,6 +120,8 @@ class ViewController: UIViewController {
         let nc = NotificationCenter.default
         nc.addObserver(forName:.send, object:nil, queue:nil, using:sendPresention)
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
+        nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
+        
         
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
@@ -176,15 +202,46 @@ class ViewController: UIViewController {
             //print(s.getHighestBlock())
             
             let hash:GethHash = GethHash.init(fromHex: "0x633e24c5d0cd3125229a7ef5311c7fc6f0fe9432993eb57cd058056469911ddc")
-            
-            let rec: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(appDelegate.core.context, hash: hash)
-            
-            let statusRaw:[String] = rec.string()!.components(separatedBy: " ")
-            
-            let status:String = statusRaw[0].components(separatedBy: "=")[1]
+            let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(appDelegate.core.context, hash: hash)
+            let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
             
             print(status)
          
+            
+            
+            let group = DispatchGroup()
+            group.enter()
+        
+            DispatchQueue.main.async {
+                
+                var break_loop = true
+                
+                while(break_loop) {
+                    print("looping")
+                    do {
+                        let hash:GethHash = GethHash.init(fromHex: "0xe7d17c5d5633f2bddbff7d7f2afdb6ce17e7c3fdf11999cc877b764f05d34fae")
+                        let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
+                        let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
+                        print("status: ", status)
+                        break_loop = false
+                        group.leave()
+                    } catch {
+                        break_loop = true
+                    }
+                    sleep(1)
+                }
+                
+                
+                
+                
+            }
+            
+            // does not wait. But the code in notify() gets run
+            // after enter() and leave() calls are balanced
+            
+            group.notify(queue: .main) {
+                print("done with async")
+            }
             
             
             

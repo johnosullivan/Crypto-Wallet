@@ -33,6 +33,8 @@ class SendPopupViewController: BasePopupViewController {
     var gasLimit = 0
     var adddress_index = 0
     
+    var receivedGethHash: ((_ hash: String) -> Void)?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -119,11 +121,13 @@ class SendPopupViewController: BasePopupViewController {
                     let test:GethTransaction = sendedTransaction
                     print(test.getHash().getHex())
                     
+                
                     let alert = UIAlertController(title: "Sent!", message: "Transactions has been submitted! Hash: " + test.getHash().getHex(), preferredStyle: .alert)
                     alert.addAction(UIAlertAction(title: "Dismiss", style: .default, handler: nil))
                     self?.present(alert, animated: true)
                     
                     self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+                    self?.receivedGethHash!(test.getHash().getHex())
                 case .failure(let error):
                     print(error)
                 }
