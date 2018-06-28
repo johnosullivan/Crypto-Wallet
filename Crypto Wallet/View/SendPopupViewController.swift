@@ -38,11 +38,48 @@ class SendPopupViewController: BasePopupViewController {
         
         print(self.view.frame)
         
+        CWPermissions.authorizeCameraWith { [weak self] (granted) in
+            
+            if granted
+            {
+               print(self?.address ?? "")
+            }
+            else
+            {
+                CWPermissions.jumpToSystemPrivacySetting()
+            }
+        }
+        
         let popupItem = PopupItem(view: sendPopupView, height: CGFloat(height - 30) , maxWidth: Const.maxWidth, landscapeSize: Const.landscapeSize, popupOption: Const.popupOption)
         configurePopupItem(popupItem)
         
         sendPopupView.closeButtonTapHandler = { [weak self] in
             self?.dismissPopupView(duration: Const.popupDuration, curve: .easeInOut, direction: .bottom) { _ in }
+        }
+        
+        sendPopupView.scanButtonTapHandler = { [weak self] in
+            print("scanning ")
+            print(self?.address ?? "")
+            print("qqStyle")
+            
+            let vc = QQScanViewController();
+            //vc.
+            var style = CWScanViewStyle()
+            style.anmiationStyle = CWScanViewAnimationStyle.None
+            style.colorAngle = UIColor.init(hexString: "#1379DE")
+            vc.scanStyle = style
+            vc.addressHandler = { [weak self] (result) in
+                print(result.strScanned!)
+                if result.strScanned?.range(of:"ethereum:") != nil {
+                    let split_address = result.strScanned?.components(separatedBy: ":")
+                    self?.sendPopupView.toAddress.text = split_address?[1]
+                } else {
+                    self?.sendPopupView.toAddress.text = result.strScanned
+                }
+            }
+            
+            
+            self?.present(vc, animated: true, completion: nil)
         }
         
         sendPopupView.selectButtonTapHandler = { [weak self] in

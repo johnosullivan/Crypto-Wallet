@@ -12,6 +12,16 @@
 		454B3CEA20E308B900D95960 /* SelectPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454B3CE920E308B900D95960 /* SelectPopupView.xib */; };
 		454B3CEC20E308C400D95960 /* SelectPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CEB20E308C400D95960 /* SelectPopupView.swift */; };
 		454B3CEE20E308D100D95960 /* SelectPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CED20E308D100D95960 /* SelectPopupViewController.swift */; };
+		454B3CF120E414EC00D95960 /* CodeScan.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 454B3CF020E414EB00D95960 /* CodeScan.bundle */; };
+		454B3CF920E4150300D95960 /* CWScanLineAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF220E4150200D95960 /* CWScanLineAnimation.swift */; };
+		454B3CFA20E4150300D95960 /* CWScanViewStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF320E4150200D95960 /* CWScanViewStyle.swift */; };
+		454B3CFB20E4150300D95960 /* CWScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF420E4150200D95960 /* CWScanView.swift */; };
+		454B3CFC20E4150300D95960 /* CWScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF520E4150200D95960 /* CWScanViewController.swift */; };
+		454B3CFD20E4150300D95960 /* CWXScanNetAnimation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF620E4150300D95960 /* CWXScanNetAnimation.swift */; };
+		454B3CFE20E4150300D95960 /* CWScanWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF720E4150300D95960 /* CWScanWrapper.swift */; };
+		454B3CFF20E4150300D95960 /* CWPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF820E4150300D95960 /* CWPermissions.swift */; };
+		454B3D0120E4158400D95960 /* QQScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0020E4158400D95960 /* QQScanViewController.swift */; };
+		454B3D0320E44FEB00D95960 /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0220E44FEB00D95960 /* UIColorHelper.swift */; };
 		4576CB9A20D8285900D53F44 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9920D8285900D53F44 /* Chain.swift */; };
 		4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9B20D891AC00D53F44 /* Ethereum.swift */; };
 		4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA020D8AF1600D53F44 /* KeystoreService.swift */; };
@@ -94,6 +104,16 @@
 		454B3CE920E308B900D95960 /* SelectPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPopupView.xib; sourceTree = "<group>"; };
 		454B3CEB20E308C400D95960 /* SelectPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPopupView.swift; sourceTree = "<group>"; };
 		454B3CED20E308D100D95960 /* SelectPopupViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPopupViewController.swift; sourceTree = "<group>"; };
+		454B3CF020E414EB00D95960 /* CodeScan.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = CodeScan.bundle; sourceTree = "<group>"; };
+		454B3CF220E4150200D95960 /* CWScanLineAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScanLineAnimation.swift; sourceTree = "<group>"; };
+		454B3CF320E4150200D95960 /* CWScanViewStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScanViewStyle.swift; sourceTree = "<group>"; };
+		454B3CF420E4150200D95960 /* CWScanView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScanView.swift; sourceTree = "<group>"; };
+		454B3CF520E4150200D95960 /* CWScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScanViewController.swift; sourceTree = "<group>"; };
+		454B3CF620E4150300D95960 /* CWXScanNetAnimation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWXScanNetAnimation.swift; sourceTree = "<group>"; };
+		454B3CF720E4150300D95960 /* CWScanWrapper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWScanWrapper.swift; sourceTree = "<group>"; };
+		454B3CF820E4150300D95960 /* CWPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWPermissions.swift; sourceTree = "<group>"; };
+		454B3D0020E4158400D95960 /* QQScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQScanViewController.swift; sourceTree = "<group>"; };
+		454B3D0220E44FEB00D95960 /* UIColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
 		4576CB9920D8285900D53F44 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		4576CB9B20D891AC00D53F44 /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
 		4576CBA020D8AF1600D53F44 /* KeystoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreService.swift; sourceTree = "<group>"; };
@@ -200,6 +220,22 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		454B3CEF20E3EC3700D95960 /* Scanner */ = {
+			isa = PBXGroup;
+			children = (
+				454B3D0020E4158400D95960 /* QQScanViewController.swift */,
+				454B3CF820E4150300D95960 /* CWPermissions.swift */,
+				454B3CF220E4150200D95960 /* CWScanLineAnimation.swift */,
+				454B3CF620E4150300D95960 /* CWXScanNetAnimation.swift */,
+				454B3CF420E4150200D95960 /* CWScanView.swift */,
+				454B3CF520E4150200D95960 /* CWScanViewController.swift */,
+				454B3CF320E4150200D95960 /* CWScanViewStyle.swift */,
+				454B3CF720E4150300D95960 /* CWScanWrapper.swift */,
+				454B3CF020E414EB00D95960 /* CodeScan.bundle */,
+			);
+			path = Scanner;
+			sourceTree = "<group>";
+		};
 		4576CB9F20D8AF0200D53F44 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -249,6 +285,7 @@
 			isa = PBXGroup;
 			children = (
 				458DBDB020CF519700185170 /* Info.plist */,
+				454B3CEF20E3EC3700D95960 /* Scanner */,
 				4576CB9F20D8AF0200D53F44 /* Services */,
 				458ED91C20D2FC05004AEF22 /* AppMain */,
 				458ED91B20D2FBED004AEF22 /* Common */,
@@ -372,6 +409,7 @@
 				45A8481D20D214F400F88753 /* ValueHelper.swift */,
 				4584626820E0ACE9004476AA /* CGRect+Inset.swift */,
 				4584626920E0ACE9004476AA /* UIView+Shape.swift */,
+				454B3D0220E44FEB00D95960 /* UIColorHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -510,6 +548,7 @@
 				4584629220E1DDF2004476AA /* SendPopupView.xib in Resources */,
 				458DBDAC20CF519700185170 /* Assets.xcassets in Resources */,
 				458DBDA720CF519500185170 /* Main.storyboard in Resources */,
+				454B3CF120E414EC00D95960 /* CodeScan.bundle in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -705,6 +744,7 @@
 				4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */,
 				4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */,
 				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
+				454B3CFF20E4150300D95960 /* CWPermissions.swift in Sources */,
 				4576CB9A20D8285900D53F44 /* Chain.swift in Sources */,
 				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
 				458ED92620D36C57004AEF22 /* WalletCardView.swift in Sources */,
@@ -712,20 +752,25 @@
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
 				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
 				454B3CEE20E308D100D95960 /* SelectPopupViewController.swift in Sources */,
+				454B3CFD20E4150300D95960 /* CWXScanNetAnimation.swift in Sources */,
 				4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */,
 				4584627A20E0ACEB004476AA /* PopupItem.swift in Sources */,
+				454B3D0320E44FEB00D95960 /* UIColorHelper.swift in Sources */,
 				4584628120E0ACEB004476AA /* ViewType.swift in Sources */,
 				4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */,
 				45A8481120D0A7D800F88753 /* BuildHelper.swift in Sources */,
 				45BAB80620CF7954006F5B68 /* EthereumTools.swift in Sources */,
+				454B3CFC20E4150300D95960 /* CWScanViewController.swift in Sources */,
 				4584629020E1DDD2004476AA /* SendPopupView.swift in Sources */,
 				45A8481720D2101C00F88753 /* APIEth.swift in Sources */,
+				454B3CFA20E4150300D95960 /* CWScanViewStyle.swift in Sources */,
 				4584627920E0ACEB004476AA /* PopupViewContainable.swift in Sources */,
 				4584628E20E1DDC3004476AA /* SendPopupViewController.swift in Sources */,
 				4584628820E140B1004476AA /* UIImageViewExtension.swift in Sources */,
 				4584627D20E0ACEB004476AA /* PopupContainerWindow.swift in Sources */,
 				451BF66420E09C0C008C43F4 /* ReceivingViewController.swift in Sources */,
 				45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */,
+				454B3CFE20E4150300D95960 /* CWScanWrapper.swift in Sources */,
 				4584627B20E0ACEB004476AA /* PopupContainerView.swift in Sources */,
 				4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */,
 				45A8481520D2100000F88753 /* API.swift in Sources */,
@@ -734,11 +779,14 @@
 				4584628020E0ACEB004476AA /* BasePopupViewController.swift in Sources */,
 				4576CBA320D97A7B00D53F44 /* GasService.swift in Sources */,
 				45A8482020D2BA4500F88753 /* Constants.swift in Sources */,
+				454B3CFB20E4150300D95960 /* CWScanView.swift in Sources */,
 				4584628B20E140B1004476AA /* CIImageExtension.swift in Sources */,
+				454B3D0120E4158400D95960 /* QQScanViewController.swift in Sources */,
 				4584627720E0ACEB004476AA /* UIView+Shape.swift in Sources */,
 				4584627F20E0ACEB004476AA /* Animator.swift in Sources */,
 				4584628920E140B1004476AA /* QRCode.swift in Sources */,
 				4584628A20E140B1004476AA /* CIColorExtension.swift in Sources */,
+				454B3CF920E4150300D95960 /* CWScanLineAnimation.swift in Sources */,
 				4584627620E0ACEB004476AA /* CGRect+Inset.swift in Sources */,
 				4584628220E0ACEB004476AA /* PopupViewDirection.swift in Sources */,
 				458DBDAA20CF519500185170 /* Crypto_Wallet.xcdatamodeld in Sources */,

@@ -161,6 +161,22 @@ class ViewController: UIViewController {
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
             print(rate)
         })
+        
+        do {
+            /*
+            let rec: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
+            print("rec: ", rec)
+            print("getPostState: ", rec.getPostState())
+            print("getCumulativeGasUsed: ", rec.getCumulativeGasUsed())
+            print("getBloom: ", rec.getBloom().getHex())
+            print("getTxHash: ", rec.getTxHash().getHex())*/
+            let rec: GethTransaction = try self.appDelegate.core.client.getTransactionByHash(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
+            //print("rec: ", rec.get)
+            //try self.appDelegate.core.client.block
+        } catch {
+            
+        }
+        
         /*
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")

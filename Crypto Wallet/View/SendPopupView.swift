@@ -49,6 +49,7 @@ class SendPopupView: UIView, PopupViewContainable, Nibable  {
     var sendButtonTapHandler: ((_ amount: String, _ toAddress: String) -> Void)?
     var closeButtonTapHandler: (() -> Void)?
     var selectButtonTapHandler: (() -> Void)?
+    var scanButtonTapHandler: (() -> Void)?
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -67,6 +68,10 @@ class SendPopupView: UIView, PopupViewContainable, Nibable  {
     
     @IBAction func didTapSelectButton() {
         selectButtonTapHandler?()
+    }
+    
+    @IBAction func didTapScanButton() {
+        scanButtonTapHandler?()
     }
 }
 
