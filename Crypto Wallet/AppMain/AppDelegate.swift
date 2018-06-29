@@ -12,6 +12,7 @@ import Alamofire
 import ObjectMapper
 import AlamofireObjectMapper
 import Geth
+import UserNotifications
 
 protocol CustomError: Error {
     typealias ErrorInfo = (title: String?, message: String?, showing: Bool)
@@ -91,6 +92,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
     public let core = Ethereum.core
     public let syncCoordinator = StandardSyncCoordinator()
     
+    let center = UNUserNotificationCenter.current()
+    
     func getBalance(address: String, result: @escaping (Result<String>) -> Void) {
         loadObjectJSON(request: API.Etherscan.balance(address: address)) { resultHandler in
             
@@ -129,6 +132,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
             let nsError = error as NSError
             print(nsError.localizedDescription)
         }
+        
+        let options: UNAuthorizationOptions = [.alert, .sound];
+        
+        // Swift
+        center.requestAuthorization(options: options) {
+            (granted, error) in
+            if !granted {
+                print("Something went wrong")
+            }
+        }
+        
+        center.getNotificationSettings { (settings) in
+            if settings.authorizationStatus != .authorized {
+                // Notifications not allowed
+            }
+        }
+
         
         return true
     }

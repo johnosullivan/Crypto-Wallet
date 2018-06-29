@@ -22,6 +22,9 @@
 		454B3CFF20E4150300D95960 /* CWPermissions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CF820E4150300D95960 /* CWPermissions.swift */; };
 		454B3D0120E4158400D95960 /* QQScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0020E4158400D95960 /* QQScanViewController.swift */; };
 		454B3D0320E44FEB00D95960 /* UIColorHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0220E44FEB00D95960 /* UIColorHelper.swift */; };
+		454B3D0720E5725700D95960 /* NotificationBarConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0420E5725700D95960 /* NotificationBarConfiguration.swift */; };
+		454B3D0820E5725700D95960 /* NotificationBarStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0520E5725700D95960 /* NotificationBarStyle.swift */; };
+		454B3D0920E5725700D95960 /* NotificationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3D0620E5725700D95960 /* NotificationBar.swift */; };
 		4576CB9A20D8285900D53F44 /* Chain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9920D8285900D53F44 /* Chain.swift */; };
 		4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CB9B20D891AC00D53F44 /* Ethereum.swift */; };
 		4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA020D8AF1600D53F44 /* KeystoreService.swift */; };
@@ -114,6 +117,9 @@
 		454B3CF820E4150300D95960 /* CWPermissions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CWPermissions.swift; sourceTree = "<group>"; };
 		454B3D0020E4158400D95960 /* QQScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QQScanViewController.swift; sourceTree = "<group>"; };
 		454B3D0220E44FEB00D95960 /* UIColorHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorHelper.swift; sourceTree = "<group>"; };
+		454B3D0420E5725700D95960 /* NotificationBarConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBarConfiguration.swift; sourceTree = "<group>"; };
+		454B3D0520E5725700D95960 /* NotificationBarStyle.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBarStyle.swift; sourceTree = "<group>"; };
+		454B3D0620E5725700D95960 /* NotificationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NotificationBar.swift; sourceTree = "<group>"; };
 		4576CB9920D8285900D53F44 /* Chain.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Chain.swift; sourceTree = "<group>"; };
 		4576CB9B20D891AC00D53F44 /* Ethereum.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ethereum.swift; sourceTree = "<group>"; };
 		4576CBA020D8AF1600D53F44 /* KeystoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreService.swift; sourceTree = "<group>"; };
@@ -236,6 +242,16 @@
 			path = Scanner;
 			sourceTree = "<group>";
 		};
+		454B3D0A20E5E1AB00D95960 /* Notification */ = {
+			isa = PBXGroup;
+			children = (
+				454B3D0420E5725700D95960 /* NotificationBarConfiguration.swift */,
+				454B3D0520E5725700D95960 /* NotificationBarStyle.swift */,
+				454B3D0620E5725700D95960 /* NotificationBar.swift */,
+			);
+			path = Notification;
+			sourceTree = "<group>";
+		};
 		4576CB9F20D8AF0200D53F44 /* Services */ = {
 			isa = PBXGroup;
 			children = (
@@ -285,6 +301,7 @@
 			isa = PBXGroup;
 			children = (
 				458DBDB020CF519700185170 /* Info.plist */,
+				454B3D0A20E5E1AB00D95960 /* Notification */,
 				454B3CEF20E3EC3700D95960 /* Scanner */,
 				4576CB9F20D8AF0200D53F44 /* Services */,
 				458ED91C20D2FC05004AEF22 /* AppMain */,
@@ -740,6 +757,8 @@
 				45A8481C20D214C300F88753 /* Currency.swift in Sources */,
 				45BAB80C20CF7C51006F5B68 /* StringHelper.swift in Sources */,
 				4584626620E0A96A004476AA /* ReceivedPopupView.swift in Sources */,
+				454B3D0820E5725700D95960 /* NotificationBarStyle.swift in Sources */,
+				454B3D0920E5725700D95960 /* NotificationBar.swift in Sources */,
 				4584627C20E0ACEB004476AA /* ShapeType.swift in Sources */,
 				4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */,
 				4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */,
@@ -774,6 +793,7 @@
 				4584627B20E0ACEB004476AA /* PopupContainerView.swift in Sources */,
 				4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */,
 				45A8481520D2100000F88753 /* API.swift in Sources */,
+				454B3D0720E5725700D95960 /* NotificationBarConfiguration.swift in Sources */,
 				4584627E20E0ACEB004476AA /* PopupWindowManager.swift in Sources */,
 				458ED92020D368E9004AEF22 /* WalletView.swift in Sources */,
 				4584628020E0ACEB004476AA /* BasePopupViewController.swift in Sources */,

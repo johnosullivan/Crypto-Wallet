@@ -9,6 +9,7 @@
 import UIKit
 import Geth
 import RealmSwift
+import UserNotifications
 
 class Account: Object {
     @objc dynamic var name = ""
@@ -22,6 +23,13 @@ extension Notification.Name {
 }
 
 class ViewController: UIViewController {
+    
+    private var loadingNotificationBar: NotificationBar?
+    private var isNotificationVisible = false {
+        didSet {
+            setNeedsStatusBarAppearanceUpdate()
+        }
+    }
     
     @IBOutlet weak var walletHeaderView: UIView!
     @IBOutlet weak var walletView: WalletView!
@@ -48,30 +56,52 @@ class ViewController: UIViewController {
     func waitForStatusChangeWithHash(hash: String) {
         let group = DispatchGroup()
         group.enter()
+        var status:Int = 0
         DispatchQueue.global(qos: .background).async {
             var break_loop = true
             while(break_loop) {
+                print("Waiting...", hash)
                 do {
                     let hash:GethHash = GethHash.init(fromHex: hash)
                     let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
-                    let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
+                    status = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
                     break_loop = false
-                    NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash.getHex(), "status": status])
                     group.leave()
                 } catch { break_loop = true }
                 sleep(1)
             }
         }
         group.notify(queue: .main) {
-            //self.refreshWallets()
+            NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash, "status": status])
         }
     }
     
     func didRecieveTxDone(notification:Notification) -> Void {
+      
+        
         let hash = notification.userInfo!["hash"]! as! String
         let status = notification.userInfo!["status"]! as! Int
         print("hash: ", hash)
         print("status: ", status)
+        if (status == 1) {
+            let center = UNUserNotificationCenter.current()
+            let content = UNMutableNotificationContent()
+            content.title = "Transaction Successful!"
+            content.body = hash
+            content.sound = UNNotificationSound.default()
+            
+            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,  repeats: false)
+            let identifier = "CWLocalNotification"
+            let request = UNNotificationRequest(identifier: identifier,
+                                                content: content, trigger: trigger)
+            center.add(request, withCompletionHandler: { (error) in
+                if let error = error {
+                    // Something went wrong
+                }
+            })
+        } else {
+          
+        }
     }
     
     func receivePresention(notification:Notification) -> Void {
@@ -121,8 +151,6 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.send, object:nil, queue:nil, using:sendPresention)
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
-        
-        
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
@@ -187,71 +215,8 @@ class ViewController: UIViewController {
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
             print(rate)
         })
-        
-        do {
-            /*
-            let rec: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
-            print("rec: ", rec)
-            print("getPostState: ", rec.getPostState())
-            print("getCumulativeGasUsed: ", rec.getCumulativeGasUsed())
-            print("getBloom: ", rec.getBloom().getHex())
-            print("getTxHash: ", rec.getTxHash().getHex())*/
-            //let rec: GethTransaction = try self.appDelegate.core.client.getTransactionByHash(self.appDelegate.core.context, hash: GethHash.init(fromHex: "0x3e6a0c0517852dfd243e29c816228d60cbeb071c9f20a15ebcac69db2eb96435"))
-            //print("rec: ", rec.get)
-            //let s:GethSyncProgress = try self.appDelegate.core.client.syncProgress(self.appDelegate.core.context)
-            //print(s.getHighestBlock())
-            
-            let hash:GethHash = GethHash.init(fromHex: "0x633e24c5d0cd3125229a7ef5311c7fc6f0fe9432993eb57cd058056469911ddc")
-            let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(appDelegate.core.context, hash: hash)
-            let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
-            
-            print(status)
-         
-            
-            
-            let group = DispatchGroup()
-            group.enter()
-        
-            DispatchQueue.main.async {
-                
-                var break_loop = true
-                
-                while(break_loop) {
-                    print("looping")
-                    do {
-                        let hash:GethHash = GethHash.init(fromHex: "0xe7d17c5d5633f2bddbff7d7f2afdb6ce17e7c3fdf11999cc877b764f05d34fae")
-                        let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
-                        let status:Int = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
-                        print("status: ", status)
-                        break_loop = false
-                        group.leave()
-                    } catch {
-                        break_loop = true
-                    }
-                    sleep(1)
-                }
-                
-                
-                
-                
-            }
-            
-            // does not wait. But the code in notify() gets run
-            // after enter() and leave() calls are balanced
-            
-            group.notify(queue: .main) {
-                print("done with async")
-            }
-            
-            
-            
-
-            
-            
-        } catch {
-            print(error as Error)
-        }
-        
+      
+        NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": "dafgssgdgfsfdg", "status": 1])
         /*
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
