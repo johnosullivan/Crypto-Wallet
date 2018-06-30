@@ -73,6 +73,7 @@ class ViewController: UIViewController {
         }
         group.notify(queue: .main) {
             NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash, "status": status])
+            self.refreshWallets()
         }
     }
     
@@ -84,7 +85,7 @@ class ViewController: UIViewController {
         print("hash: ", hash)
         print("status: ", status)
         if (status == 1) {
-            let center = UNUserNotificationCenter.current()
+            /*let center = UNUserNotificationCenter.current()
             let content = UNMutableNotificationContent()
             content.title = "Transaction Successful!"
             content.body = hash
@@ -98,7 +99,7 @@ class ViewController: UIViewController {
                 if let error = error {
                     // Something went wrong
                 }
-            })
+            })*/
         } else {
           
         }
