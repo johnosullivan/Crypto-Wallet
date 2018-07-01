@@ -171,11 +171,33 @@
                             <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.67843137249999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cxZ-4w-ko0">
+                            <rect key="frame" x="0.0" y="393" width="320" height="44"/>
+                            <color key="backgroundColor" white="0.33333333329999998" alpha="1" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstAttribute="height" constant="44" id="0OW-ck-eLx"/>
+                            </constraints>
+                            <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="16"/>
+                            <state key="normal" title="Transactions">
+                                <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </state>
+                            <userDefinedRuntimeAttributes>
+                                <userDefinedRuntimeAttribute type="number" keyPath="cornerRadius">
+                                    <integer key="value" value="0"/>
+                                </userDefinedRuntimeAttribute>
+                                <userDefinedRuntimeAttribute type="boolean" keyPath="layer.masksToBounds" value="NO"/>
+                            </userDefinedRuntimeAttributes>
+                            <connections>
+                                <action selector="send:" destination="iN0-l3-epB" eventType="touchUpInside" id="pwf-J0-o2Q"/>
+                            </connections>
+                        </button>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
                         <constraint firstItem="w5Y-cE-YgH" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leading" constant="7" id="5zT-9g-4gQ"/>
                         <constraint firstItem="kY3-9l-Myv" firstAttribute="baseline" secondItem="vHw-VU-lJG" secondAttribute="baseline" id="AQ3-G4-tLZ"/>
+                        <constraint firstItem="cxZ-4w-ko0" firstAttribute="leading" secondItem="2ZT-IV-poe" secondAttribute="leading" id="DtJ-3u-hmu"/>
+                        <constraint firstAttribute="bottom" secondItem="cxZ-4w-ko0" secondAttribute="bottom" constant="43" id="DuK-kW-53S"/>
                         <constraint firstItem="Phx-Ur-WxP" firstAttribute="top" secondItem="OGR-lR-C5v" secondAttribute="top" constant="87" id="Fhh-LA-sus"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leading" id="KTb-zf-eFb"/>
                         <constraint firstItem="w5Y-cE-YgH" firstAttribute="centerX" secondItem="2ZT-IV-poe" secondAttribute="centerX" id="MAf-6l-XRM"/>
@@ -190,6 +212,7 @@
                         <constraint firstItem="kY3-9l-Myv" firstAttribute="firstBaseline" secondItem="vHw-VU-lJG" secondAttribute="firstBaseline" id="nuz-14-jwm"/>
                         <constraint firstItem="kY3-9l-Myv" firstAttribute="leading" secondItem="OGR-lR-C5v" secondAttribute="leadingMargin" id="s9P-Il-s4O"/>
                         <constraint firstItem="vHw-VU-lJG" firstAttribute="trailing" secondItem="OGR-lR-C5v" secondAttribute="trailingMargin" id="soW-2z-quM"/>
+                        <constraint firstItem="cxZ-4w-ko0" firstAttribute="trailing" secondItem="2ZT-IV-poe" secondAttribute="trailing" id="uwY-r5-Nmf"/>
                         <constraint firstItem="2ZT-IV-poe" firstAttribute="trailing" secondItem="bsF-7r-fUg" secondAttribute="trailing" id="wRe-Xv-uGm"/>
                     </constraints>
                 </view>
