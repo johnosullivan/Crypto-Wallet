@@ -218,6 +218,21 @@ class ViewController: UIViewController {
         })
       
         NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": "dafgssgdgfsfdg", "status": 1])
+        
+        self.appDelegate.getTransactions(address: "0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106", result: { result in
+            switch result {
+            case .success(let results):
+                for item in results {
+                    // Do this
+                    print("FROM: " + item.from + " -> TO: " + item.to)
+                    
+                }
+                //print(results)
+            case .failure(let error):
+                print(error)
+            }
+        })
+        
         /*
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
