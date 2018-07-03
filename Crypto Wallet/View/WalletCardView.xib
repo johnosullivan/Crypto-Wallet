@@ -212,6 +212,7 @@
                 <outlet property="addressLabel" destination="Sao-ue-K7Z" id="lxV-Gc-6O1"/>
                 <outlet property="balanceLabel" destination="vHw-VU-lJG" id="uBo-9v-zJo"/>
                 <outlet property="contentView" destination="OGR-lR-C5v" id="0t1-QK-lnR"/>
+                <outlet property="headerView" destination="bsF-7r-fUg" id="StG-TK-aP8"/>
                 <outlet property="iconImageView" destination="WFC-9A-SaW" id="HSx-L2-odc"/>
                 <outlet property="rateBalanceLabel" destination="Phx-Ur-WxP" id="sYu-jE-B79"/>
             </connections>

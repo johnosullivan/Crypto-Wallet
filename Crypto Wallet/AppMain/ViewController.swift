@@ -155,6 +155,8 @@ class ViewController: UIViewController {
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
+            
+
             wallet.currentIndex = (i - 1)
             do {
                 let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: (i - 1))
@@ -223,11 +225,10 @@ class ViewController: UIViewController {
             switch result {
             case .success(let results):
                 for item in results {
-                    // Do this
+                    print("-------------------------------------------------------------------------------------------")
                     print("FROM: " + item.from + " -> TO: " + item.to)
-                    
+                    print("ACCOUNT: " + item.amount.amount + " - HASH: " + item.txHash)
                 }
-                //print(results)
             case .failure(let error):
                 print(error)
             }

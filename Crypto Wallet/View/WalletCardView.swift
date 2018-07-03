@@ -6,6 +6,7 @@ import Geth
 class WalletCardView: CardView {
 
     @IBOutlet weak var contentView: UIView!
+    @IBOutlet weak var headerView: UIView!
     
     @IBOutlet weak var send: UIButton!
     @IBOutlet weak var receive: UIButton!
@@ -46,6 +47,7 @@ class WalletCardView: CardView {
         contentView.layer.cornerRadius  = 10
         contentView.layer.masksToBounds = true
         presentedDidUpdate()
+        
     }
     
     override var presented: Bool { didSet { presentedDidUpdate() } }
@@ -54,6 +56,13 @@ class WalletCardView: CardView {
         contentView.backgroundColor = UIColor.white
         contentView.addTransitionFade()
         iconImageView.image = UIImage(named: "Ethereum-icon")?.withRenderingMode(.alwaysTemplate)
+        
+        let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
+        self.headerView.addGestureRecognizer(gesture)
+    }
+    
+    @objc func someAction(_ sender:UITapGestureRecognizer){
+        tapped()
     }
     
     @IBOutlet weak var removeCardViewButton: UIButton!

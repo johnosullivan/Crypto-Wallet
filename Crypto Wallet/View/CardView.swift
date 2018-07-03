@@ -133,17 +133,19 @@ open class CardView: UIView {
     
     func setupGestures() {
         
+        //self.backgroundColor = UIColor.red
+        
         tapGestureRecognizer.addTarget(self, action: #selector(CardView.tapped))
         tapGestureRecognizer.delegate = self
-        addGestureRecognizer(tapGestureRecognizer)
+        //addGestureRecognizer(tapGestureRecognizer)
         
         panGestureRecognizer.addTarget(self, action: #selector(CardView.panned(gestureRecognizer:)))
         panGestureRecognizer.delegate = self
-        addGestureRecognizer(panGestureRecognizer)
+        //addGestureRecognizer(panGestureRecognizer)
         
         longGestureRecognizer.addTarget(self, action: #selector(CardView.longPressed(gestureRecognizer:)))
         longGestureRecognizer.delegate = self
-        addGestureRecognizer(longGestureRecognizer)
+        //addGestureRecognizer(longGestureRecognizer)
         
     }
     
