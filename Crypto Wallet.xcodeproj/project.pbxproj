@@ -79,6 +79,13 @@
 		45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80820CF7B19006F5B68 /* UITools.swift */; };
 		45BAB80C20CF7C51006F5B68 /* StringHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45BAB80B20CF7C51006F5B68 /* StringHelper.swift */; };
 		45D0352C20EC615E002A61FB /* Transaction.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0352B20EC615D002A61FB /* Transaction.swift */; };
+		45D0353620EDB4DF002A61FB /* String+Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0352F20EDB4DF002A61FB /* String+Utility.swift */; };
+		45D0353720EDB4DF002A61FB /* TabularCollectionCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 45D0353020EDB4DF002A61FB /* TabularCollectionCell.xib */; };
+		45D0353820EDB4DF002A61FB /* TabularLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0353120EDB4DF002A61FB /* TabularLayout.swift */; };
+		45D0353920EDB4DF002A61FB /* TabularCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0353220EDB4DF002A61FB /* TabularCollectionView.swift */; };
+		45D0353A20EDB4DF002A61FB /* Font.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0353320EDB4DF002A61FB /* Font.swift */; };
+		45D0353B20EDB4DF002A61FB /* Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0353420EDB4DF002A61FB /* Color.swift */; };
+		45D0353C20EDB4DF002A61FB /* TabularCollectionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 45D0353520EDB4DF002A61FB /* TabularCollectionCell.swift */; };
 		75CEBD6AF2F22E5E4E8838A9 /* Pods_Crypto_Wallet.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */; };
 		A1EEFAB24EB9B1DBEE0E9BF3 /* Pods_Crypto_WalletTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */; };
 /* End PBXBuildFile section */
@@ -182,6 +189,13 @@
 		45BAB80820CF7B19006F5B68 /* UITools.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITools.swift; sourceTree = "<group>"; };
 		45BAB80B20CF7C51006F5B68 /* StringHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = StringHelper.swift; path = Helpers/StringHelper.swift; sourceTree = SOURCE_ROOT; };
 		45D0352B20EC615D002A61FB /* Transaction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Transaction.swift; sourceTree = "<group>"; };
+		45D0352F20EDB4DF002A61FB /* String+Utility.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Utility.swift"; sourceTree = "<group>"; };
+		45D0353020EDB4DF002A61FB /* TabularCollectionCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = TabularCollectionCell.xib; sourceTree = "<group>"; };
+		45D0353120EDB4DF002A61FB /* TabularLayout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabularLayout.swift; sourceTree = "<group>"; };
+		45D0353220EDB4DF002A61FB /* TabularCollectionView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabularCollectionView.swift; sourceTree = "<group>"; };
+		45D0353320EDB4DF002A61FB /* Font.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Font.swift; sourceTree = "<group>"; };
+		45D0353420EDB4DF002A61FB /* Color.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Color.swift; sourceTree = "<group>"; };
+		45D0353520EDB4DF002A61FB /* TabularCollectionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TabularCollectionCell.swift; sourceTree = "<group>"; };
 		485F7B0DE95FFC9C3FC11364 /* Pods_Crypto_Wallet.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_Wallet.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5967F890B0F2997B0E46ABE3 /* Pods-Crypto WalletTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests.release.xcconfig"; sourceTree = "<group>"; };
 		79335E0002F8E9FE1C1DAD51 /* Pods-Crypto WalletUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -302,6 +316,7 @@
 		458DBDA020CF519500185170 /* Crypto Wallet */ = {
 			isa = PBXGroup;
 			children = (
+				45D0352D20EDB4B7002A61FB /* 3rdPartyLib */,
 				458DBDB020CF519700185170 /* Info.plist */,
 				454B3D0A20E5E1AB00D95960 /* Notification */,
 				454B3CEF20E3EC3700D95960 /* Scanner */,
@@ -432,6 +447,28 @@
 				454B3D0220E44FEB00D95960 /* UIColorHelper.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		45D0352D20EDB4B7002A61FB /* 3rdPartyLib */ = {
+			isa = PBXGroup;
+			children = (
+				45D0352E20EDB4DF002A61FB /* TabularModule */,
+			);
+			path = 3rdPartyLib;
+			sourceTree = "<group>";
+		};
+		45D0352E20EDB4DF002A61FB /* TabularModule */ = {
+			isa = PBXGroup;
+			children = (
+				45D0352F20EDB4DF002A61FB /* String+Utility.swift */,
+				45D0353020EDB4DF002A61FB /* TabularCollectionCell.xib */,
+				45D0353120EDB4DF002A61FB /* TabularLayout.swift */,
+				45D0353220EDB4DF002A61FB /* TabularCollectionView.swift */,
+				45D0353320EDB4DF002A61FB /* Font.swift */,
+				45D0353420EDB4DF002A61FB /* Color.swift */,
+				45D0353520EDB4DF002A61FB /* TabularCollectionCell.swift */,
+			);
+			path = TabularModule;
 			sourceTree = "<group>";
 		};
 		C2E8C6D6D621DB59EA03CCB7 /* Pods */ = {
@@ -567,6 +604,7 @@
 				458ED92520D36C57004AEF22 /* WalletCardView.xib in Resources */,
 				4584629220E1DDF2004476AA /* SendPopupView.xib in Resources */,
 				458DBDAC20CF519700185170 /* Assets.xcassets in Resources */,
+				45D0353720EDB4DF002A61FB /* TabularCollectionCell.xib in Resources */,
 				458DBDA720CF519500185170 /* Main.storyboard in Resources */,
 				454B3CF120E414EC00D95960 /* CodeScan.bundle in Resources */,
 			);
@@ -764,8 +802,11 @@
 				454B3D0920E5725700D95960 /* NotificationBar.swift in Sources */,
 				4584627C20E0ACEB004476AA /* ShapeType.swift in Sources */,
 				4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */,
+				45D0353A20EDB4DF002A61FB /* Font.swift in Sources */,
 				4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */,
+				45D0353C20EDB4DF002A61FB /* TabularCollectionCell.swift in Sources */,
 				45BAB80420CF781E006F5B68 /* ViewController.swift in Sources */,
+				45D0353620EDB4DF002A61FB /* String+Utility.swift in Sources */,
 				454B3CFF20E4150300D95960 /* CWPermissions.swift in Sources */,
 				4576CB9A20D8285900D53F44 /* Chain.swift in Sources */,
 				45BAB80320CF781E006F5B68 /* AppDelegate.swift in Sources */,
@@ -789,12 +830,15 @@
 				4584627920E0ACEB004476AA /* PopupViewContainable.swift in Sources */,
 				4584628E20E1DDC3004476AA /* SendPopupViewController.swift in Sources */,
 				4584628820E140B1004476AA /* UIImageViewExtension.swift in Sources */,
+				45D0353820EDB4DF002A61FB /* TabularLayout.swift in Sources */,
+				45D0353B20EDB4DF002A61FB /* Color.swift in Sources */,
 				4584627D20E0ACEB004476AA /* PopupContainerWindow.swift in Sources */,
 				451BF66420E09C0C008C43F4 /* ReceivingViewController.swift in Sources */,
 				45A8481320D20EA600F88753 /* NetworkLoadable.swift in Sources */,
 				454B3CFE20E4150300D95960 /* CWScanWrapper.swift in Sources */,
 				4584627B20E0ACEB004476AA /* PopupContainerView.swift in Sources */,
 				4576CB9C20D891AC00D53F44 /* Ethereum.swift in Sources */,
+				45D0353920EDB4DF002A61FB /* TabularCollectionView.swift in Sources */,
 				45A8481520D2100000F88753 /* API.swift in Sources */,
 				454B3D0720E5725700D95960 /* NotificationBarConfiguration.swift in Sources */,
 				4584627E20E0ACEB004476AA /* PopupWindowManager.swift in Sources */,
