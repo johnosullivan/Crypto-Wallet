@@ -171,6 +171,17 @@
                             <color key="textColor" red="0.60784313729999995" green="0.61960784310000006" blue="0.67843137249999996" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                             <nil key="highlightedColor"/>
                         </label>
+                        <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="xTy-7d-IhH" customClass="TabularCollectionView" customModule="Crypto_Wallet" customModuleProvider="target">
+                            <rect key="frame" x="0.0" y="111" width="320" height="325"/>
+                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="Uia-7p-a6c">
+                                <size key="itemSize" width="50" height="50"/>
+                                <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                            </collectionViewFlowLayout>
+                        </collectionView>
                     </subviews>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     <constraints>
@@ -211,6 +222,7 @@
             <connections>
                 <outlet property="addressLabel" destination="Sao-ue-K7Z" id="lxV-Gc-6O1"/>
                 <outlet property="balanceLabel" destination="vHw-VU-lJG" id="uBo-9v-zJo"/>
+                <outlet property="collectionView" destination="xTy-7d-IhH" id="6Hf-FW-05i"/>
                 <outlet property="contentView" destination="OGR-lR-C5v" id="0t1-QK-lnR"/>
                 <outlet property="headerView" destination="bsF-7r-fUg" id="StG-TK-aP8"/>
                 <outlet property="iconImageView" destination="WFC-9A-SaW" id="HSx-L2-odc"/>

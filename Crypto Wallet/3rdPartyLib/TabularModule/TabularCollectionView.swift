@@ -10,7 +10,7 @@ import UIKit
 
 struct CellTitleAttributes {
     var title: String?
-    var font: UIFont = Font.avenirMedium.font(ofSize: 14)
+    var font: UIFont = Font.avenirLight.font(ofSize: 10)
     var textAlignment: NSTextAlignment = .left
     var textColor: UIColor = Color.text.uiColor
 }
@@ -79,7 +79,7 @@ class TabularCollectionView: UICollectionView {
         let layout = TabularLayout()
         layout.cellTitleAttributes = { [weak self] indexPath in
             guard let strongSelf = self, let attribute = strongSelf.tabularDatasource?.tabularView(strongSelf, titleAttributesForCellAt: indexPath) else {
-                return (nil, Font.avenirMedium.font(ofSize: 14))
+                return (nil, Font.avenirLight.font(ofSize: 2))
             }
             
             return (attribute.title, attribute.font)

@@ -31,6 +31,34 @@ class ViewController: UIViewController {
         }
     }
     
+    let data :[[String]] = [
+        ["Date","From/To","Account"],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
+        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
+        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ]
+    ]
+    
     @IBOutlet weak var walletHeaderView: UIView!
     @IBOutlet weak var walletView: WalletView!
     @IBOutlet weak var addCardViewButton: UIButton!
@@ -155,6 +183,10 @@ class ViewController: UIViewController {
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
+            
+            wallet.collectionView.tabularDelegate = self
+            wallet.collectionView.tabularDatasource = self
+            wallet.collectionView.reloadData()
             
 
             wallet.currentIndex = (i - 1)
@@ -316,4 +348,43 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
+
+// MARK: - TabularCollectionDataSource
+
+extension ViewController: TabularCollectionDataSource {
+    
+    func tabularView(_ tabularView: TabularCollectionView, titleAttributesForCellAt indexpath: IndexPath) -> CellTitleAttributes {
+        var font = Font.avenirLight.font()
+        var textAlignment = NSTextAlignment.center
+        if indexpath.section == 0 {
+            font = Font.avenirLight.font(ofSize: 12)
+        }
+        if indexpath.row < 2 && indexpath.section != 0 {
+            textAlignment = .right
+        }
+        let text = data[indexpath.section][indexpath.row]
+        return CellTitleAttributes(title: text, font: font, textAlignment: textAlignment, textColor: Color.text.uiColor)
+    }
+    
+    func numberOfColumns(in tabularView: TabularCollectionView) -> Int { return data.first?.count ?? 0 }
+    
+    func numberOfRows(in tabularView: TabularCollectionView) -> Int { return data.count }
+    
+    func numberOfStaticRows(in tabularView: TabularCollectionView) -> Int { return 1 }
+    
+    func numberOfStaticColumn(in tabularView: TabularCollectionView) -> Int { return 1 }
+    
+}
+
+// MARK: - TabularCollectionDelegate
+
+extension ViewController: TabularCollectionDelegate {
+    
+    private func tabularView(_ tabularView: TabularCollectionView, didSeletItemAt indexPath: IndexPath) { }
+    
+    func tabularView(_ tabularView: TabularCollectionView, shouldHideColumnSeparatorAt indexPath: IndexPath) -> Bool {
+        return indexPath.row != 0
+    }
+}
+
 

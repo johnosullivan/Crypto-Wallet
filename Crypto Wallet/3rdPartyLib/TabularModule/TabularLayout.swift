@@ -22,7 +22,7 @@ class TabularLayout: UICollectionViewLayout {
     private var itemsWidths: [CGFloat] = []
     private var itemsHeights: [CGFloat] = []
     private var contentSize: CGSize = .zero
-    private var contentFont: UIFont = Font.avenirMedium.font(ofSize: 14)
+    private var contentFont: UIFont = Font.avenirLight.font(ofSize: 10)
     
     override func prepare() {
         super.prepare()

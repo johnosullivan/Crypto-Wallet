@@ -17,6 +17,8 @@ class WalletCardView: CardView {
     @IBOutlet weak var rateBalanceLabel: UILabel!
     @IBOutlet weak var indexLabel: UILabel!
     
+    @IBOutlet weak var collectionView: TabularCollectionView!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     var currentDocumentPartTitle: String!
     var currentIndex: Int = 0
@@ -86,5 +88,4 @@ class WalletCardView: CardView {
            print(error as Error)
         }
     }
-    
 }

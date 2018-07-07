@@ -10,7 +10,6 @@ import Foundation
 import Geth
 import ObjectMapper
 
-
 struct Transaction {
     var txHash: String!
     var to: String!
