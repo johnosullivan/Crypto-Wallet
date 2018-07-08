@@ -354,10 +354,10 @@ class ViewController: UIViewController {
 extension ViewController: TabularCollectionDataSource {
     
     func tabularView(_ tabularView: TabularCollectionView, titleAttributesForCellAt indexpath: IndexPath) -> CellTitleAttributes {
-        var font = Font.avenirLight.font()
+        var font = Font.avenirMedium.font()
         var textAlignment = NSTextAlignment.center
         if indexpath.section == 0 {
-            font = Font.avenirLight.font(ofSize: 12)
+            font = Font.avenirMedium.font(ofSize: 12)
         }
         if indexpath.row < 2 && indexpath.section != 0 {
             textAlignment = .right

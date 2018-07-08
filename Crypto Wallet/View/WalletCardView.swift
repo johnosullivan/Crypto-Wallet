@@ -61,6 +61,8 @@ class WalletCardView: CardView {
         
         let gesture = UITapGestureRecognizer(target: self, action:  #selector (self.someAction (_:)))
         self.headerView.addGestureRecognizer(gesture)
+        
+        //self.collectionView.isScrollEnabled = false
     }
     
     @objc func someAction(_ sender:UITapGestureRecognizer){
