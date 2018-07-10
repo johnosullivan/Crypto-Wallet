@@ -23,25 +23,15 @@ extension APIMethodProtocol {
     
     typealias Params = [String: Any?]
     
-    var baseUrl: String {
-        return ""
-    }
+    var baseUrl: String { return "" }
     
-    var requestTimeout: TimeInterval {
-        return 20
-    }
+    var requestTimeout: TimeInterval { return 20 }
     
-    var path: String {
-        return ""
-    }
+    var path: String { return "" }
     
-    var params: Params? {
-        return nil
-    }
+    var params: Params? { return nil }
     
-    var headers: [String: String] {
-        return [String: String]()
-    }
+    var headers: [String: String] { return [String: String]() }
     
     func asURLRequest() throws -> URLRequest {
         let url = try (baseUrl + path).asURL()
