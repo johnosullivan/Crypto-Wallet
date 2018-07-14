@@ -100,7 +100,6 @@ enum Chain: String {
     case mainnet
     case ropsten
     case rinkeby
-    case privatenet
     
     static var `default`: Chain {
         return .mainnet
@@ -114,8 +113,6 @@ enum Chain: String {
             return 3
         case .rinkeby:
             return 4
-        case .privatenet:
-            return 0
         }
     }
     
@@ -134,8 +131,6 @@ enum Chain: String {
             return Constants.Ethereum.ropstenEnodeRawUrl
         case .rinkeby:
             return Constants.Ethereum.rinkebyEnodeRawUrl
-        case .privatenet:
-            return ""
         }
     }
     
@@ -147,8 +142,6 @@ enum Chain: String {
                 return GethTestnetGenesis()
             case .rinkeby:
                 return GethRinkebyGenesis()
-        case .privatenet:
-                return ""
         }
     }
     
@@ -164,8 +157,6 @@ enum Chain: String {
                 return "Ropsten Testnet"
             case .rinkeby:
                 return "Rinkeby Testnet"
-        case .privatenet:
-                return ""
         }
     }
     
@@ -181,8 +172,6 @@ enum Chain: String {
                 return "ropsten.etherscan.io"
             case .rinkeby:
                 return "rinkeby.etherscan.io"
-        case .privatenet:
-                return ""
         }
     }
     
@@ -194,8 +183,6 @@ enum Chain: String {
                 return "https://ropsten.infura.io"
             case .rinkeby:
                 return "https://rinkeby.infura.io"
-        case .privatenet:
-                return ""
         }
     }
     
@@ -207,8 +194,6 @@ enum Chain: String {
                 return "https://ropsten.etherscan.io"
             case .rinkeby:
                 return "https://rinkeby.etherscan.io"
-        case .privatenet:
-                return ""
         }
     }
     
