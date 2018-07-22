@@ -54,4 +54,6 @@ extension Ether: Currency {
     
     var symbol: String { return "Ξ" }
     
+    var description: String { return "" }
+    
 }

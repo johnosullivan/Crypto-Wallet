@@ -14,7 +14,6 @@ class SendPopupView: UIView, PopupViewContainable, Nibable  {
     @IBOutlet weak var qrimageview: UIImageView!
     @IBOutlet weak var address: UILabel!
     @IBOutlet weak var sendview: UIView!
-    
     @IBOutlet weak var amount: UITextField!
     @IBOutlet weak var toAddress: UITextField!
     
