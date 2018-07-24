@@ -188,7 +188,7 @@ extension TabularLayout {
                 size.width += widthPadding
                 size.height += heightPadding
                 // Top padding for first row
-                size.height += section == 0 ? 8 : 0
+                size.height += section == 0 ? 4 : 0
                 
                 // checking the previous size on the same index of column
                 if itemsWidths.count > index {

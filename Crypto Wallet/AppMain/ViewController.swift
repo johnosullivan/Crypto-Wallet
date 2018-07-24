@@ -359,8 +359,14 @@ extension ViewController: TabularCollectionDataSource {
         if indexpath.section == 0 {
             font = Font.avenirMedium.font(ofSize: 12)
         }
-        if indexpath.row < 2 && indexpath.section != 0 {
-            textAlignment = .right
+        if indexpath.row == 0 && indexpath.section != 0 {
+            textAlignment = .center
+        }
+        if indexpath.row == 1 && indexpath.section != 0 {
+            textAlignment = .left
+        }
+        if indexpath.row == 2 && indexpath.section != 0 {
+            textAlignment = .center
         }
         let text = data[indexpath.section][indexpath.row]
         return CellTitleAttributes(title: text, font: font, textAlignment: textAlignment, textColor: Color.text.uiColor)

@@ -119,8 +119,8 @@ extension TabularCollectionView: UICollectionViewDataSource {
 
         (cell as? TabularCollectionCell)?.shouldRoundLeftCorner = indexPath.row == 0
         // Separator for cells
-        (cell as? TabularCollectionCell)?.rightSeperator.isHidden = tabularDelegate?.tabularView(self, shouldHideColumnSeparatorAt: indexPath) ?? true
-        (cell as? TabularCollectionCell)?.bottomSeperator.isHidden = tabularDelegate?.tabularView(self, shouldHideRowSeparatorAt: indexPath) ?? true
+        //(cell as? TabularCollectionCell)?.rightSeperator.isHidden = tabularDelegate?.tabularView(self, shouldHideColumnSeparatorAt: indexPath) ?? true
+        //(cell as? TabularCollectionCell)?.bottomSeperator.isHidden = tabularDelegate?.tabularView(self, shouldHideRowSeparatorAt: indexPath) ?? true
         
         // Getting Data Source related to Title attributes.
         let titleAttribute = tabularDatasource?.tabularView(self, titleAttributesForCellAt: indexPath)
