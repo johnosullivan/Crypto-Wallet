@@ -181,6 +181,8 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
         
+        
+        
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
             
@@ -201,6 +203,8 @@ class ViewController: UIViewController {
             } catch { print(error as Error) }
             wallets.append(wallet)
         }
+ 
+ 
         
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
             for i in 0 ... self.wallets.count - 1 {
@@ -217,6 +221,9 @@ class ViewController: UIViewController {
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { (timer) in
             self.refreshWallets()
         }
+ 
+ 
+ 
     }
     
     func refreshWallets() {
@@ -247,6 +254,15 @@ class ViewController: UIViewController {
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
+        
+        do {
+            try appDelegate.keyStore.createAccount(passphrase: "mogilska")
+        } catch {
+            
+        }
+        
+        /*
+        
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
             print(rate)
         })
@@ -265,6 +281,8 @@ class ViewController: UIViewController {
                 print(error)
             }
         })
+ 
+        */
         
         /*
         do {
