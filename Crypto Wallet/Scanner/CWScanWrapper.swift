@@ -375,7 +375,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         
         qrFilter?.setValue("H", forKey: "inputCorrectionLevel")
         
-        let colorFilter = CIFilter(name: "CIFalseColor", withInputParameters: ["inputImage":qrFilter!.outputImage!,"inputColor0":CIColor(cgColor: qrColor.cgColor),"inputColor1":CIColor(cgColor: bkColor.cgColor)])
+        let colorFilter = CIFilter(name: "CIFalseColor", parameters: ["inputImage":qrFilter!.outputImage!,"inputColor0":CIColor(cgColor: qrColor.cgColor),"inputColor1":CIColor(cgColor: bkColor.cgColor)])
         
         
         let qrImage = colorFilter!.outputImage!;
@@ -409,7 +409,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         let context = CIContext()
         let cgImage = context.createCGImage(outputImage!, from: outputImage!.extent)
         
-        let image = UIImage(cgImage: cgImage!, scale: 1.0, orientation: UIImageOrientation.up)
+        let image = UIImage(cgImage: cgImage!, scale: 1.0, orientation: UIImage.Orientation.up)
         
         
         let scaleRate:CGFloat = 20.0
@@ -432,7 +432,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         
         if img != nil
         {
-            let imgRotation = imageRotation(image: img!, orientation: UIImageOrientation.right)
+            let imgRotation = imageRotation(image: img!, orientation: UIImage.Orientation.right)
             return imgRotation
         }
         return nil
@@ -449,7 +449,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         
         if img != nil
         {
-            let imgRotation = imageRotation(image: img!, orientation: UIImageOrientation.right)
+            let imgRotation = imageRotation(image: img!, orientation: UIImage.Orientation.right)
             return imgRotation
         }
         return nil
@@ -532,7 +532,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         return cropImage
     }
 
-    static func imageRotation(image:UIImage,orientation:UIImageOrientation)->UIImage
+    static func imageRotation(image:UIImage,orientation:UIImage.Orientation)->UIImage
     {
         var rotate:Double = 0.0;
         var rect:CGRect;
@@ -542,7 +542,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         var scaleY:CGFloat = 1.0;
         
         switch (orientation) {
-        case UIImageOrientation.left:
+        case UIImage.Orientation.left:
             rotate = .pi/2;
             rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width);
             translateX = 0;
@@ -550,7 +550,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
             scaleY = rect.size.width/rect.size.height;
             scaleX = rect.size.height/rect.size.width;
             break;
-        case UIImageOrientation.right:
+        case UIImage.Orientation.right:
             rotate = 3 * .pi/2;
             rect = CGRect(x: 0, y: 0, width: image.size.height, height: image.size.width);
             translateX = -rect.size.height;
@@ -558,7 +558,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
             scaleY = rect.size.width/rect.size.height;
             scaleX = rect.size.height/rect.size.width;
             break;
-        case UIImageOrientation.down:
+        case UIImage.Orientation.down:
             rotate = .pi;
             rect = CGRect(x: 0, y: 0, width: image.size.width, height: image.size.height);
             translateX = -rect.size.width;

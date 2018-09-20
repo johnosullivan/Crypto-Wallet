@@ -102,7 +102,7 @@ public class NotificationBar {
         guard !style.config().isLoaderHidden else {
             return
         }
-        let loader = UIActivityIndicatorView(activityIndicatorStyle: .white)
+        let loader = UIActivityIndicatorView(style: .white)
         loader.center.x = view.frame.width - loader.frame.width
         loader.center.y = view.frame.height / 2
         view.addSubview(loader)
@@ -146,7 +146,7 @@ public class NotificationBar {
     private func subscribeForRotationChanges() {
         NotificationCenter.default.addObserver(self,
                                                selector: #selector(handleRotation),
-                                               name: NSNotification.Name.UIDeviceOrientationDidChange,
+                                               name: UIDevice.orientationDidChangeNotification,
                                                object: nil)
     }
     

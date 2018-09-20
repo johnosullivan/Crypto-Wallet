@@ -384,7 +384,7 @@ open class CWScanView: UIView
             self.activityView = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 30, height: 30))
             
             activityView?.center = CGPoint(x: XRetangleLeft +  sizeRetangle.width/2, y: YMinRetangle + sizeRetangle.height/2)
-            activityView?.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.whiteLarge
+            activityView?.style = UIActivityIndicatorView.Style.whiteLarge
             
             addSubview(activityView!)
             

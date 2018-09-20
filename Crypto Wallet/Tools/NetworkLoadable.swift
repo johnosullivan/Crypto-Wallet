@@ -74,7 +74,7 @@ private struct AnyOperation<ResponseSerializer: DataResponseSerializerProtocol>:
     var completion: ((Result<ResponseSerializer.SerializedObject>) -> Void)?
     
     func execute() {
-        print(request.urlRequest)
+        print(request.urlRequest as Any)
         Alamofire.request(request).response(queue: DispatchQueue.main, responseSerializer: responseSerializer) { response in
             self.completion?(response.result)
         }

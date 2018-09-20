@@ -83,14 +83,14 @@ class QQScanViewController: CWScanViewController {
         btnFlash.bounds = CGRect(x: 0, y: 0, width: size.width, height: size.height)
         btnFlash.center = CGPoint(x: bottomItemsView!.frame.width/2, y: bottomItemsView!.frame.height/2)
         btnFlash.backgroundColor = UIColor.yellow
-        btnFlash.addTarget(self, action: #selector(QQScanViewController.openOrCloseFlash), for: UIControlEvents.touchUpInside)
+        btnFlash.addTarget(self, action: #selector(QQScanViewController.openOrCloseFlash), for: UIControl.Event.touchUpInside)
         
         
         self.btnPhoto = UIButton()
         btnPhoto.bounds = btnFlash.bounds
         btnPhoto.center = CGPoint(x: bottomItemsView!.frame.width/4, y: bottomItemsView!.frame.height/2)
         btnPhoto.backgroundColor = UIColor.red
-        btnPhoto.addTarget(self, action: #selector(QQScanViewController.openLocalPhotoAlbum), for: UIControlEvents.touchUpInside)
+        btnPhoto.addTarget(self, action: #selector(QQScanViewController.openLocalPhotoAlbum), for: UIControl.Event.touchUpInside)
         
         bottomItemsView?.addSubview(btnFlash)
         bottomItemsView?.addSubview(btnPhoto)

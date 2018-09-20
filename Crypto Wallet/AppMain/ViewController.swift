@@ -82,19 +82,20 @@ class ViewController: UIViewController {
     }
     
     func waitForStatusChangeWithHash(hash: String) {
+        /*
         let group = DispatchGroup()
         group.enter()
-        var status:Int = 0
+        //var status:Int = 0
         DispatchQueue.global(qos: .background).async {
             var break_loop = true
             while(break_loop) {
                 print("Waiting...", hash)
                 do {
-                    let hash:GethHash = GethHash.init(fromHex: hash)
-                    let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
+                    //let hash:GethHash = GethHash.init(fromHex: hash)
+                    //let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
                     //status = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
-                    //break_loop = false
-                    //group.leave()
+                    break_loop = false
+                    group.leave()
                 } catch { break_loop = true }
                 sleep(1)
             }
@@ -103,6 +104,7 @@ class ViewController: UIViewController {
             NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash, "status": status])
             self.refreshWallets()
         }
+         */
     }
     
     func didRecieveTxDone(notification:Notification) -> Void {

@@ -73,7 +73,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
         loadArray(request: API.Etherscan.transactions(address: address), keyPath: "result", completion: result)
     }
 
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
+    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
     
         let chain = Chain.rinkeby
