@@ -55,7 +55,7 @@ struct Rate {
         realmObject.value = value
         realmObject.from = from
         realmObject.to = to
-        realmObject.fromTo = "\(from)-\(to)"
+        realmObject.fromTo = "\(String(describing: from))-\(String(describing: to))"
         return realmObject
     }
     

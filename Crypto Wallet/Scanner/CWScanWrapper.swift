@@ -326,7 +326,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         return false
     }
 
-    static open func recognizeQRImage(image:UIImage) ->[CWScanResult]
+    static public func recognizeQRImage(image:UIImage) ->[CWScanResult]
     {
         var returnResult:[CWScanResult]=[]
         
@@ -362,7 +362,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
     }
 
     
-    static open func createCode( codeType:String, codeString:String, size:CGSize,qrColor:UIColor,bkColor:UIColor )->UIImage?
+    static public func createCode( codeType:String, codeString:String, size:CGSize,qrColor:UIColor,bkColor:UIColor )->UIImage?
     {
         
         let stringData = codeString.data(using: String.Encoding.utf8)
@@ -395,7 +395,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
        
     }
     
-    static open func createCode128(  codeString:String, size:CGSize,qrColor:UIColor,bkColor:UIColor )->UIImage?
+    static public func createCode128(  codeString:String, size:CGSize,qrColor:UIColor,bkColor:UIColor )->UIImage?
     {
         let stringData = codeString.data(using: String.Encoding.utf8)
         
@@ -438,7 +438,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         return nil
     }
 
-    static open func getConcreteCodeImage(srcCodeImage:UIImage,rect:CGRect)->UIImage?
+    static public func getConcreteCodeImage(srcCodeImage:UIImage,rect:CGRect)->UIImage?
     {
         if rect.isEmpty
         {
@@ -455,7 +455,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         return nil
     }
 
-    static open func getConcreteCodeRectFromImage(srcCodeImage:UIImage,codeResult:CWScanResult)->CGRect
+    static public func getConcreteCodeRectFromImage(srcCodeImage:UIImage,codeResult:CWScanResult)->CGRect
     {
         if (codeResult.arrayCorner == nil || (codeResult.arrayCorner?.count)! < 4  )
         {
@@ -494,7 +494,7 @@ open class CWScanWrapper: NSObject,AVCaptureMetadataOutputObjectsDelegate {
         return rect
     }
     
-    static open func addImageLogo(srcImg:UIImage,logoImg:UIImage,logoSize:CGSize )->UIImage
+    static public func addImageLogo(srcImg:UIImage,logoImg:UIImage,logoSize:CGSize )->UIImage
     {
         UIGraphicsBeginImageContext(srcImg.size);
         srcImg.draw(in: CGRect(x: 0, y: 0, width: srcImg.size.width, height: srcImg.size.height))

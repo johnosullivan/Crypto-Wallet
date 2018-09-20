@@ -278,7 +278,7 @@ open class WalletView: UIView {
     
     // MARK: Private methods
     
-    private let observerContext = UnsafeMutableRawPointer.allocate(bytes: 4, alignedTo: 1)
+    private let observerContext = UnsafeMutableRawPointer.allocate(byteCount: 4, alignment: 1)
     
     deinit {
         scrollView.removeObserver(self, forKeyPath: #keyPath(UIScrollView.frame))
