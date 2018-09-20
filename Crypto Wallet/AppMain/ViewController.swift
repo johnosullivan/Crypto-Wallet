@@ -92,9 +92,9 @@ class ViewController: UIViewController {
                 do {
                     let hash:GethHash = GethHash.init(fromHex: hash)
                     let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
-                    status = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
-                    break_loop = false
-                    group.leave()
+                    //status = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
+                    //break_loop = false
+                    //group.leave()
                 } catch { break_loop = true }
                 sleep(1)
             }
@@ -254,13 +254,13 @@ class ViewController: UIViewController {
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
-        
+        /*
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
         } catch {
             
         }
-        
+        */
         /*
         
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
