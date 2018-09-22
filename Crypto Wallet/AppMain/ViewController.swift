@@ -184,7 +184,6 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
         
         
-        
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
             
@@ -256,7 +255,7 @@ class ViewController: UIViewController {
     
     @IBAction func addCardViewAction(_ sender: Any) {
         
-        /*
+       /*
         do {
             try appDelegate.keyStore.createAccount(passphrase: "mogilska")
         } catch {

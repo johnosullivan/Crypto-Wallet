@@ -283,7 +283,7 @@ open class WalletView: UIView {
     deinit {
         scrollView.removeObserver(self, forKeyPath: #keyPath(UIScrollView.frame))
         scrollView.removeObserver(self, forKeyPath: #keyPath(UIScrollView.bounds))
-        observerContext.deallocate(bytes: 4, alignedTo: 1)
+        observerContext.deallocate()
     }
     
     
