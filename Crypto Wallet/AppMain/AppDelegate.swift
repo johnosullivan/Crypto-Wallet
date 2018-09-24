@@ -54,14 +54,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
             
             switch resultHandler {
             case .success(let object):
-                
                 guard let json = object as? [String: Any], let balance = json["result"] as? String else {
                     result(Result.failure(NetworkError.parseError))
                     return
                 }
-                
                 result(Result.success(balance))
-                
             case .failure(let error):
                 result(Result.failure(error))
             }
@@ -75,7 +72,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-    
         let chain = Chain.rinkeby
         core.chain = chain
         core.syncCoordinator = syncCoordinator

@@ -183,14 +183,12 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
         
-        
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
             
             wallet.collectionView.tabularDelegate = self
             wallet.collectionView.tabularDatasource = self
             wallet.collectionView.reloadData()
-            
 
             wallet.currentIndex = (i - 1)
             do {
@@ -205,8 +203,6 @@ class ViewController: UIViewController {
             wallets.append(wallet)
         }
  
- 
-        
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
             for i in 0 ... self.wallets.count - 1 {
                 self.wallets[i].rateAmount = rate
@@ -222,9 +218,6 @@ class ViewController: UIViewController {
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { (timer) in
             self.refreshWallets()
         }
- 
- 
- 
     }
     
     func refreshWallets() {
