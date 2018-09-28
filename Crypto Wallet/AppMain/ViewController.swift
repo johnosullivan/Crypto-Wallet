@@ -210,8 +210,8 @@ class ViewController: UIViewController {
         
         walletView.reload(cardViews: wallets)
         walletView.didUpdatePresentedCardViewBlock = { [weak self] (_) in
-            self?.showAddCardViewButtonIfNeeded()
-            self?.addCardViewButton.addTransitionFade()
+            //self?.showAddCardViewButtonIfNeeded()
+            //self?.addCardViewButton.addTransitionFade()
         }
         
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { (timer) in
@@ -238,7 +238,7 @@ class ViewController: UIViewController {
     }
     
     func showAddCardViewButtonIfNeeded() {
-        addCardViewButton.alpha = walletView.presentedCardView == nil || walletView.insertedCardViews.count <= 1 ? 1.0 : 0.0
+        //addCardViewButton.alpha = walletView.presentedCardView == nil || walletView.insertedCardViews.count <= 1 ? 1.0 : 0.0
     }
     
     func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {
