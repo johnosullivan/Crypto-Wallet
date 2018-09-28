@@ -185,10 +185,9 @@ class ViewController: UIViewController {
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
-            
-            wallet.collectionView.tabularDelegate = self
-            wallet.collectionView.tabularDatasource = self
-            wallet.collectionView.reloadData()
+            //wallet.collectionView.tabularDelegate = self
+            //wallet.collectionView.tabularDatasource = self
+            //wallet.collectionView.reloadData()
 
             wallet.currentIndex = (i - 1)
             do {
@@ -254,7 +253,7 @@ class ViewController: UIViewController {
         } catch {
             
         }
-        */
+ */
         /*
         
         self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
