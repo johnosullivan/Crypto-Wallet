@@ -31,34 +31,6 @@ class ViewController: UIViewController {
         }
     }
     
-    let data :[[String]] = [
-        ["Date","From/To","Account"],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","+1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","+2.3" ],
-        ["10/21/2018","0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106","-1.0" ],
-        ["10/21/2018","0xd428163A725997a8ccE7AaD8c2422fB0cBec4def","-0.5" ]
-    ]
-    
     @IBOutlet weak var walletHeaderView: UIView!
     @IBOutlet weak var walletView: WalletView!
     @IBOutlet weak var addCardViewButton: UIButton!
@@ -185,9 +157,6 @@ class ViewController: UIViewController {
         
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
-            //wallet.collectionView.tabularDelegate = self
-            //wallet.collectionView.tabularDatasource = self
-            //wallet.collectionView.reloadData()
 
             wallet.currentIndex = (i - 1)
             do {
@@ -210,8 +179,7 @@ class ViewController: UIViewController {
         
         walletView.reload(cardViews: wallets)
         walletView.didUpdatePresentedCardViewBlock = { [weak self] (_) in
-            //self?.showAddCardViewButtonIfNeeded()
-            //self?.addCardViewButton.addTransitionFade()
+
         }
         
         refreshTimer = Timer.scheduledTimer(withTimeInterval: 20.0, repeats: true) { (timer) in
@@ -361,7 +329,7 @@ class ViewController: UIViewController {
 }
 
 // MARK: - TabularCollectionDataSource
-
+/*
 extension ViewController: TabularCollectionDataSource {
     
     func tabularView(_ tabularView: TabularCollectionView, titleAttributesForCellAt indexpath: IndexPath) -> CellTitleAttributes {
@@ -403,5 +371,5 @@ extension ViewController: TabularCollectionDelegate {
         return indexPath.row != 0
     }
 }
-
+*/
 
