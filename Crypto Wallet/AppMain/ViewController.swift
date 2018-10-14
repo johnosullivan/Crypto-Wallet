@@ -53,6 +53,12 @@ class ViewController: UIViewController {
         PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
     }
     
+    @IBAction func add(sender: UIButton) {
+        print("add")
+        let vc = self.storyboard?.instantiateViewController(withIdentifier: "addview") as! AddViewController
+        self.present(vc, animated: true, completion: nil)
+    }
+    
     func waitForStatusChangeWithHash(hash: String) {
         /*
         let group = DispatchGroup()

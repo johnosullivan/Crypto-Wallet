@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		1239A067818F4D245F08E693 /* Pods_Crypto_WalletUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 841FA81ED6E9252EA2034E89 /* Pods_Crypto_WalletUITests.framework */; };
+		4517DA4B2172E79A000AC493 /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4517DA4A2172E79A000AC493 /* AddViewController.swift */; };
 		451BF66420E09C0C008C43F4 /* ReceivingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 451BF66320E09C0C008C43F4 /* ReceivingViewController.swift */; };
 		454B3CEA20E308B900D95960 /* SelectPopupView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 454B3CE920E308B900D95960 /* SelectPopupView.xib */; };
 		454B3CEC20E308C400D95960 /* SelectPopupView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 454B3CEB20E308C400D95960 /* SelectPopupView.swift */; };
@@ -111,6 +112,7 @@
 		03A110548D1DC21459243496 /* Pods-Crypto WalletTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletTests/Pods-Crypto WalletTests.debug.xcconfig"; sourceTree = "<group>"; };
 		0D6F04586A649D0CB67DA989 /* Pods_Crypto_WalletTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Crypto_WalletTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E09B949D41E61964BDA35E5 /* Pods-Crypto WalletUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Crypto WalletUITests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Crypto WalletUITests/Pods-Crypto WalletUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		4517DA4A2172E79A000AC493 /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		451BF66320E09C0C008C43F4 /* ReceivingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReceivingViewController.swift; sourceTree = "<group>"; };
 		454B3CE920E308B900D95960 /* SelectPopupView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SelectPopupView.xib; sourceTree = "<group>"; };
 		454B3CEB20E308C400D95960 /* SelectPopupView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectPopupView.swift; sourceTree = "<group>"; };
@@ -371,6 +373,7 @@
 				45BAB80220CF781E006F5B68 /* ViewController.swift */,
 				45BAB80120CF781E006F5B68 /* AppDelegate.swift */,
 				451BF66320E09C0C008C43F4 /* ReceivingViewController.swift */,
+				4517DA4A2172E79A000AC493 /* AddViewController.swift */,
 			);
 			path = AppMain;
 			sourceTree = "<group>";
@@ -855,6 +858,7 @@
 				4584627720E0ACEB004476AA /* UIView+Shape.swift in Sources */,
 				4584627F20E0ACEB004476AA /* Animator.swift in Sources */,
 				4584628920E140B1004476AA /* QRCode.swift in Sources */,
+				4517DA4B2172E79A000AC493 /* AddViewController.swift in Sources */,
 				4584628A20E140B1004476AA /* CIColorExtension.swift in Sources */,
 				454B3CF920E4150300D95960 /* CWScanLineAnimation.swift in Sources */,
 				4584627620E0ACEB004476AA /* CGRect+Inset.swift in Sources */,
