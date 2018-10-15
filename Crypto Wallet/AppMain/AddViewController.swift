@@ -15,8 +15,19 @@ class AddViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.view.backgroundColor = UIColor.blue
-        
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    @IBAction func generateWallet(sender: UIButton) {
+        let addGenerateVC = self.storyboard?.instantiateViewController(withIdentifier: "addgenerate") as! AddGenerateWallet
+        self.navigationController?.pushViewController(addGenerateVC, animated: true)
+    }
+    
+    @IBAction func importWallet(sender: UIButton) {
+       
     }
     
 }
