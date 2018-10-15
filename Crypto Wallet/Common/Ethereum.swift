@@ -19,7 +19,7 @@ class Ethereum: EthereumCoreProtocol {
     static let core = Ethereum()
     static let syncQueue = DispatchQueue(label: "com.ethereum-wallet.sync")
     
-    let context: GethContext = GethNewContext()
+    public let context: GethContext = GethNewContext()
     var syncCoordinator: SyncCoordinatorProtocol!
     var client: GethEthereumClient!
     var chain: Chain!

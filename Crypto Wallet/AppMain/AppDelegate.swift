@@ -72,6 +72,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+       // let syncCoordinator = LesSyncCoordinator(context: self.core.context, keystore: keyStore)
+
         let chain = Chain.rinkeby
         core.chain = chain
         core.syncCoordinator = syncCoordinator

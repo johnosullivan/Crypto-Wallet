@@ -54,9 +54,25 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(sender: UIButton) {
-        let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addview") as! AddViewController
-        let addNavController = UINavigationController(rootViewController: addVC)
-        self.present(addNavController, animated: true, completion: nil)
+        let fileManager = FileManager.default
+        let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
+        do {
+            let fileURLs = try fileManager.contentsOfDirectory(at: documentsURL , includingPropertiesForKeys: nil)
+            // process files
+            print(fileURLs)
+        } catch {
+            print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
+        }
+        //let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addview") as! AddViewController
+        //let addNavController = UINavigationController(rootViewController: addVC)
+        //self.present(addNavController, animated: true, completion: nil)
+        /*do {
+            let account:GethAccount = try appDelegate.keyStore.createAccount(passphrase: "mogilska")
+            print(account.getAddress())
+            print(account.getURL())
+        } catch {
+            
+        }*/
     }
     
     func waitForStatusChangeWithHash(hash: String) {
@@ -161,7 +177,7 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.receive, object:nil, queue:nil, using:receivePresention)
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
         
-        /*
+        
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
 
@@ -183,7 +199,7 @@ class ViewController: UIViewController {
                 self.wallets[i].rateAmount = rate
             }
         })
-         */
+        
         walletView.reload(cardViews: wallets)
         walletView.didUpdatePresentedCardViewBlock = { [weak self] (_) in
 
@@ -195,7 +211,7 @@ class ViewController: UIViewController {
     }
     
     func refreshWallets() {
-        /*
+        
         for i in 1 ... appDelegate.keyStore.getAccountCount() {
             do {
                 let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: (i - 1))
@@ -210,7 +226,7 @@ class ViewController: UIViewController {
             for i in 0 ... self.wallets.count - 1 {
                 self.wallets[i].rateAmount = rate
             }
-        })*/
+        })
     }
     
     func showAddCardViewButtonIfNeeded() {
