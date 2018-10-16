@@ -1,6 +1,6 @@
 import UIKit
 import Kingfisher
-import Rswift
+// import Rswift
 import Geth
 
 class WalletCardView: CardView {

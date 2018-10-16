@@ -36,7 +36,11 @@ enum NetworkError: CustomError {
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoordinatorDelegate {
     
-    func syncDidChangeProgress(current: Int64, max: Int64) { }
+    func syncDidChangeProgress(current: Int64, max: Int64) {
+        print("currentBlock: ", current)
+        print("highestBlock: ", max)
+    }
+    
     func syncDidFinished() { }
     func syncDidUpdateBalance(_ balanceHex: String, timestamp: Int64) { }
     func syncDidUpdateGasLimit(_ gasLimit: Int64) {  }
@@ -48,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
     public let syncCoordinator = StandardSyncCoordinator()
     
     let center = UNUserNotificationCenter.current()
+    
     
     func getBalance(address: String, result: @escaping (Result<String>) -> Void) {
         loadObjectJSON(request: API.Etherscan.balance(address: address)) { resultHandler in
@@ -72,7 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetworkLoadable, SyncCoor
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
-       // let syncCoordinator = LesSyncCoordinator(context: self.core.context, keystore: keyStore)
+        //let syncCoordinator = LesSyncCoordinator(context: self.core.context, keystore: keyStore)
 
         let chain = Chain.rinkeby
         core.chain = chain

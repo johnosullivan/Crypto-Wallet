@@ -11,6 +11,8 @@ import Geth
 import RealmSwift
 import UserNotifications
 
+import web3swift
+
 class Account: Object {
     @objc dynamic var name = ""
     @objc dynamic var address = ""
@@ -73,6 +75,15 @@ class ViewController: UIViewController {
         } catch {
             
         }*/
+        
+            let address = EthereumAddress("0xE6877A4d8806e9A9F12eB2e8561EA6c1db19978d")!
+            let web3Main = Web3.InfuraRinkebyWeb3(accessToken: "")
+            let balanceResult = web3Main.eth.getBalance(address: address)
+            guard case .success(let balance) = balanceResult else { return }
+            print("balance: ", balance)
+        
+       
+        
     }
     
     func waitForStatusChangeWithHash(hash: String) {
@@ -178,7 +189,7 @@ class ViewController: UIViewController {
         nc.addObserver(forName:.txDone, object:nil, queue:nil, using:didRecieveTxDone)
         
         
-        for i in 1 ... appDelegate.keyStore.getAccountCount() {
+       for i in 1 ... appDelegate.keyStore.getAccountCount() {
             let wallet = WalletCardView.nibForClass()
 
             wallet.currentIndex = (i - 1)
@@ -212,7 +223,7 @@ class ViewController: UIViewController {
     
     func refreshWallets() {
         
-        for i in 1 ... appDelegate.keyStore.getAccountCount() {
+       for i in 1 ... appDelegate.keyStore.getAccountCount() {
             do {
                 let addressGeth: GethAccount = try appDelegate.keyStore.getAccount(at: (i - 1))
                 wallets[(i - 1)].currentAddress = addressGeth.getAddress().getHex()!

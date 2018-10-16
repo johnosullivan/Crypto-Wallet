@@ -48,7 +48,7 @@ class LesSyncCoordinator: SyncCoordinatorProtocol {
     }
     
     func startSync(chain: Chain, delegate: SyncCoordinatorDelegate) throws {
-        GethSetVerbosity(5)
+        GethSetVerbosity(0)
         
         self.delegate = delegate
         try startNode(chain: chain)
@@ -118,8 +118,6 @@ class LesSyncCoordinator: SyncCoordinatorProtocol {
         if let syncProgress = try? node.ethereumClient().syncProgress(context) {
             let currentBlock = syncProgress.getCurrentBlock()
             let highestBlock = syncProgress.getHighestBlock()
-            print("currentBlock: ", currentBlock)
-            print("highestBlock: ", highestBlock)
             delegate?.syncDidChangeProgress(current: currentBlock, max: highestBlock)
             isSyncing = true
         } else if isSyncing {

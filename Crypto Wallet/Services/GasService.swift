@@ -37,7 +37,7 @@ class GasService: GasServiceProtocol {
     
     init(core: Ethereum) {
         self.client = core.client
-        self.context = core.context        
+        self.context = core.context
     }
     
     func getSuggestedGasLimit(result: @escaping (Result<Int64>) -> Void) {
