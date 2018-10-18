@@ -65,16 +65,6 @@ class ViewController: UIViewController {
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
-        //let addVC = self.storyboard?.instantiateViewController(withIdentifier: "addview") as! AddViewController
-        //let addNavController = UINavigationController(rootViewController: addVC)
-        //self.present(addNavController, animated: true, completion: nil)
-        /*do {
-            let account:GethAccount = try appDelegate.keyStore.createAccount(passphrase: "mogilska")
-            print(account.getAddress())
-            print(account.getURL())
-        } catch {
-            
-        }*/
         
             let address = EthereumAddress("0xE6877A4d8806e9A9F12eB2e8561EA6c1db19978d")!
             let web3Main = Web3.InfuraRinkebyWeb3(accessToken: "")
@@ -82,34 +72,10 @@ class ViewController: UIViewController {
             guard case .success(let balance) = balanceResult else { return }
             print("balance: ", balance)
         
-       
-        
     }
     
     func waitForStatusChangeWithHash(hash: String) {
-        /*
-        let group = DispatchGroup()
-        group.enter()
-        //var status:Int = 0
-        DispatchQueue.global(qos: .background).async {
-            var break_loop = true
-            while(break_loop) {
-                print("Waiting...", hash)
-                do {
-                    //let hash:GethHash = GethHash.init(fromHex: hash)
-                    //let receipt: GethReceipt = try self.appDelegate.core.client.getTransactionReceipt(self.appDelegate.core.context, hash: hash)
-                    //status = Int(receipt.string()!.components(separatedBy: " ")[0].components(separatedBy: "=")[1])!
-                    break_loop = false
-                    group.leave()
-                } catch { break_loop = true }
-                sleep(1)
-            }
-        }
-        group.notify(queue: .main) {
-            NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": hash, "status": status])
-            self.refreshWallets()
-        }
-         */
+        
     }
     
     func didRecieveTxDone(notification:Notification) -> Void {
