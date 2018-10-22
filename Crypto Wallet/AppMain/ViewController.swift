@@ -80,30 +80,6 @@ class ViewController: UIViewController {
     
     func didRecieveTxDone(notification:Notification) -> Void {
       
-        
-        let hash = notification.userInfo!["hash"]! as! String
-        let status = notification.userInfo!["status"]! as! Int
-        print("hash: ", hash)
-        print("status: ", status)
-        if (status == 1) {
-            /*let center = UNUserNotificationCenter.current()
-            let content = UNMutableNotificationContent()
-            content.title = "Transaction Successful!"
-            content.body = hash
-            content.sound = UNNotificationSound.default()
-            
-            let trigger = UNTimeIntervalNotificationTrigger(timeInterval: 5,  repeats: false)
-            let identifier = "CWLocalNotification"
-            let request = UNNotificationRequest(identifier: identifier,
-                                                content: content, trigger: trigger)
-            center.add(request, withCompletionHandler: { (error) in
-                if let error = error {
-                    // Something went wrong
-                }
-            })*/
-        } else {
-          
-        }
     }
     
     func receivePresention(notification:Notification) -> Void {
