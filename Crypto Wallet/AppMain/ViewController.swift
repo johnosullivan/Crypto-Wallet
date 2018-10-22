@@ -56,6 +56,7 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(sender: UIButton) {
+        
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
@@ -66,11 +67,11 @@ class ViewController: UIViewController {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
         
-            let address = EthereumAddress("0xE6877A4d8806e9A9F12eB2e8561EA6c1db19978d")!
-            let web3Main = Web3.InfuraRinkebyWeb3(accessToken: "")
-            let balanceResult = web3Main.eth.getBalance(address: address)
-            guard case .success(let balance) = balanceResult else { return }
-            print("balance: ", balance)
+        let address = EthereumAddress("0xE6877A4d8806e9A9F12eB2e8561EA6c1db19978d")!
+        let web3Main = Web3.InfuraRinkebyWeb3(accessToken: "")
+        let balanceResult = web3Main.eth.getBalance(address: address)
+        guard case .success(let balance) = balanceResult else { return }
+        print("balance: ", balance)
         
     }
     
@@ -83,10 +84,10 @@ class ViewController: UIViewController {
     }
     
     func receivePresention(notification:Notification) -> Void {
-        let address = notification.userInfo!["address"]! as! String
-        let popup = ReceivedPopupViewController()
-        popup.address = address
-        PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
+        //let address = notification.userInfo!["address"]! as! String
+        //let popup = ReceivedPopupViewController()
+        //popup.address = address
+        //PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
     }
     
     func getBalanceOfAddress(address: GethAccount, handler: ((_ balance: String, _ value: Double) -> Void)?) {
@@ -182,118 +183,11 @@ class ViewController: UIViewController {
         })
     }
     
-    func showAddCardViewButtonIfNeeded() {
-        //addCardViewButton.alpha = walletView.presentedCardView == nil || walletView.insertedCardViews.count <= 1 ? 1.0 : 0.0
-    }
-    
     func setTimeout(_ delay:TimeInterval, block:@escaping ()->Void) -> Timer {
         return Timer.scheduledTimer(timeInterval: delay, target: BlockOperation(block: block), selector: #selector(Operation.main), userInfo: nil, repeats: false)
     }
     
     @IBAction func addCardViewAction(_ sender: Any) {
-        
-       /*
-        do {
-            try appDelegate.keyStore.createAccount(passphrase: "mogilska")
-        } catch {
-            
-        }
- */
-        /*
-        
-        self.getRateConvert(from: "ETH", to: "USD", handler: { (rate: Double) in
-            print(rate)
-        })
-      
-        NotificationCenter.default.post(name:.txDone, object: nil, userInfo: ["hash": "dafgssgdgfsfdg", "status": 1])
-        
-        self.appDelegate.getTransactions(address: "0x5CAf1a91Ae54e76B6b5e6Aa656e8693FbB10c106", result: { result in
-            switch result {
-            case .success(let results):
-                for item in results {
-                    print("-------------------------------------------------------------------------------------------")
-                    print("FROM: " + item.from + " -> TO: " + item.to)
-                    print("ACCOUNT: " + item.amount.amount + " - HASH: " + item.txHash)
-                }
-            case .failure(let error):
-                print(error)
-            }
-        })
- 
-        */
-        
-        /*
-        do {
-            try appDelegate.keyStore.createAccount(passphrase: "mogilska")
-        } catch {
-            
-        }*/
-        /*let rate = RatesNetworkService()
-         let currencies_array = ["ETH","USD"]
-         rate.getRate(currencies: currencies_array) { result in
-         switch result {
-         case .success(let rates):
-         let rate_array = rates.filter { $0.from == "ETH" }
-         for index in 0...rate_array.count - 1 {
-         let current:Rate = rate_array[index]
-         if (current.to == "USD") {
-         self.rateBalanceLabel.text = "$" + String(Double(ethBalance.value) * current.value)
-         }
-         }
-         case .failure(let error):
-         print(error)
-         }
-         }*/
-        /*
-        let trans_service = TransactionService.init(core: core, keystore: keystore, transferType: TransferType.default)
-        let trans = TransactionInfo.init(amount: 20000000000000000.0, address: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", contractAddress: "0x697baf1c1c441ad4ed98c1b9c73f4f409991887a", gasLimit: 53000.0, gasPrice: 1000000000.0)
-        trans_service.sendTransaction(with: trans, passphrase: "mogilska") { result in
-            switch result {
-            case .success(let sendedTransaction):
-                print(sendedTransaction)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-       let gasService = GasService(core: core)
-        
-        gasService.getSuggestedGasPrice() { result in
-            switch result {
-            case .success(let gasPrice):
-                print("gasPrice: ", gasPrice)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        
-        gasService.getSuggestedGasLimit() { result in
-            switch result {
-            case .success(let gasLimit):
-                print("gasLimit: ", gasLimit)
-            case .failure(let error):
-                print(error)
-            }
-        }
-        */
-       /*
-        let chain = Chain.ropsten
-        let keystore = KeystoreService()
-        let core = Ethereum.core
-        core.chain = chain
-        let syncCoordinator = StandardSyncCoordinator()
-        core.syncCoordinator = syncCoordinator
-        
-        do  {
-            try syncCoordinator.startSync(chain: chain, delegate: self)
-            try core.client = syncCoordinator.getClient()
-            let account:GethAccount = try keystore.createAccount(passphrase: "mogilska")
-            print(account.getAddress().getHex())
-        } catch {
-            let nsError = error as NSError
-            print(nsError.localizedDescription)
-        }
-        */
         
     }
     override var prefersStatusBarHidden: Bool {
@@ -304,49 +198,3 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
     }
 }
-
-// MARK: - TabularCollectionDataSource
-/*
-extension ViewController: TabularCollectionDataSource {
-    
-    func tabularView(_ tabularView: TabularCollectionView, titleAttributesForCellAt indexpath: IndexPath) -> CellTitleAttributes {
-        var font = Font.avenirMedium.font()
-        var textAlignment = NSTextAlignment.center
-        if indexpath.section == 0 {
-            font = Font.avenirMedium.font(ofSize: 12)
-        }
-        if indexpath.row == 0 && indexpath.section != 0 {
-            textAlignment = .center
-        }
-        if indexpath.row == 1 && indexpath.section != 0 {
-            textAlignment = .left
-        }
-        if indexpath.row == 2 && indexpath.section != 0 {
-            textAlignment = .center
-        }
-        let text = data[indexpath.section][indexpath.row]
-        return CellTitleAttributes(title: text, font: font, textAlignment: textAlignment, textColor: Color.text.uiColor)
-    }
-    
-    func numberOfColumns(in tabularView: TabularCollectionView) -> Int { return data.first?.count ?? 0 }
-    
-    func numberOfRows(in tabularView: TabularCollectionView) -> Int { return data.count }
-    
-    func numberOfStaticRows(in tabularView: TabularCollectionView) -> Int { return 1 }
-    
-    func numberOfStaticColumn(in tabularView: TabularCollectionView) -> Int { return 1 }
-    
-}
-
-// MARK: - TabularCollectionDelegate
-
-extension ViewController: TabularCollectionDelegate {
-    
-    private func tabularView(_ tabularView: TabularCollectionView, didSeletItemAt indexPath: IndexPath) { }
-    
-    func tabularView(_ tabularView: TabularCollectionView, shouldHideColumnSeparatorAt indexPath: IndexPath) -> Bool {
-        return indexPath.row != 0
-    }
-}
-*/
-
