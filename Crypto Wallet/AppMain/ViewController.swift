@@ -56,7 +56,6 @@ class ViewController: UIViewController {
     }
     
     @IBAction func add(sender: UIButton) {
-        
         let fileManager = FileManager.default
         let documentsURL = fileManager.urls(for: .documentDirectory, in: .userDomainMask)[0]
         do {
@@ -66,13 +65,6 @@ class ViewController: UIViewController {
         } catch {
             print("Error while enumerating files \(documentsURL.path): \(error.localizedDescription)")
         }
-        
-        let address = EthereumAddress("0xE6877A4d8806e9A9F12eB2e8561EA6c1db19978d")!
-        let web3Main = Web3.InfuraRinkebyWeb3(accessToken: "")
-        let balanceResult = web3Main.eth.getBalance(address: address)
-        guard case .success(let balance) = balanceResult else { return }
-        print("balance: ", balance)
-        
     }
     
     func waitForStatusChangeWithHash(hash: String) {
@@ -84,10 +76,7 @@ class ViewController: UIViewController {
     }
     
     func receivePresention(notification:Notification) -> Void {
-        //let address = notification.userInfo!["address"]! as! String
-        //let popup = ReceivedPopupViewController()
-        //popup.address = address
-        //PopupWindowManager.shared.changeKeyWindow(rootViewController: popup)
+    
     }
     
     func getBalanceOfAddress(address: GethAccount, handler: ((_ balance: String, _ value: Double) -> Void)?) {
