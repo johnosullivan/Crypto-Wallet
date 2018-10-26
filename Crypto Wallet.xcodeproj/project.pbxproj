@@ -32,7 +32,6 @@
 		4576CBA120D8AF1600D53F44 /* KeystoreService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA020D8AF1600D53F44 /* KeystoreService.swift */; };
 		4576CBA320D97A7B00D53F44 /* GasService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA220D97A7B00D53F44 /* GasService.swift */; };
 		4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */; };
-		4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */; };
 		4576CBA920D987D600D53F44 /* TransactionFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBA820D987D600D53F44 /* TransactionFactory.swift */; };
 		4576CBAB20DB4BEC00D53F44 /* APIRate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4576CBAA20DB4BEC00D53F44 /* APIRate.swift */; };
 		4584626420E0A96A004476AA /* ReceivedPopupViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4584626120E0A969004476AA /* ReceivedPopupViewController.swift */; };
@@ -137,7 +136,6 @@
 		4576CBA020D8AF1600D53F44 /* KeystoreService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeystoreService.swift; sourceTree = "<group>"; };
 		4576CBA220D97A7B00D53F44 /* GasService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GasService.swift; sourceTree = "<group>"; };
 		4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StandardSyncCoordinator.swift; sourceTree = "<group>"; };
-		4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LesSyncCoordinator.swift; sourceTree = "<group>"; };
 		4576CBA820D987D600D53F44 /* TransactionFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransactionFactory.swift; sourceTree = "<group>"; };
 		4576CBAA20DB4BEC00D53F44 /* APIRate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIRate.swift; sourceTree = "<group>"; };
 		4584626120E0A969004476AA /* ReceivedPopupViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReceivedPopupViewController.swift; sourceTree = "<group>"; };
@@ -278,7 +276,6 @@
 				4576CBA020D8AF1600D53F44 /* KeystoreService.swift */,
 				4576CBA220D97A7B00D53F44 /* GasService.swift */,
 				4576CBA420D97B2800D53F44 /* StandardSyncCoordinator.swift */,
-				4576CBA620D97BA000D53F44 /* LesSyncCoordinator.swift */,
 				4576CBA820D987D600D53F44 /* TransactionFactory.swift */,
 			);
 			path = Services;
@@ -833,7 +830,6 @@
 				458ED92620D36C57004AEF22 /* WalletCardView.swift in Sources */,
 				45A8481A20D2149A00F88753 /* Ether.swift in Sources */,
 				45BAB80920CF7B19006F5B68 /* UITools.swift in Sources */,
-				4576CBA720D97BA000D53F44 /* LesSyncCoordinator.swift in Sources */,
 				454B3CEE20E308D100D95960 /* SelectPopupViewController.swift in Sources */,
 				454B3CFD20E4150300D95960 /* CWXScanNetAnimation.swift in Sources */,
 				4576CBA520D97B2800D53F44 /* StandardSyncCoordinator.swift in Sources */,
@@ -1062,7 +1058,10 @@
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crypto Wallet/Crypto Wallet-Bridging-Header.h";
@@ -1082,7 +1081,10 @@
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				ENABLE_BITCODE = NO;
 				INFOPLIST_FILE = "Crypto Wallet/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-Wallet";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_OBJC_BRIDGING_HEADER = "Crypto Wallet/Crypto Wallet-Bridging-Header.h";
@@ -1100,7 +1102,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1118,7 +1124,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletTests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1135,7 +1145,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;
@@ -1152,7 +1166,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 69UBQ6HF54;
 				INFOPLIST_FILE = "Crypto WalletUITests/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "com.otech.Crypto-WalletUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.2;

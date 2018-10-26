@@ -56,10 +56,6 @@ class KeystoreService: KeystoreServiceProtocol {
     }
     
     func createAccount(passphrase: String) throws -> GethAccount {
-        /*guard keystore.getAccounts().size() == 0 else {
-            throw EthereumError.accountExist
-        }*/
-        
         return try keystore.newAccount(passphrase)
     }
     
